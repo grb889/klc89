@@ -1,0 +1,761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>OSINT Tutorial: Creating a Secure Email Account and Forums for Leaks - OSINT Toolkit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osint-tutorial-creating-a-secure-email-account-and-forums-for-leaks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Toolkit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSINT Tutorial: Creating a Secure Email Account and Forums for Leaks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Toolkit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kali-osint-virtualbox-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Kali VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firefox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Browser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Osint Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-choose-a-privacy-focused-email-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Choose a Privacy-Focused Email Provider
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Choose a Privacy-Focused Email Provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Providers:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Tool:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-mask-your-identity-during-account-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Mask Your Identity During Account Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Mask Your Identity During Account Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Methods:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-the-email-account-securely" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Create the Email Account Securely
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Create the Email Account Securely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporary-number-services-use-cautiously" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporary Number Services (Use Cautiously):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-maintain-ongoing-operational-security-opsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Maintain Ongoing Operational Security (OpSec)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-platforms-used-for-digital-content-sharing-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Platforms Used for Digital Content Sharing &amp; Leaks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Platforms Used for Digital Content Sharing &amp; Leaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forums-leak-sharing-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forums &amp; Leak Sharing Platforms:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-mod-content-platforms-often-used-for-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game &amp; Mod Content Platforms (often used for distribution):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-tips-for-leak-related-email-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Tips for Leak-Related Email Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="osint-tutorial-creating-a-secure-email-account-and-forums-for-leaks">OSINT Tutorial: Creating a Secure Email Account and Forums for Leaks</h1>
+<p>This enhanced tutorial outlines how to create a secure, anonymous email account for OSINT investigations or whistleblowing, and identifies platforms where digital content (including leaks) is often shared. The goal is operational security (OpSec), privacy, and resilience against doxxing or attribution.</p>
+<hr />
+<h2 id="step-1-choose-a-privacy-focused-email-provider">Step 1: Choose a Privacy-Focused Email Provider</h2>
+<p>Use a provider that offers end-to-end encryption, strong privacy policies, and does not require personal information.</p>
+<h3 id="recommended-providers">Recommended Providers:</h3>
+<ul>
+<li>
+<p><strong>ProtonMail</strong> (<a href="https://protonmail.com">protonmail.com</a>)<br />
+  Based in Switzerland, ProtonMail offers end-to-end encryption and anonymous signup. Use the Tor version for enhanced anonymity: <a href="https://protonmail.com/tor">protonmail.com/tor</a>.</p>
+</li>
+<li>
+<p><strong>Tutanota</strong> (<a href="https://tutanota.com">tutanota.com</a>)<br />
+  Encrypted email and calendar services. Allows anonymous signup without a phone number. Also offers an Onion address.</p>
+</li>
+<li>
+<p><strong>StartMail</strong> (<a href="https://startmail.com">startmail.com</a>)<br />
+  Based in the Netherlands. Offers unlimited aliases, strong encryption, and no logging.</p>
+</li>
+<li>
+<p><strong>Mailbox.org</strong> (<a href="https://mailbox.org">mailbox.org</a>)<br />
+  Privacy-first German provider supporting PGP encryption and pseudonymous usage.</p>
+</li>
+<li>
+<p><strong>CTemplar</strong> (formerly active, now archived – verify availability before use)</p>
+</li>
+</ul>
+<h3 id="extra-tool">Extra Tool:</h3>
+<ul>
+<li><strong>SimpleLogin</strong> (<a href="https://simplelogin.io">simplelogin.io</a>) or <strong>AnonAddy</strong> (<a href="https://anonaddy.com">anonaddy.com</a>)<br />
+  Create anonymous aliases to forward to your secure inbox.</li>
+</ul>
+<hr />
+<h2 id="step-2-mask-your-identity-during-account-creation">Step 2: Mask Your Identity During Account Creation</h2>
+<p>Even with a secure email provider, you must ensure your network and hardware setup is not leaking identity.</p>
+<h3 id="recommended-methods">Recommended Methods:</h3>
+<ul>
+<li><strong>VPN</strong>: Use a no-log provider (e.g., Mullvad, IVPN, ProtonVPN). Prefer cash or crypto payments for higher anonymity.</li>
+<li><strong>Tor Browser</strong>: Route traffic through the Tor network. Launch your email provider's .onion URL where available.</li>
+<li><strong>Tails OS</strong>: A live OS focused on anonymity and privacy. Automatically routes through Tor. Useful for high-risk whistleblowing or sensitive OSINT.</li>
+<li><strong>Browser Isolation</strong>: Use Firefox with hardened privacy settings or a browser container (e.g., Firefox Multi-Account Containers).</li>
+</ul>
+<hr />
+<h2 id="step-3-create-the-email-account-securely">Step 3: Create the Email Account Securely</h2>
+<p>Follow these principles during sign-up:</p>
+<ul>
+<li>Use a <strong>non-identifying username</strong>. Avoid handles you've used elsewhere.</li>
+<li>Do <strong>not reuse passwords</strong>. Use a password manager like Bitwarden or KeePassXC.</li>
+<li>Avoid <strong>real information</strong>: fake names, birthdates, etc.</li>
+<li><strong>Never link a phone number</strong> unless using a temporary/burner solution.</li>
+</ul>
+<h3 id="temporary-number-services-use-cautiously">Temporary Number Services (Use Cautiously):</h3>
+<ul>
+<li><a href="https://www.receive-sms-online.info">Receive SMS Online</a></li>
+<li><a href="https://anonymsms.com">AnonymSMS</a></li>
+<li><a href="https://freephonenum.com">FreePhoneNum.com</a></li>
+<li><a href="https://receive-smss.com">Receive-smss.com</a></li>
+<li><strong>Alternative</strong>: Use apps like TextNow or Hushed (with VPN + dummy info).</li>
+</ul>
+<p><strong>⚠️ Note</strong>: Avoid using these numbers for accounts where long-term access is required. Numbers may be recycled.</p>
+<hr />
+<h2 id="step-4-maintain-ongoing-operational-security-opsec">Step 4: Maintain Ongoing Operational Security (OpSec)</h2>
+<ul>
+<li><strong>Dedicated Browsers or VMs</strong>: Run a separate browser profile or VM for all activity tied to your anonymous email.</li>
+<li><strong>Do Not Cross-Link</strong>: Don’t log into personal accounts, social media, or shopping sites using the same browser/IP/session.</li>
+<li><strong>Email Aliases for Separation</strong>: Use SimpleLogin or AnonAddy to create aliases for different purposes (leaks, monitoring, registration).</li>
+<li><strong>Turn Off JavaScript</strong> (where possible): Consider using NoScript or JS blockers in Tor/Firefox for leak submission.</li>
+<li><strong>Beware of Email Headers</strong>: Avoid sending emails directly to recipients. Use pastebin-style services or public-key encrypted messaging instead.</li>
+</ul>
+<hr />
+<h2 id="step-5-platforms-used-for-digital-content-sharing-leaks">Step 5: Platforms Used for Digital Content Sharing &amp; Leaks</h2>
+<p>These forums/platforms often host or share modded content, game repacks, and occasionally leaks. Monitor for investigative purposes.</p>
+<h3 id="forums-leak-sharing-platforms">Forums &amp; Leak Sharing Platforms:</h3>
+<ul>
+<li>
+<p><strong>VeryLeak's</strong> (<a href="https://veryleaks.is">veryleaks.is</a>)<br />
+  A platform known for sharing software, exploits, and leaked documents.</p>
+</li>
+<li>
+<p><strong>4chan /r9k/ or /g/</strong> (<a href="https://www.4chan.org">4chan.org</a>)<br />
+  Anonymous boards where leaks often appear before mainstream attention.</p>
+</li>
+<li>
+<p><strong>Exploit.in / BreachForums</strong> <em>(verify legal status and avoid posting)</em></p>
+</li>
+<li>
+<p><strong>Dread Forum</strong> (Tor-only Reddit-style forum, often used by whistleblowers and hackers)</p>
+</li>
+</ul>
+<hr />
+<h3 id="game-mod-content-platforms-often-used-for-distribution">Game &amp; Mod Content Platforms (often used for distribution):</h3>
+<ul>
+<li>
+<p><strong>NexusMods</strong> (<a href="https://www.nexusmods.com">nexusmods.com</a>)<br />
+  Hosting for over 700K+ game mods, sometimes includes illicit or grey-market uploads.</p>
+</li>
+<li>
+<p><strong>SteamCommunity</strong> (<a href="https://steamcommunity.com">steamcommunity.com</a>)<br />
+  Used for sharing guides, mods, and announcements. Leaks may be shared in discussions.</p>
+</li>
+<li>
+<p><strong>FitGirl Repacks</strong> (<a href="https://fitgirl-repacks.site">fitgirl-repacks.site</a>)<br />
+  Offers highly compressed versions of games, popular in grey-market redistribution.</p>
+</li>
+<li>
+<p><strong>SkidrowReloaded</strong> (<a href="https://skidrowreloaded.com">skidrowreloaded.com</a>)<br />
+  Hosts cracks, repacks, and modded game content.</p>
+</li>
+<li>
+<p><strong>Reddit Communities</strong>: e.g., r/Piracy, r/OSINT, r/PrivacyToolsIO <em>(watch, don’t post)</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="final-tips-for-leak-related-email-use">Final Tips for Leak-Related Email Use</h2>
+<ul>
+<li>Don’t use HTML email format. Stick with plain text.</li>
+<li>Never send attachments unless pre-scanned and anonymized (e.g., stripped EXIF, zipped with AES encryption).</li>
+<li>If submitting leaks, use secure pastebins (e.g., <a href="https://0bin.net">0bin.net</a>, <a href="https://paste.debian.net">paste.debian.net</a>) with auto-destruct.</li>
+<li>For long-term secure communication, exchange PGP keys.</li>
+</ul>
+<hr />
+<h2 id="tools-summary">Tools Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anonymous Email</td>
+<td>ProtonMail, Tutanota, StartMail</td>
+</tr>
+<tr>
+<td>Email Alias</td>
+<td>SimpleLogin, AnonAddy</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>Mullvad, ProtonVPN, IVPN</td>
+</tr>
+<tr>
+<td>Network Obfuscation</td>
+<td>Tor Browser, Tails OS</td>
+</tr>
+<tr>
+<td>Temporary SMS</td>
+<td>Receive-smss.com, AnonymSMS</td>
+</tr>
+<tr>
+<td>Password Management</td>
+<td>KeePassXC, Bitwarden</td>
+</tr>
+<tr>
+<td>Secure Pastebins</td>
+<td>0bin, PrivateBin, Paste.debian.net</td>
+</tr>
+</tbody>
+</table>
+<p>Stay safe, stay legal, and always verify platforms before interacting.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
