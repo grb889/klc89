@@ -1,0 +1,19 @@
+site_name: OSINT Toolkit
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Kali Setup: kali-osint-virtualbox-setup.md
+  - Resize Kali VM: resize-kali-vm.md
+  - Browser: firefox.md
+  - Google Dorking: google_dork_osint.md
+  - OSINT Environment: OSINT_Environment_Kali_vs_Tails.md
+  - theHarvester Guide: theHarvester_OSINT_Guide.md
+  - Osint Toolkit : Free_OSINT_Tools_List.md
+
+extra:
+  meta:
+    - name: robots
+      content: noindex
+
+  

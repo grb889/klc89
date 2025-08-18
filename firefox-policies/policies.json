@@ -1,0 +1,122 @@
+{
+  "policies": {
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "allowed"
+      },
+      "uBlock0@raymondhill.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{75afe46a-7a50-4c6b-b866-c43a1075b071}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/user-agent-switcher-revived/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "CookieAutoDelete@kennydo.com": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "wappalyzer@crunchlabz.com": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{73a6fe31-595d-460b-a920-fcc0f8843232}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/noscript/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "addon@darkreader.org": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{531906d3-e22f-4a6c-a102-8057b88a1a63}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/single-file/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{292b92dc-b295-45e6-add6-a5ce6911a544}": {
+  "install_url": "https://addons.mozilla.org/firefox/downloads/file/3958866/copywebtables-0.1.1.xpi",
+  "installation_mode": "force_installed"
+},
+
+      "{aea49ee9-c3aa-4841-9752-e84a28adff4b}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/shodan/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "@testpilot-containers": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
+        "installation_mode": "force_installed"
+      }
+    },
+   "Bookmarks": [
+  {
+    "Title": "default",
+    "Placement": "toolbar",
+    "Children": [
+      {
+        "Title": "Google Hacking DB",
+        "URL": "https://www.exploit-db.com/google-hacking-database"
+      },
+      {
+        "Title": "URLScan.io",
+        "URL": "https://urlscan.io"
+      },
+      {
+        "Title": "VirusTotal",
+        "URL": "https://www.virustotal.com/"
+      },
+      {
+        "Title": "URLClean",
+        "URL": "https://urlclean.github.io/"
+      },
+      {
+        "Title": "Phone Number Search (CZ)",
+        "URL": "https://www.truecaller.com/"
+      },
+      {
+        "Title": "PDF to PPT Converter",
+        "URL": "https://www.ilovepdf.com/pdf_to_powerpoint"
+      },
+      {
+        "Title": "IntelX",
+        "URL": "https://intelx.io"
+      },
+      {
+        "Title": "Archive.today",
+        "URL": "https://archive.today"
+      },
+      {
+        "Title": "Whois Lookup",
+        "URL": "https://who.is/"
+      },
+      {
+        "Title": "IP Info",
+        "URL": "https://ipinfo.io/"
+      },
+      {
+        "Title": "Censys",
+        "URL": "https://search.censys.io/"
+      },
+      {
+        "Title": "Wayback Machine",
+        "URL": "https://web.archive.org/"
+      },
+      {
+        "Title": "SpiderFoot (demo)",
+        "URL": "https://demo.spiderfoot.net/"
+      }
+    ]
+  }
+],
+
+    "Preferences": {
+      "media.peerconnection.enabled": false,
+      "geo.enabled": false
+    },
+    "DisablePrivateBrowsing": false,
+    "DisableFirefoxAccounts": true,
+    "BlockAboutConfig": true,
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "ProviderURL": "https://mozilla.cloudflare-dns.com/dns-query"
+    }
+  }
+}

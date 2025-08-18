@@ -1,0 +1,1438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../resize-kali-vm/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Kali Setup - OSINT Toolkit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kali-linux-virtual-machine-setup-for-osint-virtualbox-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSINT Toolkit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kali Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OSINT Toolkit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kali Setup
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali Setup
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 🧰 Install VirtualBox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-download-kali-linux-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 📥 Download Kali Linux ISO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-kali-linux-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 📦 Create a Kali Linux VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-install-kali-linux-inside-the-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 🏗️ Install Kali Linux Inside the VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-install-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 🔧 Post-Install Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🔧 Post-Install Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-system-and-install-essential-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update system and install essential tools:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-clone-and-run-the-osint-setup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 🧰 Clone and Run the OSINT Setup Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-install-guest-additions-for-clipboard-display-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 🔌 Install Guest Additions for Clipboard &amp; Display Enhancements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 🔌 Install Guest Additions for Clipboard &amp; Display Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-firefox-extensions-optional-but-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 🌐 Firefox Extensions (Optional but Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-take-a-snapshot-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 📸 Take a Snapshot (Highly Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recommended-virtualbox-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 🧠 Recommended VirtualBox Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-browser-setup-for-osint-investigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 🌐 Browser Setup for OSINT Investigations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 🌐 Browser Setup for OSINT Investigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Browser Choices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions-to-install-firefox-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Extensions to Install (Firefox Only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-online-tools-useful-in-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Free Online Tools Useful in OSINT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 Free Online Tools Useful in OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privacy-tweaks-in-firefox" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Privacy Tweaks in Firefox:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-using-clean-browser-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 🧱 Using Clean Browser Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 🧱 Using Clean Browser Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-installing-nordvpn-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 🔐 Installing NordVPN (Optional)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 🔐 Installing NordVPN (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-nordvpn-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install NordVPN CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Log In
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-connect-to-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Connect to a Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-privacy-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Privacy Hardening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-auto-connect-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Auto-Connect (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-export-or-clone-your-kali-osint-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. 💾 Export or Clone Your Kali OSINT VM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Kali VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Osint Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 🧰 Install VirtualBox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-download-kali-linux-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 📥 Download Kali Linux ISO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-kali-linux-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 📦 Create a Kali Linux VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-install-kali-linux-inside-the-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 🏗️ Install Kali Linux Inside the VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-install-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 🔧 Post-Install Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🔧 Post-Install Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-system-and-install-essential-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update system and install essential tools:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-clone-and-run-the-osint-setup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 🧰 Clone and Run the OSINT Setup Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-install-guest-additions-for-clipboard-display-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 🔌 Install Guest Additions for Clipboard &amp; Display Enhancements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 🔌 Install Guest Additions for Clipboard &amp; Display Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-firefox-extensions-optional-but-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 🌐 Firefox Extensions (Optional but Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-take-a-snapshot-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 📸 Take a Snapshot (Highly Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recommended-virtualbox-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 🧠 Recommended VirtualBox Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-browser-setup-for-osint-investigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 🌐 Browser Setup for OSINT Investigations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 🌐 Browser Setup for OSINT Investigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Browser Choices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions-to-install-firefox-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Extensions to Install (Firefox Only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-online-tools-useful-in-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Free Online Tools Useful in OSINT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 Free Online Tools Useful in OSINT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privacy-tweaks-in-firefox" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Privacy Tweaks in Firefox:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-using-clean-browser-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 🧱 Using Clean Browser Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 🧱 Using Clean Browser Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-installing-nordvpn-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 🔐 Installing NordVPN (Optional)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 🔐 Installing NordVPN (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-nordvpn-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install NordVPN CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Log In
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-connect-to-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Connect to a Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-privacy-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Privacy Hardening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-auto-connect-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Auto-Connect (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-export-or-clone-your-kali-osint-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. 💾 Export or Clone Your Kali OSINT VM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kali-linux-virtual-machine-setup-for-osint-virtualbox-guide">🐱‍💻 Kali Linux Virtual Machine Setup for OSINT (VirtualBox Guide)</h1>
+<p>This guide walks you through the full process of setting up a Kali Linux virtual machine using VirtualBox on Windows 11, with specific configurations tailored for Open-Source Intelligence (OSINT) investigations.</p>
+<hr />
+<h2 id="prerequisites">🛠️ Prerequisites</h2>
+<p>Before starting, ensure the following:</p>
+<ul>
+<li><strong>Host OS:</strong> Windows, IOS,Linux</li>
+<li><strong>RAM:</strong> At least 8 GB total on your host machine (to allocate 4 GB+ to Kali)</li>
+<li><strong>Disk Space:</strong> At least 30 GB free</li>
+</ul>
+<hr />
+<h2 id="1-install-virtualbox">1. 🧰 Install VirtualBox</h2>
+<ol>
+<li>
+<p>Download VirtualBox for Windows:
+   👉 https://www.virtualbox.org/wiki/Downloads</p>
+</li>
+<li>
+<p>Install VirtualBox and optionally download and install the <strong>VirtualBox Extension Pack</strong> for improved USB, network, and clipboard integration.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2-download-kali-linux-iso">2. 📥 Download Kali Linux ISO</h2>
+<ol>
+<li>
+<p>Go to:<br />
+   👉 https://www.kali.org/get-kali/#kali-platforms</p>
+</li>
+<li>
+<p>Download the <strong>Kali Linux Installer (64-bit)</strong> ISO.</p>
+</li>
+</ol>
+<hr />
+<h2 id="3-create-a-kali-linux-vm">3. 📦 Create a Kali Linux VM</h2>
+<ol>
+<li>Open VirtualBox and click <strong>New</strong>:</li>
+<li><strong>Name:</strong> <code>Kali OSINT</code></li>
+<li><strong>Type:</strong> <code>Linux</code></li>
+<li>
+<p><strong>Version:</strong> <code>Debian (64-bit)</code></p>
+</li>
+<li>
+<p>Set <strong>RAM</strong>:</p>
+</li>
+<li>Minimum: 4096 MB (4 GB)</li>
+<li>
+<p>Recommended: 6144 MB or more</p>
+</li>
+<li>
+<p>Create a virtual hard disk:</p>
+</li>
+<li>Format: <code>VDI (VirtualBox Disk Image)</code></li>
+<li>Storage: <code>Dynamically allocated</code></li>
+<li>
+<p>Size: <code>At least 20 GB</code></p>
+</li>
+<li>
+<p>Adjust advanced settings:</p>
+</li>
+<li><strong>System → Processor:</strong> Allocate at least 2 CPUs</li>
+<li><strong>Display → Video Memory:</strong> Set to 128 MB</li>
+<li>
+<p><strong>General → Advanced:</strong></p>
+<ul>
+<li>Shared Clipboard: <code>Bidirectional</code></li>
+<li>Drag and Drop: <code>Bidirectional</code></li>
+</ul>
+</li>
+<li>
+<p>Mount the Kali ISO:</p>
+</li>
+<li>Go to <strong>Settings → Storage</strong></li>
+<li>Click the empty optical drive under <code>Controller: IDE</code></li>
+<li>Click the disk icon → Choose a disk file → Select the Kali ISO</li>
+</ol>
+<hr />
+<h2 id="4-install-kali-linux-inside-the-vm">4. 🏗️ Install Kali Linux Inside the VM</h2>
+<ol>
+<li>
+<p>Start the VM → Select <strong>Graphical Install</strong></p>
+</li>
+<li>
+<p>Follow setup prompts:</p>
+</li>
+<li>Language, Region, Keyboard: Choose based on your preference</li>
+<li>Hostname: <code>kali-osint</code></li>
+<li>Domain: Leave blank</li>
+<li>Create a <strong>non-root user</strong> (recommended for security)</li>
+<li>
+<p>Partitioning:</p>
+<ul>
+<li>Select: <code>Guided – Use entire disk</code></li>
+<li>Choose: <code>All files in one partition</code></li>
+<li>Confirm with: <code>Yes</code> to write changes to disk</li>
+</ul>
+</li>
+<li>
+<p>Let the installation complete</p>
+</li>
+<li>
+<p>⚠️ Important: After install, <strong>remove the ISO</strong> from the virtual drive before rebooting.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5-post-install-configuration">5. 🔧 Post-Install Configuration</h2>
+<p>After your first boot:</p>
+<h3 id="update-system-and-install-essential-tools">Update system and install essential tools:</h3>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install -y git curl
+</code></pre>
+<hr />
+<h2 id="6-clone-and-run-the-osint-setup-script">6. 🧰 Clone and Run the OSINT Setup Script</h2>
+<p>Set up your OSINT tool environment:</p>
+<pre><code class="language-bash">git clone https://github.com/alex2t/kali-osint-setup.git
+cd kali-osint-setup
+chmod +x setup_osint_tools.sh
+./setup_osint_tools.sh
+</code></pre>
+<p>This script installs:
+- APT-based tools: <code>theHarvester</code>, <code>SpiderFoot</code>, <code>Amass</code>
+- Python-based tools: <code>Holehe</code>, <code>Social Analyzer</code>
+- GitHub repos: <code>Sherlock</code>, <code>GHunt</code>, and more</p>
+<blockquote>
+<p>📁 All tools will be available under <code>~/osint-tools</code></p>
+</blockquote>
+<hr />
+<h2 id="7-install-guest-additions-for-clipboard-display-enhancements">7. 🔌 Install Guest Additions for Clipboard &amp; Display Enhancements</h2>
+<h3 id="step-by-step">Step-by-step:</h3>
+<p>A. In the VirtualBox window:</p>
+<pre><code>Devices → Insert Guest Additions CD image…
+</code></pre>
+<p>B. Inside Kali terminal, run:</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install -y build-essential dkms linux-headers-$(uname -r) &amp;&amp; \
+sudo mkdir -p /media/cdrom &amp;&amp; \
+sudo mount /dev/cdrom /media/cdrom &amp;&amp; \
+sudo /media/cdrom/VBoxLinuxAdditions.run &amp;&amp; \
+echo &quot;✅ Done. Now reboot: sudo reboot&quot;
+</code></pre>
+<p>C. Reboot your VM:</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<p>Clipboard sharing will now work both ways.</p>
+<hr />
+<h2 id="8-firefox-extensions-optional-but-recommended">8. 🌐 Firefox Extensions (Optional but Recommended)</h2>
+<p>Install useful browser extensions automatically:</p>
+<pre><code class="language-bash">sudo mkdir -p /usr/lib/firefox/distribution/
+sudo cp firefox-policies/policies.json /usr/lib/firefox/distribution/
+</code></pre>
+<p>Then restart Firefox. Extensions like <strong>uBlock Origin</strong>, <strong>Wappalyzer</strong>, <strong>NoScript</strong> will auto-install.</p>
+<hr />
+<h2 id="9-take-a-snapshot-highly-recommended">9. 📸 Take a Snapshot (Highly Recommended)</h2>
+<p>Once your setup is complete and tested:</p>
+<ul>
+<li>Shut down the VM</li>
+<li>In VirtualBox Manager → Right-click the VM → Take Snapshot</li>
+<li>Name: <code>Base OSINT Setup</code></li>
+</ul>
+<hr />
+<h2 id="10-recommended-virtualbox-settings">10. 🧠 Recommended VirtualBox Settings</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>4 GB min</td>
+<td>6 GB+ preferred</td>
+</tr>
+<tr>
+<td>CPU Cores</td>
+<td>2 min</td>
+<td>3–4 cores ideal</td>
+</tr>
+<tr>
+<td>Video Memory</td>
+<td>128 MB</td>
+<td>Max it out</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>20 GB+</td>
+<td>Use Dynamically Allocated (VDI)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-browser-setup-for-osint-investigations">11. 🌐 Browser Setup for OSINT Investigations</h2>
+<h3 id="browser-choices">🔐 Browser Choices:</h3>
+<ul>
+<li><strong>Firefox (Recommended)</strong></li>
+<li><strong>LibreWolf</strong> (privacy-hardened)</li>
+<li><strong>Chromium</strong> + privacy extensions</li>
+</ul>
+<h2 id="extensions-to-install-firefox-only">🧩 Extensions to Install (Firefox Only)</h2>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Purpose</th>
+<th>Firefox Add-on Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uBlock Origin</td>
+<td>Blocks trackers and ads</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/ublock-origin/">uBlock Origin</a></td>
+</tr>
+<tr>
+<td>User-Agent Switcher</td>
+<td>Spoofs browser/OS fingerprints</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/uaswitcher/">User-Agent Switcher</a></td>
+</tr>
+<tr>
+<td>Cookie AutoDelete</td>
+<td>Deletes cookies automatically</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/cookie-autodelete/">Cookie AutoDelete</a></td>
+</tr>
+<tr>
+<td>Wappalyzer</td>
+<td>Identifies web technologies</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/wappalyzer/">Wappalyzer</a></td>
+</tr>
+<tr>
+<td>NoScript</td>
+<td>Blocks unwanted JS execution</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/noscript/">NoScript</a></td>
+</tr>
+<tr>
+<td>Dark Reader</td>
+<td>Applies dark mode for readability</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/darkreader/">Dark Reader</a></td>
+</tr>
+<tr>
+<td>SingleFile</td>
+<td>Save entire web pages as single HTML file</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/single-file/">SingleFile</a></td>
+</tr>
+<tr>
+<td>Copytables</td>
+<td>Copy HTML tables easily</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/copytables/">Copytables</a></td>
+</tr>
+<tr>
+<td>Shodan Plugin</td>
+<td>Display IP/domain intel via Shodan</td>
+<td><a href="https://addons.mozilla.org/firefox/addon/shodan/">Shodan</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="free-online-tools-useful-in-osint">🧰 Free Online Tools Useful in OSINT</h2>
+<ul>
+<li><a href="https://www.exploit-db.com/google-hacking-database">🔍 Google Hacking Database</a></li>
+<li><a href="https://urlscan.io">🔗 URLScan.io (Scan &amp; analyze URLs)</a></li>
+<li><a href="https://www.virustotal.com">📎 VirusTotal (Scan files &amp; URLs)</a></li>
+<li><a href="https://urlclean.com/">📨 URLClean (Deobfuscate/redact URLs)</a></li>
+<li><a href="https://phonebook.cz/">📱 Phone Number Search (CZ)</a></li>
+<li><a href="https://smallpdf.com/pdf-to-ppt">📚 PDF to PowerPoint Converter</a></li>
+<li><a href="https://intelx.io">🌍 IntelX (search leaked content &amp; OSINT)</a></li>
+<li><a href="https://archive.ph/">📸 Archive.today (Snapshot any web page)</a></li>
+<li><a href="https://who.is">🕵️‍♀️ Whois Lookup</a></li>
+<li><a href="https://ipinfo.io">📍 IP Info</a></li>
+<li><a href="https://search.censys.io/">🧭 Censys</a></li>
+<li><a href="https://web.archive.org/">🌐 Wayback Machine</a></li>
+<li><a href="https://demo.spiderfoot.net/">👁️ SpiderFoot (demo)</a></li>
+</ul>
+<hr />
+<h3 id="privacy-tweaks-in-firefox">⚠️ Privacy Tweaks in Firefox:</h3>
+<ul>
+<li><strong>Disable WebRTC</strong>:</li>
+<li>Visit <code>about:config</code></li>
+<li>Search: <code>media.peerconnection.enabled</code></li>
+<li>
+<p>Set to <code>false</code></p>
+</li>
+<li>
+<p><strong>Disable Geolocation</strong>:</p>
+</li>
+<li>Visit <code>about:config</code></li>
+<li>Search: <code>geo.enabled</code></li>
+<li>
+<p>Set to <code>false</code></p>
+</li>
+<li>
+<p><strong>Private Mode Settings</strong>:</p>
+</li>
+<li>Visit <code>about:preferences#privacy</code></li>
+<li>Set: Firefox will use custom settings for history</li>
+</ul>
+<hr />
+<h2 id="12-using-clean-browser-profiles">12. 🧱 Using Clean Browser Profiles</h2>
+<h3 id="why">Why?</h3>
+<p>To avoid cross-contamination between investigations and prevent tracking.</p>
+<h3 id="options">Options:</h3>
+<ul>
+<li>
+<p><strong>New Firefox Profile</strong>:
+  <code>bash
+  firefox-esr --ProfileManager</code>
+  Create one per investigation (e.g., <code>target-a</code>, <code>target-b</code>).</p>
+</li>
+<li>
+<p><strong>Firefox Containers</strong>:</p>
+</li>
+<li>Install: Firefox Multi-Account Containers</li>
+<li>
+<p>Use one container per investigation (e.g., Company-A, Threat-Actor-X)</p>
+</li>
+<li>
+<p><strong>Private Mode</strong>:</p>
+</li>
+<li>Use <code>Ctrl + Shift + P</code> for temporary isolation</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Isolation Level</th>
+<th>Best Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full</td>
+<td>New profile per case</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Firefox containers</td>
+</tr>
+<tr>
+<td>Temporary</td>
+<td>Private window</td>
+</tr>
+<tr>
+<td>Max Stealth</td>
+<td>Clean VM/browser</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-installing-nordvpn-optional">13. 🔐 Installing NordVPN (Optional)</h2>
+<h3 id="step-1-install-nordvpn-cli">Step 1: Install NordVPN CLI</h3>
+<pre><code class="language-bash">sh &lt;(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+sudo groupadd nordvpn
+sudo usermod -aG nordvpn $USER
+sudo reboot
+</code></pre>
+<h3 id="step-2-log-in">Step 2: Log In</h3>
+<pre><code class="language-bash">nordvpn login
+</code></pre>
+<p>A browser window will open for authentication.</p>
+<h3 id="step-3-connect-to-a-server">Step 3: Connect to a Server</h3>
+<pre><code class="language-bash">nordvpn connect         # Auto connect
+nordvpn connect us      # Connect to a US server
+</code></pre>
+<h3 id="step-4-privacy-hardening">Step 4: Privacy Hardening</h3>
+<pre><code class="language-bash">nordvpn set killswitch on
+nordvpn set cybersec on
+nordvpn set technology OpenVPN
+nordvpn set obfuscate on
+</code></pre>
+<h3 id="step-5-auto-connect-optional">Step 5: Auto-Connect (Optional)</h3>
+<pre><code class="language-bash">nordvpn set autoconnect on
+</code></pre>
+<hr />
+<h2 id="14-export-or-clone-your-kali-osint-vm">14. 💾 Export or Clone Your Kali OSINT VM</h2>
+<p>To reuse or share your VM:</p>
+<ul>
+<li><strong>Snapshot:</strong> Right-click → Take Snapshot</li>
+<li><strong>Export OVA:</strong> File → Export Appliance</li>
+</ul>
+<hr />
+<blockquote>
+<p>🧠 <strong>Reminder:</strong> Always use separate profiles or containers for different OSINT investigations to avoid tracking, linkage, or error in attribution.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
