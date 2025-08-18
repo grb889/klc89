@@ -452,39 +452,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-using-clean-browser-profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      12. 🧱 Using Clean Browser Profiles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="12. 🧱 Using Clean Browser Profiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#13-installing-nordvpn-optional" class="md-nav__link">
     <span class="md-ellipsis">
       13. 🔐 Installing NordVPN (Optional)
@@ -574,6 +541,28 @@
   
   <span class="md-ellipsis">
     Resize Kali VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firefox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Browser
     
   </span>
   
@@ -873,39 +862,6 @@
   <a href="#privacy-tweaks-in-firefox" class="md-nav__link">
     <span class="md-ellipsis">
       ⚠️ Privacy Tweaks in Firefox:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-using-clean-browser-profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      12. 🧱 Using Clean Browser Profiles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="12. 🧱 Using Clean Browser Profiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options:
     </span>
   </a>
   
@@ -1294,56 +1250,6 @@ sudo cp firefox-policies/policies.json /usr/lib/firefox/distribution/
 <li>Visit <code>about:preferences#privacy</code></li>
 <li>Set: Firefox will use custom settings for history</li>
 </ul>
-<hr />
-<h2 id="12-using-clean-browser-profiles">12. 🧱 Using Clean Browser Profiles</h2>
-<h3 id="why">Why?</h3>
-<p>To avoid cross-contamination between investigations and prevent tracking.</p>
-<h3 id="options">Options:</h3>
-<ul>
-<li>
-<p><strong>New Firefox Profile</strong>:
-  <code>bash
-  firefox-esr --ProfileManager</code>
-  Create one per investigation (e.g., <code>target-a</code>, <code>target-b</code>).</p>
-</li>
-<li>
-<p><strong>Firefox Containers</strong>:</p>
-</li>
-<li>Install: Firefox Multi-Account Containers</li>
-<li>
-<p>Use one container per investigation (e.g., Company-A, Threat-Actor-X)</p>
-</li>
-<li>
-<p><strong>Private Mode</strong>:</p>
-</li>
-<li>Use <code>Ctrl + Shift + P</code> for temporary isolation</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Isolation Level</th>
-<th>Best Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Full</td>
-<td>New profile per case</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>Firefox containers</td>
-</tr>
-<tr>
-<td>Temporary</td>
-<td>Private window</td>
-</tr>
-<tr>
-<td>Max Stealth</td>
-<td>Clean VM/browser</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h2 id="13-installing-nordvpn-optional">13. 🔐 Installing NordVPN (Optional)</h2>
 <h3 id="step-1-install-nordvpn-cli">Step 1: Install NordVPN CLI</h3>

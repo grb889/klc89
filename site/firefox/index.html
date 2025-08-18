@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../firefox/">
+        <link rel="prev" href="../resize-kali-vm/">
       
       
-        <link rel="next" href="../OSINT_Environment_Kali_vs_Tails/">
+        <link rel="next" href="../google_dork_osint/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Google Dorking - OSINT Toolkit</title>
+        <title>Browser - OSINT Toolkit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-dorking-for-osint" class="md-skip">
+        <a href="#firefox-configuration-for-osint-investigations-kali-linux-virtualbox" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Dorking
+              Browser
             
           </span>
         </div>
@@ -257,28 +257,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../firefox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -296,7 +274,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Browser
     
   </span>
   
@@ -309,7 +287,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Browser
     
   </span>
   
@@ -332,46 +310,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-google-dorking" class="md-nav__link">
+  <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 What Is Google Dorking?
+      🎯 Goal
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-use-case-find-only-face-images-of-a-person" class="md-nav__link">
+  <a href="#1-understanding-firefox-profiles" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Example Use Case: Find Only Face Images of a Person
+      🧱 1. Understanding Firefox Profiles
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧠 Example Use Case: Find Only Face Images of a Person">
+    <nav class="md-nav" aria-label="🧱 1. Understanding Firefox Profiles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
+  <a href="#what-is-a-profile" class="md-nav__link">
     <span class="md-ellipsis">
-      Step-by-step:
+      🔍 What is a Profile?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
+  <a href="#osint-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Result:
+      📦 OSINT Usage
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#linux-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Example:
+      🔧 Linux Commands
     </span>
   </a>
   
@@ -383,73 +361,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-google-dork-operators" class="md-nav__link">
+  <a href="#2-multi-account-containers-mac" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Core Google Dork Operators
+      🧩 2. Multi-Account Containers (MAC)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-dorking-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Advanced Dorking Techniques
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔍 Advanced Dorking Techniques">
+    <nav class="md-nav" aria-label="🧩 2. Multi-Account Containers (MAC)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-search-for-exposed-files-in-open-directories" class="md-nav__link">
+  <a href="#what-are-containers" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Search for Exposed Files in Open Directories
+      🔐 What are Containers?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-locate-documents-on-misconfigured-file-servers" class="md-nav__link">
+  <a href="#osint-application" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Locate Documents on Misconfigured File Servers
+      🕵️ OSINT Application
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-discover-documents-in-backup-folders" class="md-nav__link">
+  <a href="#setup-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Discover Documents in Backup Folders
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-target-government-or-organization-sites" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Target Government or Organization Sites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-multi-parameter-search-query-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Multi-parameter search query 1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-multi-parameter-search-query2" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Multi-parameter search query(2)
+      🔧 Setup Notes
     </span>
   </a>
   
@@ -461,46 +403,103 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips-for-effective-dorking" class="md-nav__link">
+  <a href="#3-arkenfox-userjs-hardening" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Practical Tips for Effective Dorking
+      🔐 3. Arkenfox User.js Hardening
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legal-and-ethical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚖️ Legal and Ethical Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#suggested-next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📎 Suggested Next Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📎 Suggested Next Steps">
+    <nav class="md-nav" aria-label="🔐 3. Arkenfox User.js Hardening">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sheet-list-from-the-web" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Sheet List from the web :
+      🧬 Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osint-optimized-userjs-place-in-each-profile-dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ OSINT-Optimized user.js (Place in each profile dir)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-burner-profile-creation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 4. Burner Profile Creation Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 4. Burner Profile Creation Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burner_firefoxsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 burner_firefox.sh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extension-handling-containers-ublock-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 5. Extension Handling (Containers + uBlock etc.)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔚 Final Recommendations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-burner_firefoxsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Using burner_firefox.sh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Using burner_firefox.sh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 How to Use
     </span>
   </a>
   
@@ -515,6 +514,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -612,46 +633,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-google-dorking" class="md-nav__link">
+  <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 What Is Google Dorking?
+      🎯 Goal
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-use-case-find-only-face-images-of-a-person" class="md-nav__link">
+  <a href="#1-understanding-firefox-profiles" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Example Use Case: Find Only Face Images of a Person
+      🧱 1. Understanding Firefox Profiles
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧠 Example Use Case: Find Only Face Images of a Person">
+    <nav class="md-nav" aria-label="🧱 1. Understanding Firefox Profiles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
+  <a href="#what-is-a-profile" class="md-nav__link">
     <span class="md-ellipsis">
-      Step-by-step:
+      🔍 What is a Profile?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
+  <a href="#osint-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Result:
+      📦 OSINT Usage
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#linux-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Example:
+      🔧 Linux Commands
     </span>
   </a>
   
@@ -663,73 +684,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-google-dork-operators" class="md-nav__link">
+  <a href="#2-multi-account-containers-mac" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Core Google Dork Operators
+      🧩 2. Multi-Account Containers (MAC)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-dorking-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Advanced Dorking Techniques
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔍 Advanced Dorking Techniques">
+    <nav class="md-nav" aria-label="🧩 2. Multi-Account Containers (MAC)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-search-for-exposed-files-in-open-directories" class="md-nav__link">
+  <a href="#what-are-containers" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Search for Exposed Files in Open Directories
+      🔐 What are Containers?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-locate-documents-on-misconfigured-file-servers" class="md-nav__link">
+  <a href="#osint-application" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Locate Documents on Misconfigured File Servers
+      🕵️ OSINT Application
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-discover-documents-in-backup-folders" class="md-nav__link">
+  <a href="#setup-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Discover Documents in Backup Folders
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-target-government-or-organization-sites" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Target Government or Organization Sites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-multi-parameter-search-query-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Multi-parameter search query 1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-multi-parameter-search-query2" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Multi-parameter search query(2)
+      🔧 Setup Notes
     </span>
   </a>
   
@@ -741,46 +726,103 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips-for-effective-dorking" class="md-nav__link">
+  <a href="#3-arkenfox-userjs-hardening" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Practical Tips for Effective Dorking
+      🔐 3. Arkenfox User.js Hardening
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legal-and-ethical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚖️ Legal and Ethical Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#suggested-next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📎 Suggested Next Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📎 Suggested Next Steps">
+    <nav class="md-nav" aria-label="🔐 3. Arkenfox User.js Hardening">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sheet-list-from-the-web" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Sheet List from the web :
+      🧬 Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osint-optimized-userjs-place-in-each-profile-dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ OSINT-Optimized user.js (Place in each profile dir)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-burner-profile-creation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 4. Burner Profile Creation Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 4. Burner Profile Creation Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#burner_firefoxsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 burner_firefox.sh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extension-handling-containers-ublock-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 5. Extension Handling (Containers + uBlock etc.)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔚 Final Recommendations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-burner_firefoxsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Using burner_firefox.sh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Using burner_firefox.sh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 How to Use
     </span>
   </a>
   
@@ -807,287 +849,239 @@
 
 
 
-<h1 id="google-dorking-for-osint">📚 Google Dorking for OSINT</h1>
-<p><strong>Google Dorking</strong> (also known as Google hacking) refers to using advanced search operators in Google to find specific, often hidden, pieces of information. It's a powerful and beginner-friendly OSINT technique used by cybersecurity professionals, journalists, and investigators.</p>
-<hr />
-<h2 id="what-is-google-dorking">🔍 What Is Google Dorking?</h2>
-<p>Google Dorking leverages the way Google indexes web content. By combining search terms with advanced operators, you can:</p>
+<h1 id="firefox-configuration-for-osint-investigations-kali-linux-virtualbox">Firefox Configuration for OSINT Investigations (Kali Linux – VirtualBox)</h1>
+<h2 id="goal">🎯 Goal</h2>
+<p>To establish a hardened, compartmentalized, and anonymous browser setup for OSINT operations using:</p>
 <ul>
-<li>Discover publicly exposed files</li>
-<li>Search within a specific domain</li>
-<li>Find login portals</li>
-<li>Identify vulnerable pages or misconfigurations</li>
-<li>Locate public documents, images, or directories</li>
+<li><strong>Firefox ESR profiles</strong> (full separation of investigations)</li>
+<li><strong>Multi-Account Containers</strong> (per-tab compartmentalization)</li>
+<li><strong>Arkenfox-based hardening</strong> (<code>user.js</code>)</li>
+<li><strong>Scripted automation</strong> for burner-profile creation</li>
 </ul>
-<blockquote>
-<p>⚠️ <strong>Ethical Reminder:</strong> Use Google Dorking responsibly. Only access information that is publicly available and not protected by authentication or privacy settings.</p>
-</blockquote>
-<hr />
-<h2 id="example-use-case-find-only-face-images-of-a-person">🧠 Example Use Case: Find Only Face Images of a Person</h2>
-<p>This trick lets you refine Google Images to only show <strong>face-type</strong> images:</p>
-<h3 id="step-by-step">Step-by-step:</h3>
+<h2 id="1-understanding-firefox-profiles">🧱 1. Understanding Firefox Profiles</h2>
+<h3 id="what-is-a-profile">🔍 What is a Profile?</h3>
+<p>A <strong>Firefox profile</strong> is a self-contained environment that stores:</p>
+<ul>
+<li>Browsing history, cache, cookies</li>
+<li>Bookmarks and session info</li>
+<li>Installed extensions</li>
+<li><code>about:config</code> settings</li>
+</ul>
+<h3 id="osint-usage">📦 OSINT Usage</h3>
+<p>Each <strong>investigation target</strong> should get its own Firefox profile. This avoids:</p>
+<ul>
+<li>Cross-contamination of cookies, storage, fingerprinting trails</li>
+<li>Session or login leakage between targets</li>
+<li>Correlating traffic from Target A and Target B</li>
+</ul>
+<p><strong>Best Practice:</strong> 1 Profile = 1 Target</p>
+<h3 id="linux-commands">🔧 Linux Commands</h3>
+<pre><code class="language-bash"># Create a profile
+firefox-esr -CreateProfile &quot;target-a&quot;
+
+# List profiles
+cat ~/.mozilla/firefox/profiles.ini
+
+# Delete a profile manually
+rm -rf ~/.mozilla/firefox/*.target-a/
+
+# Launch a specific profile
+firefox-esr -P &quot;target-a&quot;
+</code></pre>
+<h2 id="2-multi-account-containers-mac">🧩 2. Multi-Account Containers (MAC)</h2>
+<h3 id="what-are-containers">🔐 What are Containers?</h3>
+<p>Containers allow tab-level isolation <em>within a single profile</em>:</p>
+<ul>
+<li>Separate cookies, local storage, sessions</li>
+<li>Maintain multiple identities on the same site</li>
+<li>Reduce risk of cross-site tracking</li>
+</ul>
+<h3 id="osint-application">🕵️ OSINT Application</h3>
+<p>Use containers <strong>within an investigation profile</strong> to separate workflows:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Container</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-a</code></td>
+<td><code>target-a-social</code></td>
+<td>Log into Twitter</td>
+</tr>
+<tr>
+<td><code>target-a</code></td>
+<td><code>target-a-research</code></td>
+<td>Scrape open forums</td>
+</tr>
+<tr>
+<td><code>target-a</code></td>
+<td><code>target-a-search</code></td>
+<td>General browsing</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practice:</strong> 1 Profile → Multiple Containers (per investigation type)</p>
+<h3 id="setup-notes">🔧 Setup Notes</h3>
+<ul>
+<li>The <strong>Multi-Account Containers extension</strong> can be pre-installed via <code>policies.json</code>.</li>
+<li>But <strong>domain-to-container bindings must be set manually</strong>.</li>
+<li>Containers do <strong>not sync</strong> between profiles.</li>
+</ul>
+<h2 id="3-arkenfox-userjs-hardening">🔐 3. Arkenfox User.js Hardening</h2>
+<h3 id="purpose">🧬 Purpose</h3>
+<p>Arkenfox is a privacy-hardening configuration applied via a <code>user.js</code> file in each Firefox profile. It overrides <code>about:config</code> to:</p>
+<ul>
+<li>Disable tracking APIs</li>
+<li>Prevent fingerprinting</li>
+<li>Stop telemetry and WebRTC leaks</li>
+</ul>
+<h3 id="osint-optimized-userjs-place-in-each-profile-dir">⚙️ OSINT-Optimized <code>user.js</code> (Place in each profile dir)</h3>
+<pre><code class="language-js">// --- Privacy and Fingerprinting Protection ---
+user_pref(&quot;media.peerconnection.enabled&quot;, false); // WebRTC
+user_pref(&quot;geo.enabled&quot;, false);
+user_pref(&quot;dom.battery.enabled&quot;, false);
+user_pref(&quot;dom.gamepad.enabled&quot;, false);
+user_pref(&quot;device.sensors.enabled&quot;, false);
+user_pref(&quot;webgl.disabled&quot;, true);
+user_pref(&quot;dom.webnotifications.enabled&quot;, false);
+user_pref(&quot;dom.push.enabled&quot;, false);
+user_pref(&quot;beacon.enabled&quot;, false);
+
+user_pref(&quot;privacy.resistFingerprinting&quot;, true);
+user_pref(&quot;privacy.resistFingerprinting.letterboxing&quot;, true);
+user_pref(&quot;privacy.resistFingerprinting.block_mozAddonManager&quot;, true);
+
+user_pref(&quot;canvas.poisondata&quot;, true);
+user_pref(&quot;canvas.poisondata.enable&quot;, true);
+user_pref(&quot;canvas.capturestream.enabled&quot;, false);
+user_pref(&quot;dom.webaudio.enabled&quot;, false);
+
+user_pref(&quot;network.http.referer.XOriginTrimmingPolicy&quot;, 2);
+user_pref(&quot;network.http.referer.XOriginPolicy&quot;, 2);
+user_pref(&quot;network.dns.disablePrefetch&quot;, true);
+user_pref(&quot;network.prefetch-next&quot;, false);
+user_pref(&quot;network.predictor.enabled&quot;, false);
+
+user_pref(&quot;browser.formfill.enable&quot;, false);
+user_pref(&quot;network.cookie.cookieBehavior&quot;, 5);
+user_pref(&quot;privacy.partition.network_state.ocsp_cache&quot;, true);
+
+// --- DNS over HTTPS ---
+user_pref(&quot;network.trr.mode&quot;, 2);
+user_pref(&quot;network.trr.uri&quot;, &quot;https://mozilla.cloudflare-dns.com/dns-query&quot;);
+
+// --- UI &amp; Session Behavior ---
+user_pref(&quot;browser.startup.page&quot;, 0);
+user_pref(&quot;signon.rememberSignons&quot;, false);
+user_pref(&quot;browser.sessionstore.privacy_level&quot;, 2);
+user_pref(&quot;browser.download.manager.addToRecentDocs&quot;, false);
+</code></pre>
+<h2 id="4-burner-profile-creation-script">⚙️ 4. Burner Profile Creation Script</h2>
+<h3 id="burner_firefoxsh">🔄 <code>burner_firefox.sh</code></h3>
+<pre><code class="language-bash">#!/bin/bash
+
+# === CONFIGURATION ===
+PROFILE_NAME=&quot;burner-$(date +%s)&quot;
+FIREFOX_CMD=$(which firefox)
+
+# Check if Firefox is installed
+if [ -z &quot;$FIREFOX_CMD&quot; ]; then
+  echo &quot;❌ Firefox is not installed or not in PATH.&quot;
+  exit 1
+fi
+
+echo &quot;🌀 Creating Firefox burner profile: $PROFILE_NAME&quot;
+firefox -CreateProfile &quot;$PROFILE_NAME&quot;
+
+# Find profile folder
+PROFILE_DIR=$(find ~/.mozilla/firefox -maxdepth 1 -type d -name &quot;*.$PROFILE_NAME&quot; | head -n 1)
+
+if [ -z &quot;$PROFILE_DIR&quot; ]; then
+  echo &quot;❌ Failed to find profile directory.&quot;
+  exit 1
+fi
+
+echo &quot;📁 Profile created at: $PROFILE_DIR&quot;
+
+# Download latest arkenfox user.js
+echo &quot;🌐 Downloading hardened user.js from arkenfox...&quot;
+curl -sSL https://raw.githubusercontent.com/arkenfox/user.js/master/user.js -o &quot;$PROFILE_DIR/user.js&quot;
+
+# Launch Firefox with that profile
+echo &quot;🚀 Launching Firefox with burner profile...&quot;
+firefox -no-remote -P &quot;$PROFILE_NAME&quot; &amp;
+</code></pre>
+<h2 id="5-extension-handling-containers-ublock-etc">🔁 5. Extension Handling (Containers + uBlock etc.)</h2>
+<ul>
+<li>Extensions <strong>forced via <code>policies.json</code></strong> are installed into <strong>every profile</strong>, regardless of how it was created.</li>
+<li>Containers extension must be enabled in each profile even if pre-installed.</li>
+<li>Manual extension installs are profile-specific and <strong>do not cross over</strong>.</li>
+</ul>
+<h2 id="final-recommendations">🔚 Final Recommendations</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full investigation isolation</td>
+<td><strong>Firefox Profile</strong></td>
+</tr>
+<tr>
+<td>Subtask separation</td>
+<td><strong>Multi-Account Containers</strong></td>
+</tr>
+<tr>
+<td>Fingerprint &amp; leak defense</td>
+<td><strong>Arkenfox <code>user.js</code></strong></td>
+</tr>
+<tr>
+<td>Fast deployment</td>
+<td><strong><code>burner_firefox.sh</code> script</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Use profiles as <strong>walls between investigations</strong> and containers as <strong>drawers inside each investigation</strong>. Harden each profile with Arkenfox or the lightweight <code>user.js</code>.</p>
+<h2 id="using-burner_firefoxsh">📁 Using <code>burner_firefox.sh</code></h2>
+<p>This script automates creation of a hardened Firefox profile for OSINT:</p>
+<h3 id="requirements">✅ Requirements</h3>
+<ul>
+<li>Firefox must be installed</li>
+<li>Run from any folder on a Linux system</li>
+</ul>
+<h3 id="how-to-use">🧾 How to Use</h3>
 <ol>
 <li>
-<p><strong>Search the name using quotes</strong> for accuracy:
-   <code>"Elon Musk"</code></p>
+<p>Unzip the <code>burner_firefox.zip</code>:
+   <code>bash
+   unzip burner_firefox.zip
+   cd burner_firefox</code></p>
 </li>
 <li>
-<p><strong>Click on the 'Images' tab</strong> on Google.</p>
+<p>Make the script executable:
+   <code>bash
+   chmod +x burner_firefox.sh</code></p>
 </li>
 <li>
-<p>Click on:
-   <code>Tools → Type → Clipart</code></p>
+<p>Run the script:
+   <code>bash
+   ./burner_firefox.sh</code></p>
 </li>
 <li>
-<p>In the <strong>URL</strong>, find this parameter:
-   <code>tbs=itp:clipart</code></p>
+<p>Firefox will launch with a hardened profile, using the latest Arkenfox <code>user.js</code>.</p>
 </li>
 <li>
-<p><strong>Replace</strong> <code>itp:clipart</code> with <code>itp:face</code></p>
-</li>
-<li>
-<p>Press Enter.</p>
+<p>Optional: You can place the included <code>user.js</code> manually in any profile folder under <code>~/.mozilla/firefox/xxxxxxxx.profileName/</code>.</p>
 </li>
 </ol>
-<h3 id="result">✅ Result:</h3>
-<p>Only face images of the target (e.g., Elon Musk) will be displayed.</p>
-<h3 id="example">Example:</h3>
-<ul>
-<li>
-<p>Original:
-  <code>https://www.google.com/search?q="Elon+Musk"&amp;...&amp;tbs=itp:clipart</code></p>
-</li>
-<li>
-<p>Modified:
-  <code>https://www.google.com/search?q="Elon+Musk"&amp;...&amp;tbs=itp:face</code></p>
-</li>
-</ul>
 <hr />
-<h2 id="core-google-dork-operators">🛠️ Core Google Dork Operators</h2>
-<table>
-<thead>
-<tr>
-<th><strong>Use Case</strong></th>
-<th><strong>Operator</strong></th>
-<th><strong>Example</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Search within a specific domain</td>
-<td><code>site:</code></td>
-<td><code>site:nytimes.com cybersecurity</code></td>
-</tr>
-<tr>
-<td>Search multiple domains</td>
-<td><code>OR</code></td>
-<td><code>"John Doe" site:facebook.com OR site:twitter.com</code></td>
-</tr>
-<tr>
-<td>Find specific file types</td>
-<td><code>filetype:</code></td>
-<td><code>filetype:pdf machine learning</code></td>
-</tr>
-<tr>
-<td>Keywords in page title</td>
-<td><code>intitle:</code></td>
-<td><code>intitle:"data privacy"</code></td>
-</tr>
-<tr>
-<td>All keywords in title</td>
-<td><code>allintitle:</code></td>
-<td><code>allintitle:"cybersecurity law"</code></td>
-</tr>
-<tr>
-<td>Keywords in page text</td>
-<td><code>intext:</code></td>
-<td><code>intext:"cyber threat"</code></td>
-</tr>
-<tr>
-<td>All keywords in text</td>
-<td><code>allintext:</code></td>
-<td><code>allintext:"malware statistics 2024"</code></td>
-</tr>
-<tr>
-<td>Keywords in URL</td>
-<td><code>inurl:</code></td>
-<td><code>inurl:"login"</code></td>
-</tr>
-<tr>
-<td>All keywords in URL</td>
-<td><code>allinurl:</code></td>
-<td><code>allinurl:"admin login panel"</code></td>
-</tr>
-<tr>
-<td>Number ranges</td>
-<td><code>numrange:</code></td>
-<td><code>numrange:2010-2020</code></td>
-</tr>
-<tr>
-<td>Filter by date</td>
-<td><code>before:</code> / <code>after:</code></td>
-<td><code>filetype:pdf before:2020-01-01 after:2018-01-01</code></td>
-</tr>
-<tr>
-<td>Language-specific results</td>
-<td><code>lang:</code></td>
-<td><code>site:gov.uk lang:en cybersecurity</code></td>
-</tr>
-<tr>
-<td>Wildcard keyword</td>
-<td><code>*</code></td>
-<td><code>"password * leak"</code></td>
-</tr>
-<tr>
-<td>Related websites</td>
-<td><code>related:</code></td>
-<td><code>related:bbc.com</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="advanced-dorking-techniques">🔍 Advanced Dorking Techniques</h2>
-<h3 id="1-search-for-exposed-files-in-open-directories">1. Search for Exposed Files in Open Directories</h3>
-<pre><code class="language-text">intitle:&quot;index of&quot; &quot;cisco&quot; (pdf | doc | ppt)
-</code></pre>
-<p>Finds public folders listing Cisco-related documents.</p>
-<hr />
-<h3 id="2-locate-documents-on-misconfigured-file-servers">2. Locate Documents on Misconfigured File Servers</h3>
-<pre><code class="language-text">inurl:&quot;/files/&quot; &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Targets URLs with <code>/files/</code>, a common folder on unsecured servers.</p>
-<hr />
-<h3 id="3-discover-documents-in-backup-folders">3. Discover Documents in Backup Folders</h3>
-<pre><code class="language-text">inurl:backup &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Identifies documents stored in backup folders—often overlooked during security audits.</p>
-<hr />
-<h3 id="4-target-government-or-organization-sites">4. Target Government or Organization Sites</h3>
-<pre><code class="language-text">site:.gov &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Refines results to government domains. You can change <code>.gov</code> to <code>.edu</code>, <code>.org</code>, or country-specific domains like <code>.fr</code>, <code>.de</code>.</p>
-<hr />
-<h3 id="5-multi-parameter-search-query-1">5.  Multi-parameter search query 1</h3>
-<pre><code class="language-text">(&quot;Spiderfoot&quot;) (intext:tutorial OR intext:&quot;cheat sheet&quot;) (filetype:pdf OR filetype:ppt OR filetype:pptx)
-</code></pre>
-<p>Each group is in parentheses for clarity.Google treats whitespace as AND by default.</p>
-<hr />
-<h3 id="6-multi-parameter-search-query2">6.  Multi-parameter search query(2)</h3>
-<pre><code class="language-text">&quot;Google Dork&quot; site:github.com (sheet OR list OR query OR advanced OR osint) after:2021-01-01
-</code></pre>
-<p>OR — any of these related keywords</p>
-<hr />
-<h2 id="practical-tips-for-effective-dorking">🎯 Practical Tips for Effective Dorking</h2>
-<ul>
-<li>Use quotes for <strong>exact phrases</strong>: <code>"john smith"</code> instead of <code>john smith</code></li>
-<li>Combine operators for precise results:
-  <code>text
-  site:linkedin.com "@gmail.com" "CTO"</code></li>
-<li>Wildcard <code>*</code> helps to guess unknown terms:
-  <code>text
-  "CEO of * Corporation"</code></li>
-<li>Use <code>numrange:</code> to filter by years or values:
-  <code>text
-  cyberattack statistics numrange:2010-2023</code></li>
-</ul>
-<hr />
-<h2 id="legal-and-ethical-considerations">⚖️ Legal and Ethical Considerations</h2>
-<p>Google Dorking uses public search data indexed by Google. However:</p>
-<ul>
-<li>Do <strong>not</strong> access pages protected by login or authorization.</li>
-<li>Do <strong>not</strong> attempt to exploit vulnerabilities.</li>
-<li>Use this technique for ethical research, journalism, education, or organizational security testing with permission.</li>
-</ul>
-<hr />
-<h2 id="summary">✅ Summary</h2>
-<p>Google Dorking is an essential OSINT skill that transforms basic search into a precision reconnaissance tool. By mastering search operators and refining queries, you can uncover valuable data hiding in plain sight.</p>
-<hr />
-<h2 id="suggested-next-steps">📎 Suggested Next Steps</h2>
-<ul>
-<li>Practice with safe searches like:
-  <code>text
-  site:gov.uk "cybersecurity"
-  intitle:"index of" filetype:pdf</code></li>
-<li>Combine this with tools like <strong>SpiderFoot</strong>, <strong>theHarvester</strong>, or <strong>Recon-ng</strong> for automated data extraction.</li>
-<li>Add browser extensions like <strong>Shodan Plugin</strong> to enhance in-browser reconnaissance.</li>
-</ul>
-<hr />
-<p>🕵️‍♂️ Google Dorks Cheat Sheet for Hidden Paths &amp; Exposed Files</p>
-<blockquote>
-<p>📋 <em>Table adapted from <a href="https://github.com/sudosu01/-Google-Dorks-Cheat-Sheet-for-Hidden-Paths-Exposed-Files">this GitHub repository</a>.</em><br />
-Original author unknown. All credit to the creator.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th><strong>Google Dork</strong></th>
-<th><strong>What It Finds / Does</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>inurl:web.config</code></td>
-<td>Finds exposed ASP.NET configuration files. May contain DB connection strings, secrets.</td>
-</tr>
-<tr>
-<td><code>intitle:"index of" "web.config"</code></td>
-<td>Searches for open directory listings containing <code>web.config</code>.</td>
-</tr>
-<tr>
-<td><code>inurl:.htaccess</code></td>
-<td>Finds exposed <code>.htaccess</code> files used by Apache (can reveal rules, paths, restrictions).</td>
-</tr>
-<tr>
-<td><code>inurl:.htpasswd</code></td>
-<td>Looks for Apache password files (used with <code>.htaccess</code>). May reveal hashed passwords.</td>
-</tr>
-<tr>
-<td><code>inurl:.env</code></td>
-<td>Exposes <code>.env</code> files—used in Laravel, Node.js, etc. Often includes API keys, DB creds.</td>
-</tr>
-<tr>
-<td><code>ext:bak OR ext:old OR ext:backup inurl:admin</code></td>
-<td>Finds backup/old files in admin directories (may contain original code/configs).</td>
-</tr>
-<tr>
-<td><code>intitle:"index of" ".git"</code></td>
-<td>Shows exposed <code>.git</code> repositories—can leak full project source code.</td>
-</tr>
-<tr>
-<td><code>intitle:"index of" ".svn"</code></td>
-<td>Finds exposed Subversion (SVN) version control directories.</td>
-</tr>
-<tr>
-<td><code>filetype:sql "insert into" OR "create table"</code></td>
-<td>Searches for SQL database dumps, usually from MySQL or PostgreSQL.</td>
-</tr>
-<tr>
-<td><code>filetype:json "mongo" OR "password"</code></td>
-<td>Finds JSON files with MongoDB configs or other sensitive credentials.</td>
-</tr>
-<tr>
-<td><code>intitle:"index of" "error_log"</code></td>
-<td>Finds open error log files (can contain paths, errors, user info).</td>
-</tr>
-<tr>
-<td><code>intitle:"phpinfo()" "PHP Version"</code></td>
-<td>Locates PHP info pages — these expose server config, installed extensions.</td>
-</tr>
-<tr>
-<td><code>intitle:"index of" (config|backup|admin|database)</code></td>
-<td>Finds open directories with config/backup/admin/database files.</td>
-</tr>
-<tr>
-<td><code>inurl:wp-content/debug.log</code></td>
-<td>Finds exposed debug logs in WordPress installs — may include stack traces, errors.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="sheet-list-from-the-web">Sheet List from the web :</h3>
-<p>-
-         - <a href="https://hackersonlineclub.com/google-hacking/">hackersonlineclub.com/google-hacking</a>
-         - <a href="https://www.boxpiper.com/posts/google-dork-list">www.boxpiper.com/posts/google-dork-list</a>
-         - <a href="https://www.boxpiper.com/posts/top-35-google-dorks-list">www.boxpiper.com/posts/top-35-google-dorks-list</a></p>
 
 
 
