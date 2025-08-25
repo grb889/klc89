@@ -1,19 +1,25 @@
 site_name: OSINT Toolkit
 theme:
   name: material
+
 nav:
   - Home: index.md
-  - Kali Setup: kali-osint-virtualbox-setup.md
-  - Resize Kali VM: resize-kali-vm.md
-  - Browser: firefox.md
-  - Google Dorking: google_dork_osint.md
-  - OSINT Environment: OSINT_Environment_Kali_vs_Tails.md
-  - theHarvester Guide: theHarvester_OSINT_Guide.md
-  - Osint Toolkit : Free_OSINT_Tools_List.md
+  - Environment Setup:
+      - Kali Setup: kali-osint-virtualbox-setup.md
+      - Resize Kali VM: resize-kali-vm.md
+      - OSINT Environment (Tails vs Kali): OSINT_Environment_Kali_vs_Tails.md
+      - Browser: firefox.md
+  - Core Tools & Techniques:
+      - Google Dorking: google_dork_osint.md
+      - theHarvester Guide: theHarvester_OSINT_Guide.md
+      - Free OSINT Tools List: Free_OSINT_Tools_List.md
+  - Real-World Use Cases:
+      - Website Monitoring: website_monitoring.md
+      - Email Forensic Investigation: Email Forensic Investigation.md
+      - Advanced Wireless OSINT: advanced_wireless_osint.md
+      - Secure Email & Leak Monitoring: secure_email_leak_guide.md
 
 extra:
   meta:
     - name: robots
       content: noindex
-
-  

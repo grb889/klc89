@@ -1,85 +1,144 @@
-# 📚 OSINT Toolkit Documentation – Table of Contents
+# 📚 Practical OSINT Handbook – Table of Contents
 
 This repository contains improved and fully detailed Markdown documentation for OSINT operations, tools, and environments. Each document is designed for professionals with a technical background, such as computer science graduates or infosec practitioners entering the OSINT field.
 
 ---
 
-## 🖥️ 1. [kali virtualbox set up](kali-osint-virtualbox-setup.md)
+## ⚙️ 1. Environment Setup  
 
+### 1.1 [Kali VirtualBox Setup](kali-osint-virtualbox-setup.md)  
 **Description:**  
-Step-by-step instructions to install Kali Linux inside VirtualBox, configure the system for OSINT work, optimize browser hygiene, set up VPN, and take snapshots for reproducible environments.
+Step-by-step instructions to install Kali Linux inside VirtualBox, configure the system for OSINT work, optimize browser hygiene, set up VPN, and take snapshots for reproducible environments.  
 
-**Key Sections:**
-- Install VirtualBox and Kali Linux
-- Post-install setup and tool automation
-- Installing Guest Additions
-- Browser configuration for OSINT
-- Installing and configuring NordVPN
-- Snapshot and clean profile best practices
+**Key Sections:**  
+- Install VirtualBox and Kali Linux  
+- Post-install setup and tool automation  
+- Installing Guest Additions  
+- Browser configuration for OSINT  
+- Installing and configuring NordVPN  
+- Snapshot and clean profile best practices  
 
 ---
 
-## 💽 2. [resize-your-VM](resize-kali-vm.md)
-
+### 1.2 [Resize Your VM](resize-kali-vm.md)  
 **Description:**  
-Complete guide to expanding the virtual hard disk size of a Kali Linux VM and resizing partitions within the guest system using GParted.
+Complete guide to expanding the virtual hard disk size of a Kali Linux VM and resizing partitions within the guest system using GParted.  
 
-**Key Sections:**
-- Resize `.vdi` file using VBoxManage on Windows
-- Install and use GParted inside Kali
-- Confirming expanded disk space
+**Key Sections:**  
+- Resize `.vdi` file using VBoxManage on Windows  
+- Install and use GParted inside Kali  
+- Confirming expanded disk space  
 
 ---
 
-## 🔍 3. [Google-Dork](google_dork_osint.md)
-
+### 1.3 [Tails vs. Kali](OSINT_Environment_Kali_vs_Tails.md)  
 **Description:**  
-Comprehensive tutorial and cheat sheet on Google Dorking, including operator syntax, filters, and OSINT-specific search tricks for identifying public information across the web.
+Comparative guide analyzing the use cases, pros, and cons of Tails vs. Kali Linux for OSINT tasks, along with operational security recommendations.  
 
-**Key Sections:**
-- Face-only image search tricks
-- Google Dork operator examples (site:, filetype:, intitle:, etc.)
-- Search templates for documents, backups, exposed directories
-- Wildcarding and combining filters for precise queries
+**Key Sections:**  
+- Tails: anonymity-first investigations  
+- Kali: tool-rich investigations  
+- Threat modeling and OpSec best practices  
+- General legal/ethical guidance  
 
 ---
 
-## 🆚 4. [Tails-VS-Kali](OSINT_Environment_Kali_vs_Tails.md)
+## 🔧 2. Core Tools & Techniques  
 
+### 2.1 [Google Dorking for OSINT](google_dork_osint.md)  
 **Description:**  
-Comparative guide analyzing the use cases, pros, and cons of Tails vs. Kali Linux for OSINT tasks, along with operational security recommendations.
+Comprehensive tutorial and cheat sheet on Google Dorking, including operator syntax, filters, and OSINT-specific search tricks for identifying public information across the web.  
 
-**Key Sections:**
-- Tails: anonymity-first investigations
-- Kali: tool-rich investigations
-- Threat modeling and OpSec best practices
-- General legal/ethical guidance
+**Key Sections:**  
+- Face-only image search tricks  
+- Google Dork operator examples (site:, filetype:, intitle:, etc.)  
+- Search templates for documents, backups, exposed directories  
+- Wildcarding and combining filters for precise queries  
 
 ---
 
-## 🛰️ 5. [theHarvester](theHarvester_OSINT_Guide.md)
-
+### 2.2 [theHarvester OSINT Guide](theHarvester_OSINT_Guide.md)  
 **Description:**  
-In-depth reference manual for using theHarvester for passive reconnaissance. Includes advanced command syntax, use cases, and integration with custom wordlists and external APIs.
+In-depth reference manual for using theHarvester for passive reconnaissance. Includes advanced command syntax, use cases, and integration with custom wordlists and external APIs.  
 
-**Key Sections:**
-- Basic usage and help commands
-- 30+ annotated command templates
-- Screenshot capture, output formats, DNS options
-- Wordlist management and batch scanning tips
-
----
-## 🧰6. [Free OSINT Tools List](Free_OSINT_Tools_List.md)
-
-**Description:**  
-A curated directory of completely free and open-source OSINT tools across multiple domains—general reconnaissance, subdomain discovery, phone/email tracking, image metadata, dark web crawling, and username verification. Ideal for analysts, penetration testers, and threat hunters operating without commercial tools.
-
-**Key Sections:**
-- Categorized tool list: General, Specific, Social Media, Metadata
-- GitHub and official site links for each tool
-- Focused only on tools with no paid tiers or usage restrictions
-- Ideal for offline labs, workshops, and training setups
-- Includes tools like Amass, IntelOwl, ExifTool, OnionScan, and more
+**Key Sections:**  
+- Basic usage and help commands  
+- 30+ annotated command templates  
+- Screenshot capture, output formats, DNS options  
+- Wordlist management and batch scanning tips  
 
 ---
 
+### 2.3 [Free OSINT Tools List](Free_OSINT_Tools_List.md)  
+**Description:**  
+A curated directory of completely free and open-source OSINT tools across multiple domains—general reconnaissance, subdomain discovery, phone/email tracking, image metadata, dark web crawling, and username verification.  
+
+**Key Sections:**  
+- Categorized tool list: General, Specific, Social Media, Metadata  
+- GitHub and official site links for each tool  
+- Tools with no paid tiers or usage restrictions  
+- Includes Amass, IntelOwl, ExifTool, OnionScan, and more  
+
+---
+
+## 🧪 3. Real-World OSINT Use Cases  
+
+### 3.1 [OSINT Website Monitoring & Security Checks](website_monitoring.md)  
+**Description:**  
+Guide to monitoring domains for uptime, blacklisting, changes, backlinks, and malware. Includes tools like UptimeRobot, Visualping, Ahrefs, and VirusTotal.  
+
+**Key Sections:**  
+- Uptime & blacklist monitoring  
+- Website content change detection  
+- Backlink discovery & analysis  
+- Malware and suspicious activity checks  
+
+---
+
+### 3.2 [OSINT Email Forensics & Spoofing Analysis](Email%20Forensic%20Investigation.md)  
+**Description:**  
+Step-by-step forensic methodology for investigating emails: uncovering spoofed senders, analyzing headers, and verifying SPF/DKIM/DMARC.  
+
+**Key Sections:**  
+- Spoofing and phishing kit analysis  
+- Header and routing analysis  
+- Sender authentication checks  
+- Content and attachment forensics  
+
+---
+
+### 3.3 [Advanced Wireless OSINT: Wi-Fi & Bluetooth Investigations](advanced_wireless_osint.md)  
+**Description:**  
+Comprehensive workflow for leveraging wireless signals (Wi-Fi, Bluetooth) in OSINT. Captures probe requests, builds behavioral profiles, and uses WiGLE.net for geolocation.  
+
+**Quick Navigation:**  
+- [Foundational Concepts](advanced_wireless_osint.md#-foundational-concepts-and-theoretical-background)  
+- [Tools of the Trade](advanced_wireless_osint.md#-tools-of-the-trade)  
+- [Step-by-Step OSINT Workflow](advanced_wireless_osint.md#-step-by-step-osint-workflow)  
+- [Advanced Techniques & Real-World Scenarios](advanced_wireless_osint.md#-advanced-techniques-and-real-world-scenarios)  
+- [Defenses & Limitations](advanced_wireless_osint.md#-defenses-limitations-and-advanced-techniques)  
+- [Troubleshooting & Compatibility](advanced_wireless_osint.md#-troubleshooting)  
+
+---
+
+### 3.4 [Secure Email & Leak Monitoring Guide](secure_email_leak_guide.md)  
+**Description:**  
+Tutorial on creating secure, anonymous email accounts and monitoring leak-sharing forums. Focused on OpSec, anonymity, and investigative resilience.  
+
+**Key Sections:**  
+- Privacy-focused email providers  
+- Secure signup practices (VPN, Tor, Tails)  
+- Forums and content-sharing platforms  
+- Long-term OpSec best practices  
+
+---
+
+# ✅ Final Notes  
+
+This handbook is divided into three layers:  
+
+1. **Environment Setup** – build and secure your investigative workstation  
+2. **Core Tools** – learn the essential reconnaissance and OSINT utilities  
+3. **Applied Use Cases** – practice real-world scenarios and workflows  
+
+Together, these chapters form a **comprehensive OSINT training resource**, moving from technical setup to actionable investigations.  
