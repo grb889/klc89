@@ -80,6 +80,17 @@ A curated directory of completely free and open-source OSINT tools across multip
 - Includes Amass, IntelOwl, ExifTool, OnionScan, and more  
 
 ---
+### 2.4 [Unique Search Operators in Bing & Yandex](Unique_SOperators_Bing_Yandex.md)  
+**Description:**  
+Reference guide to search operators exclusive to Bing and Yandex that can uncover content Google misses.  
+
+**Key Sections:**  
+- Bing-exclusive operators (ip:, hasfeed:, linkfromdomain:, etc.)  
+- Yandex-exclusive operators (rhost:, mime:, proximity search, etc.)  
+- Practical examples for OSINT workflows  
+- When to pivot from Google to alternative engines  
+
+---
 
 ## 🧪 3. Real-World OSINT Use Cases  
 
@@ -95,7 +106,7 @@ Guide to monitoring domains for uptime, blacklisting, changes, backlinks, and ma
 
 ---
 
-### 3.2 [OSINT Email Forensics & Spoofing Analysis](Email%20Forensic%20Investigation.md)  
+### 3.2 [OSINT Email Forensics & Spoofing Analysis](Email_Forensic_Investigation.md)  
 **Description:**  
 Step-by-step forensic methodology for investigating emails: uncovering spoofed senders, analyzing headers, and verifying SPF/DKIM/DMARC.  
 
@@ -121,15 +132,16 @@ Comprehensive workflow for leveraging wireless signals (Wi-Fi, Bluetooth) in OSI
 
 ---
 
-### 3.4 [Secure Email & Leak Monitoring Guide](secure_email_leak_guide.md)  
+### 3.4 [Burner Accounts](Burner_Accounts.md)  
 **Description:**  
-Tutorial on creating secure, anonymous email accounts and monitoring leak-sharing forums. Focused on OpSec, anonymity, and investigative resilience.  
+A comprehensive chapter on creating and operating burner identities, including temporary communication tools, sock puppets, secure email practices, and monitoring leak-sharing ecosystems.  
 
-**Key Sections:**  
-- Privacy-focused email providers  
-- Secure signup practices (VPN, Tor, Tails)  
-- Forums and content-sharing platforms  
-- Long-term OpSec best practices  
+**Key Sections (with side navigation enabled):**  
+- Part I: Temporary communication tools (emails, VoIP/SMS, international options)  
+- Part II: Sock puppet accounts and compartmented identities  
+- Part III: Secure email creation and OpSec best practices  
+- Part IV: Leak monitoring and content-sharing ecosystems  
+- Part V: End-to-end burner account workflow and lifecycle management  
 
 ---
 

@@ -1,23 +1,57 @@
-site_name: OSINT Toolkit
+site_name: Practical OSINT Handbook
+site_description: Improved, detailed documentation for OSINT operations, tools, and environments.
+use_directory_urls: true
+
+# Left-side integrated ToC + better sectioned navigation
 theme:
   name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
 
+# Keep this minimal; you can adjust or remove the palette
+palette:
+  - scheme: default
+    primary: indigo
+    accent: indigo
+
+# Side nav built from your attached index.md, with the consolidation applied
 nav:
   - Home: index.md
-  - Environment Setup:
-      - Kali Setup: kali-osint-virtualbox-setup.md
-      - Resize Kali VM: resize-kali-vm.md
-      - OSINT Environment (Tails vs Kali): OSINT_Environment_Kali_vs_Tails.md
-      - Browser: firefox.md
-  - Core Tools & Techniques:
-      - Google Dorking: google_dork_osint.md
-      - theHarvester Guide: theHarvester_OSINT_Guide.md
+  - 1. Environment Setup:
+      - Kali VirtualBox Setup: kali-osint-virtualbox-setup.md
+      - Resize Your VM: resize-kali-vm.md
+      - Tails vs. Kali: OSINT_Environment_Kali_vs_Tails.md
+  - 2. Core Tools & Techniques:
+      - Google Dorking for OSINT: google_dork_osint.md
+      - theHarvester OSINT Guide: theHarvester_OSINT_Guide.md
       - Free OSINT Tools List: Free_OSINT_Tools_List.md
-  - Real-World Use Cases:
-      - Website Monitoring: website_monitoring.md
-      - Email Forensic Investigation: Email Forensic Investigation.md
+      - Unique Search Operators in Bing & Yandex: "Unique_SOperators_Bing_Yandex.md"
+  - 3. Real-World OSINT Use Cases:
+      - OSINT Website Monitoring & Security Checks: website_monitoring.md
+      - OSINT Email Forensics & Spoofing Analysis: "Email_Forensic_Investigation.md"
       - Advanced Wireless OSINT: advanced_wireless_osint.md
-      - Secure Email & Leak Monitoring: secure_email_leak_guide.md
+      - Burner Accounts: Burner_Accounts.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - pymdownx.highlight
+  - toc:
+      permalink: true
+      toc_depth: 2-4
+
+plugins:
+  - search
 
 extra:
   meta:

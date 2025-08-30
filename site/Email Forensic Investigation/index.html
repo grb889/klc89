@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../advanced_wireless_osint/">
+        <link rel="prev" href="../website_monitoring/">
       
+      
+        <link rel="next" href="../advanced_wireless_osint/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Secure Email & Leak Monitoring - OSINT Toolkit</title>
+        <title>Email Forensic Investigation - OSINT Toolkit</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#osint-tutorial-creating-a-secure-email-account-and-forums-for-leaks" class="md-skip">
+        <a href="#email-forensic-investigation" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Secure Email & Leak Monitoring
+              Email Forensic Investigation
             
           </span>
         </div>
@@ -525,10 +527,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Email%20Forensic%20Investigation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Email Forensic Investigation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -539,6 +561,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#email-forensic-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email Forensic Investigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-initial-data-collection-and-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Initial Data Collection and Verification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-pre-built-spoofing-phishing-kits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Pre-Built Spoofing &amp; Phishing Kits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of Pre-Built Spoofing &amp; Phishing Kits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blackeye" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlackEye
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zphisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZPhisher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socialfish" class="md-nav__link">
+    <span class="md-ellipsis">
+      SocialFish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evilginx2-advanced-mitm-phishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evilginx2 (Advanced MITM Phishing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-deciphering-the-headers-the-digital-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Deciphering the Headers - The Digital Trail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-content-metadata-and-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Content, Metadata, and OSINT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-spam-vs-spoof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Spam vs. Spoof
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -571,32 +707,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../secure_email_leak_guide/" class="md-nav__link">
         
   
   
@@ -607,167 +721,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-choose-a-privacy-focused-email-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Choose a Privacy-Focused Email Provider
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 1: Choose a Privacy-Focused Email Provider">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recommended-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Providers:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extra-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extra Tool:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-mask-your-identity-during-account-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Mask Your Identity During Account Creation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Mask Your Identity During Account Creation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recommended-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Methods:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-the-email-account-securely" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Create the Email Account Securely
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Create the Email Account Securely">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporary-number-services-use-cautiously" class="md-nav__link">
-    <span class="md-ellipsis">
-      Temporary Number Services (Use Cautiously):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-maintain-ongoing-operational-security-opsec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Maintain Ongoing Operational Security (OpSec)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-platforms-used-for-digital-content-sharing-leaks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Platforms Used for Digital Content Sharing &amp; Leaks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 5: Platforms Used for Digital Content Sharing &amp; Leaks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forums-leak-sharing-platforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Forums &amp; Leak Sharing Platforms:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#game-mod-content-platforms-often-used-for-distribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Game &amp; Mod Content Platforms (often used for distribution):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-tips-for-leak-related-email-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Tips for Leak-Related Email Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -797,8 +750,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -807,28 +758,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-choose-a-privacy-focused-email-provider" class="md-nav__link">
+  <a href="#email-forensic-investigation" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Choose a Privacy-Focused Email Provider
+      Email Forensic Investigation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 1: Choose a Privacy-Focused Email Provider">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-initial-data-collection-and-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Initial Data Collection and Verification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-pre-built-spoofing-phishing-kits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Pre-Built Spoofing &amp; Phishing Kits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of Pre-Built Spoofing &amp; Phishing Kits">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#recommended-providers" class="md-nav__link">
+  <a href="#blackeye" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommended Providers:
+      BlackEye
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extra-tool" class="md-nav__link">
+  <a href="#zphisher" class="md-nav__link">
     <span class="md-ellipsis">
-      Extra Tool:
+      ZPhisher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socialfish" class="md-nav__link">
+    <span class="md-ellipsis">
+      SocialFish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evilginx2-advanced-mitm-phishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evilginx2 (Advanced MITM Phishing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-deciphering-the-headers-the-digital-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Deciphering the Headers - The Digital Trail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-content-metadata-and-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Content, Metadata, and OSINT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-spam-vs-spoof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Spam vs. Spoof
     </span>
   </a>
   
@@ -836,114 +850,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-mask-your-identity-during-account-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Mask Your Identity During Account Creation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Mask Your Identity During Account Creation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recommended-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Methods:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-the-email-account-securely" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Create the Email Account Securely
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Create the Email Account Securely">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporary-number-services-use-cautiously" class="md-nav__link">
-    <span class="md-ellipsis">
-      Temporary Number Services (Use Cautiously):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-maintain-ongoing-operational-security-opsec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Maintain Ongoing Operational Security (OpSec)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-platforms-used-for-digital-content-sharing-leaks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Platforms Used for Digital Content Sharing &amp; Leaks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 5: Platforms Used for Digital Content Sharing &amp; Leaks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forums-leak-sharing-platforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Forums &amp; Leak Sharing Platforms:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#game-mod-content-platforms-often-used-for-distribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Game &amp; Mod Content Platforms (often used for distribution):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-tips-for-leak-related-email-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Tips for Leak-Related Email Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools Summary
-    </span>
-  </a>
   
 </li>
       
@@ -963,167 +869,148 @@
 
 
 
-<h1 id="osint-tutorial-creating-a-secure-email-account-and-forums-for-leaks">OSINT Tutorial: Creating a Secure Email Account and Forums for Leaks</h1>
-<p>This enhanced tutorial outlines how to create a secure, anonymous email account for OSINT investigations or whistleblowing, and identifies platforms where digital content (including leaks) is often shared. The goal is operational security (OpSec), privacy, and resilience against doxxing or attribution.</p>
-<hr />
-<h2 id="step-1-choose-a-privacy-focused-email-provider">Step 1: Choose a Privacy-Focused Email Provider</h2>
-<p>Use a provider that offers end-to-end encryption, strong privacy policies, and does not require personal information.</p>
-<h3 id="recommended-providers">Recommended Providers:</h3>
+  <h1>Email Forensic Investigation</h1>
+
+<h3 id="email-forensic-investigation"><strong>Email Forensic Investigation</strong></h3>
+<p>An email is more than just a simple message; it is a digital artifact containing a wealth of technical information. This document outlines a professional, step-by-step methodology for conducting a full email forensic investigation to uncover the true origin of a message and determine if it is legitimate, spam, or a sophisticated spoof.</p>
+<h3 id="phase-1-initial-data-collection-and-verification"><strong>Phase 1: Initial Data Collection and Verification</strong></h3>
+<p><strong>Step 1: Understand the Deception of the "From" Field</strong></p>
+<p>The "From" field, as displayed in an email client, is the easiest part of an email to forge and should never be trusted as the sole indicator of authenticity. This is due to the foundational design of the Simple Mail Transfer Protocol (SMTP), which did not prioritize security in its early development.</p>
+<p>An email address in the SMTP protocol has two key components:</p>
 <ul>
-<li>
-<p><strong>ProtonMail</strong> (<a href="https://protonmail.com">protonmail.com</a>)<br />
-  Based in Switzerland, ProtonMail offers end-to-end encryption and anonymous signup. Use the Tor version for enhanced anonymity: <a href="https://protonmail.com/tor">protonmail.com/tor</a>.</p>
-</li>
-<li>
-<p><strong>Tutanota</strong> (<a href="https://tutanota.com">tutanota.com</a>)<br />
-  Encrypted email and calendar services. Allows anonymous signup without a phone number. Also offers an Onion address.</p>
-</li>
-<li>
-<p><strong>StartMail</strong> (<a href="https://startmail.com">startmail.com</a>)<br />
-  Based in the Netherlands. Offers unlimited aliases, strong encryption, and no logging.</p>
-</li>
-<li>
-<p><strong>Mailbox.org</strong> (<a href="https://mailbox.org">mailbox.org</a>)<br />
-  Privacy-first German provider supporting PGP encryption and pseudonymous usage.</p>
-</li>
-<li>
-<p><strong>CTemplar</strong> (formerly active, now archived – verify availability before use)</p>
-</li>
+<li><strong>The "Envelope From" (MAIL FROM):</strong> This is the address used by mail servers for delivery and for sending non-delivery reports, also known as "bounces".  </li>
+<li><strong>The "Header From" (From):</strong> This is the address that appears to the recipient in their email client.</li>
 </ul>
-<h3 id="extra-tool">Extra Tool:</h3>
+<p>A crucial flaw in the system is that these two addresses do not have to match. An attacker can tell a mail server to send a message from one address (spammer@123.net) while displaying a completely different one (president@whitehouse.gov) in the header. They achieve this without needing to compromise the target's account credentials, simply by using a malicious mail server or script to forge the email headers.</p>
+<p>Attackers commonly achieve this through three primary methods:</p>
 <ul>
-<li><strong>SimpleLogin</strong> (<a href="https://simplelogin.io">simplelogin.io</a>) or <strong>AnonAddy</strong> (<a href="https://anonaddy.com">anonaddy.com</a>)<br />
-  Create anonymous aliases to forward to your secure inbox.</li>
+<li><strong>Using an Open Relay Server:</strong> A misconfigured mail server that allows anyone on the internet to send email through it. An attacker can connect and specify any "From" address they choose.  </li>
+<li><strong>Using a Malicious/Rogue SMTP Server:</strong> A spoofer can operate their own email server, allowing them to program it to generate and send emails with any From header they desire.  </li>
+<li><strong>Phishing Kits and Automated Tools:</strong> Pre-packaged tools widely available on the dark web make it easy for even non-technical individuals to craft and send spoofed emails in bulk.</li>
 </ul>
 <hr />
-<h2 id="step-2-mask-your-identity-during-account-creation">Step 2: Mask Your Identity During Account Creation</h2>
-<p>Even with a secure email provider, you must ensure your network and hardware setup is not leaking identity.</p>
-<h3 id="recommended-methods">Recommended Methods:</h3>
+<h2 id="examples-of-pre-built-spoofing-phishing-kits"><strong>Examples of Pre-Built Spoofing &amp; Phishing Kits</strong></h2>
+<h3 id="blackeye"><strong>BlackEye</strong></h3>
 <ul>
-<li><strong>VPN</strong>: Use a no-log provider (e.g., Mullvad, IVPN, ProtonVPN). Prefer cash or crypto payments for higher anonymity.</li>
-<li><strong>Tor Browser</strong>: Route traffic through the Tor network. Launch your email provider's .onion URL where available.</li>
-<li><strong>Tails OS</strong>: A live OS focused on anonymity and privacy. Automatically routes through Tor. Useful for high-risk whistleblowing or sensitive OSINT.</li>
-<li><strong>Browser Isolation</strong>: Use Firefox with hardened privacy settings or a browser container (e.g., Firefox Multi-Account Containers).</li>
+<li>Very popular phishing toolkit (open-source, also cloned by threat actors).  </li>
+<li>Provides ready-made templates to mimic Facebook, Gmail, Instagram, PayPal, etc.  </li>
+<li>Often used with tunneling services (Ngrok, Serveo) to make phishing pages publicly accessible.  </li>
+<li><strong>OSINT clue:</strong> If you see <code>ngrok.io</code> or <code>serveo.net</code> URLs in phishing campaigns, they may be BlackEye-based.  </li>
+</ul>
+<h3 id="zphisher"><strong>ZPhisher</strong></h3>
+<ul>
+<li>Bash-based toolkit, successor to BlackEye in some ways.  </li>
+<li>30 phishing templates for major platforms (Netflix, LinkedIn, Twitter, etc.).  </li>
+<li>Simplifies credential capture by generating fake login pages quickly.  </li>
+</ul>
+<h3 id="socialfish"><strong>SocialFish</strong></h3>
+<ul>
+<li>Phishing framework with Python backend.  </li>
+<li>Integrates with Ngrok for easy public hosting.  </li>
+<li>Known for its modular design: attackers can pick a template, deploy it in minutes.  </li>
+</ul>
+<h3 id="evilginx2-advanced-mitm-phishing"><strong>Evilginx2 (Advanced MITM Phishing)</strong></h3>
+<ul>
+<li>Unlike template kits, this performs a <strong>reverse proxy attack</strong>.  </li>
+<li>Intercepts traffic between user and legitimate site → can steal <strong>session cookies</strong> (bypasses 2FA).  </li>
+<li><strong>OSINT marker:</strong> SSL certificates from Let’s Encrypt, suspicious subdomains mimicking real services.  </li>
 </ul>
 <hr />
-<h2 id="step-3-create-the-email-account-securely">Step 3: Create the Email Account Securely</h2>
-<p>Follow these principles during sign-up:</p>
+<p><strong>OSINT Upgrade: Open Relay Identification</strong></p>
 <ul>
-<li>Use a <strong>non-identifying username</strong>. Avoid handles you've used elsewhere.</li>
-<li>Do <strong>not reuse passwords</strong>. Use a password manager like Bitwarden or KeePassXC.</li>
-<li>Avoid <strong>real information</strong>: fake names, birthdates, etc.</li>
-<li><strong>Never link a phone number</strong> unless using a temporary/burner solution.</li>
-</ul>
-<h3 id="temporary-number-services-use-cautiously">Temporary Number Services (Use Cautiously):</h3>
-<ul>
-<li><a href="https://www.receive-sms-online.info">Receive SMS Online</a></li>
-<li><a href="https://anonymsms.com">AnonymSMS</a></li>
-<li><a href="https://freephonenum.com">FreePhoneNum.com</a></li>
-<li><a href="https://receive-smss.com">Receive-smss.com</a></li>
-<li><strong>Alternative</strong>: Use apps like TextNow or Hushed (with VPN + dummy info).</li>
-</ul>
-<p><strong>⚠️ Note</strong>: Avoid using these numbers for accounts where long-term access is required. Numbers may be recycled.</p>
-<hr />
-<h2 id="step-4-maintain-ongoing-operational-security-opsec">Step 4: Maintain Ongoing Operational Security (OpSec)</h2>
-<ul>
-<li><strong>Dedicated Browsers or VMs</strong>: Run a separate browser profile or VM for all activity tied to your anonymous email.</li>
-<li><strong>Do Not Cross-Link</strong>: Don’t log into personal accounts, social media, or shopping sites using the same browser/IP/session.</li>
-<li><strong>Email Aliases for Separation</strong>: Use SimpleLogin or AnonAddy to create aliases for different purposes (leaks, monitoring, registration).</li>
-<li><strong>Turn Off JavaScript</strong> (where possible): Consider using NoScript or JS blockers in Tor/Firefox for leak submission.</li>
-<li><strong>Beware of Email Headers</strong>: Avoid sending emails directly to recipients. Use pastebin-style services or public-key encrypted messaging instead.</li>
+<li>Use OSINT tools like <strong>Shodan</strong> or <strong>Censys</strong> to identify open relay mail servers still exposed on the internet. This provides actionable intelligence on the types of infrastructure attackers can leverage.</li>
 </ul>
 <hr />
-<h2 id="step-5-platforms-used-for-digital-content-sharing-leaks">Step 5: Platforms Used for Digital Content Sharing &amp; Leaks</h2>
-<p>These forums/platforms often host or share modded content, game repacks, and occasionally leaks. Monitor for investigative purposes.</p>
-<h3 id="forums-leak-sharing-platforms">Forums &amp; Leak Sharing Platforms:</h3>
+<h3 id="phase-2-deciphering-the-headers-the-digital-trail"><strong>Phase 2: Deciphering the Headers - The Digital Trail</strong></h3>
+<p><strong>Step 2: Obtain the Full Email Headers</strong></p>
+<p>The full email headers are the most critical evidence in any investigation. They contain the true technical routing information and act as a log of the email's journey from its origin.</p>
 <ul>
-<li>
-<p><strong>VeryLeak's</strong> (<a href="https://veryleaks.is">veryleaks.is</a>)<br />
-  A platform known for sharing software, exploits, and leaked documents.</p>
-</li>
-<li>
-<p><strong>4chan /r9k/ or /g/</strong> (<a href="https://www.4chan.org">4chan.org</a>)<br />
-  Anonymous boards where leaks often appear before mainstream attention.</p>
-</li>
-<li>
-<p><strong>Exploit.in / BreachForums</strong> <em>(verify legal status and avoid posting)</em></p>
-</li>
-<li>
-<p><strong>Dread Forum</strong> (Tor-only Reddit-style forum, often used by whistleblowers and hackers)</p>
-</li>
+<li><strong>How to retrieve them:</strong> Every major email client has an option to view the "original" or "full" headers.  </li>
+<li><strong>Outlook:</strong> File -&gt; Properties -&gt; Internet headers   </li>
+<li><strong>Gmail:</strong> More options (three dots) -&gt; Show original   </li>
+<li><strong>Apple Mail:</strong> View -&gt; Message -&gt; Raw Source </li>
 </ul>
-<hr />
-<h3 id="game-mod-content-platforms-often-used-for-distribution">Game &amp; Mod Content Platforms (often used for distribution):</h3>
+<p>The headers will be a block of text containing fields like</p>
+<p>Received, Return-Path, SPF, DKIM, and Message-ID. Copy this entire block into a text editor for analysis.</p>
+<p><strong>Step 3: Analyze the Received Headers</strong></p>
+<p>The Received headers are a chain of records, each added by a server that handled the email. They must be read from the bottom up to trace the email's path from its origin to you.</p>
 <ul>
-<li>
-<p><strong>NexusMods</strong> (<a href="https://www.nexusmods.com">nexusmods.com</a>)<br />
-  Hosting for over 700K+ game mods, sometimes includes illicit or grey-market uploads.</p>
-</li>
-<li>
-<p><strong>SteamCommunity</strong> (<a href="https://steamcommunity.com">steamcommunity.com</a>)<br />
-  Used for sharing guides, mods, and announcements. Leaks may be shared in discussions.</p>
-</li>
-<li>
-<p><strong>FitGirl Repacks</strong> (<a href="https://fitgirl-repacks.site">fitgirl-repacks.site</a>)<br />
-  Offers highly compressed versions of games, popular in grey-market redistribution.</p>
-</li>
-<li>
-<p><strong>SkidrowReloaded</strong> (<a href="https://skidrowreloaded.com">skidrowreloaded.com</a>)<br />
-  Hosts cracks, repacks, and modded game content.</p>
-</li>
-<li>
-<p><strong>Reddit Communities</strong>: e.g., r/Piracy, r/OSINT, r/PrivacyToolsIO <em>(watch, don’t post)</em></p>
-</li>
+<li><strong>IP Addresses:</strong> Use tools like <strong>nslookup</strong> or <strong>whois</strong> to check the IP addresses in the Received headers and identify the server's location and owner.  </li>
+<li><strong>Timestamps:</strong> Analyze the timestamps. A large time gap between servers could indicate a delay or manipulation, while a suspiciously short gap between distant servers could be a red flag.  </li>
+<li><strong>Consistency Check:</strong> Compare the Received headers to the "From" address. A mismatch between the originating IP address and the claimed sender's network is a strong indicator of spoofing.</li>
 </ul>
-<hr />
-<h2 id="final-tips-for-leak-related-email-use">Final Tips for Leak-Related Email Use</h2>
+<p><strong>OSINT Upgrade</strong>:</p>
 <ul>
-<li>Don’t use HTML email format. Stick with plain text.</li>
-<li>Never send attachments unless pre-scanned and anonymized (e.g., stripped EXIF, zipped with AES encryption).</li>
-<li>If submitting leaks, use secure pastebins (e.g., <a href="https://0bin.net">0bin.net</a>, <a href="https://paste.debian.net">paste.debian.net</a>) with auto-destruct.</li>
-<li>For long-term secure communication, exchange PGP keys.</li>
+<li>Use tools like ipinfo.io, whois.domaintools.com, or AbuseIPDB to get ownership and abuse reports.  </li>
+<li>Cross-reference IP with public blacklists (Spamhaus, Talos Intelligence).  </li>
+<li>If IP belongs to a cloud provider (AWS, GCP, OVH), suspect throwaway virtual machines.</li>
 </ul>
+<p><strong>Step 4: Check the Return-Path and Message-ID</strong></p>
+<ul>
+<li><strong>Return-Path:</strong> This header specifies where non-delivery or "bounce" messages should be sent. This is often the true sender's address. If the  </li>
+<li>Return-Path differs from the From address, it is a significant red flag for spoofing.  </li>
+<li><strong>Message-ID:</strong> This is a unique identifier assigned by the sending server. Its format can offer clues about the software used.</li>
+</ul>
+<p><strong>Step 5: Verify Sender Authentication</strong></p>
+<p>Modern email systems use three primary authentication methods to combat spoofing. These are critical for determining an email's legitimacy.</p>
+<ul>
+<li><strong>SPF (Sender Policy Framework):</strong> A DNS record that specifies which mail servers are authorized to send email for a domain. A  </li>
+<li>pass result confirms authorization, while fail or softfail indicates an unauthorized server.  </li>
+<li><strong>DKIM (DomainKeys Identified Mail):</strong> Adds a digital signature to the email header to verify that the content has not been tampered with and that the sender is legitimate. A valid signature indicates authenticity.  </li>
+<li><strong>DMARC (Domain-based Message Authentication, Reporting &amp; Conformance):</strong> A policy that tells a receiving mail server what to do with an email that fails SPF or DKIM check. Look for  </li>
+<li>Authentication-Results headers for the final verdict.</li>
+</ul>
+<p><strong>OSINT Upgrade</strong>:</p>
+<ul>
+<li>Use <strong>mxtoolbox.com</strong> or <strong>dmarcian.com</strong> to query SPF/DKIM/DMARC.  </li>
+<li>Note: Many phishing domains lack DMARC, or set DMARC to “none” to avoid rejection.  </li>
+<li>If DKIM fails → extract <strong>d=domain.com</strong> value → investigate domain age and registrar.</li>
+</ul>
+<p><strong>Tutorial Using <code>mxtoolbox.com</code>:</strong></p>
+<ol>
+<li>Open your web browser and navigate to <code>mxtoolbox.com</code>.  </li>
+<li>In the main search bar, enter the domain name you wish to investigate (e.g., <code>google.com</code>).  </li>
+<li>Click the dropdown menu next to the search bar and select the specific record type you want to query: <code>SPF Record Lookup</code>, <code>DKIM Record Lookup</code>, or <code>DMARC Record Lookup</code>.  </li>
+<li>Click the search button. The tool will display the DNS record, providing details about the sender authentication configuration for that domain.</li>
+</ol>
+<p><strong>Tutorial Using <code>dmarcian.com</code>:</strong></p>
+<ol>
+<li>Navigate to <code>dmarcian.com/dmarc-inspector/</code>.  </li>
+<li>In the input field, enter the domain name you're investigating.  </li>
+<li>The tool will automatically run a DMARC check and provide a simple report on the domain's DMARC, SPF, and DKIM statu</li>
+</ol>
 <hr />
-<h2 id="tools-summary">Tools Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Purpose</th>
-<th>Tool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Anonymous Email</td>
-<td>ProtonMail, Tutanota, StartMail</td>
-</tr>
-<tr>
-<td>Email Alias</td>
-<td>SimpleLogin, AnonAddy</td>
-</tr>
-<tr>
-<td>VPN</td>
-<td>Mullvad, ProtonVPN, IVPN</td>
-</tr>
-<tr>
-<td>Network Obfuscation</td>
-<td>Tor Browser, Tails OS</td>
-</tr>
-<tr>
-<td>Temporary SMS</td>
-<td>Receive-smss.com, AnonymSMS</td>
-</tr>
-<tr>
-<td>Password Management</td>
-<td>KeePassXC, Bitwarden</td>
-</tr>
-<tr>
-<td>Secure Pastebins</td>
-<td>0bin, PrivateBin, Paste.debian.net</td>
-</tr>
-</tbody>
-</table>
-<p>Stay safe, stay legal, and always verify platforms before interacting.</p>
+<h3 id="phase-3-content-metadata-and-osint"><strong>Phase 3: Content, Metadata, and OSINT</strong></h3>
+<p><strong>Step 6: Analyze Message Body, URLs, and Attachments</strong></p>
+<p>Even with valid headers, the content can reveal a fraudulent intent.</p>
+<ul>
+<li><strong>Suspicious URLs:</strong> Hover over links without clicking them. Check if the URL matches the company it claims to represent. Use URL reputation tools to check for known malicious links.  </li>
+<li><strong>Urgency and Threats:</strong> Emails that demand immediate action or threaten account suspension are classic social engineering tactics.  </li>
+<li><strong>Metadata in Attachments:</strong> Do not open attachments directly. Analyze their metadata using a viewer to find clues such as the author's name, the program used to create the file, or the computer's name.</li>
+</ul>
+<p><strong>Attachment Analysis</strong>:</p>
+<ul>
+<li>Extract metadata with <code>exiftool</code>, <code>oletools</code>, or <strong>VirusTotal</strong>.  </li>
+<li>Malicious docs may contain macros → sandbox in <strong>Cuckoo Sandbox</strong> or <strong>Any.Run</strong>.</li>
+</ul>
+<p><strong>OSINT Upgrade: Researching Phishing Infrastructure</strong></p>
+<ul>
+<li><a href="https://github.com/topics/phishing-kit"><strong>GitHub Repositories</strong></a><strong>:</strong> These resources provide practical examples of tools used by attackers, which can be useful for studying phishing infrastructure:  </li>
+<li><strong>M4cs/BlackEye-Python:</strong> A phishing kit with Serveo subdomain creation support, useful for studying infrastructure design.  </li>
+<li><strong>Err0r-ICA/Phishbait:</strong> A working phishing tool with templates for numerous websites, useful for understanding contemporary tactics.  </li>
+<li><strong>curtbraz/PhishAPI:</strong> A web-based phishing suite with real-time alerting, an excellent case study in automated phishing.  </li>
+<li><strong>0xDanielLopez/phishing_kits:</strong> Catalogs real-world phishing kits for exploring attacker tactics.  </li>
+<li><strong>t4d/StalkPhish:</strong> A Python tool that aggregates phishing kits for investigative research and threat hunting.  </li>
+<li><strong>duo-labs/phish-collect:</strong> A project designed to harvest phishing kits at scale, useful for studying automation techniques.  </li>
+<li><strong>Sample Phishing Emails:</strong> Collect sample emails from public repositories like <strong>PhishTank</strong> or <strong>Spamhaus</strong> for pattern recognition training.</li>
+</ul>
+<h3 id="summary-spam-vs-spoof"><strong>Summary: Spam vs. Spoof</strong></h3>
+<ul>
+<li><strong>Spam:</strong> Often has a valid sender and may pass some or all authentication checks. The headers are usually consistent with the sender's mail server. The goal is mass distribution for advertising or scams.  </li>
+<li><strong>Spoof:</strong> The headers are manipulated to impersonate a legitimate sender. Key indicators include a mismatch between the  </li>
+<li>From and Return-Path headers, failed SPF/DKIM/DMARC checks, and an originating IP address that is not from the claimed sender's network.</li>
+</ul>
+<p>By following this comprehensive methodology, you can move past the surface-level deception and uncover the true origins of a malicious email. This skill is fundamental to protecting yourself and your organization from a wide range of cyber threats.</p>
 
 
 

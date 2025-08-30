@@ -180,6 +180,16 @@ Google Dorking is an essential OSINT skill that transforms basic search into a p
 
 ---
 
+###  **AI-Powered and Automated Tools**
+
+* **DorkGPT** — An AI-powered tool that generates Google Dorking queries based on natural language prompts.  
+   👉 [https://www.dorkgpt.com/](https://www.dorkgpt.com/?utm_source=chatgpt.com)
+
+* **IntelTechniques Search Tool** — A comprehensive collection of OSINT search tools, including a Google Dork search interface that automates queries across multiple search engines and databases.  
+   👉 [https://inteltechniques.com/tools/Search.html](https://inteltechniques.com/tools/Search.html?utm_source=chatgpt.com)
+
+---
+
 🕵️‍♂️ Google Dorks Cheat Sheet for Hidden Paths & Exposed Files
 > 📋 *Table adapted from [this GitHub repository](https://github.com/sudosu01/-Google-Dorks-Cheat-Sheet-for-Hidden-Paths-Exposed-Files).*  
 > Original author unknown. All credit to the creator.

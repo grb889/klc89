@@ -78,6 +78,13 @@ The Received headers are a chain of records, each added by a server that handled
 * **Timestamps:** Analyze the timestamps. A large time gap between servers could indicate a delay or manipulation, while a suspiciously short gap between distant servers could be a red flag.  
 * **Consistency Check:** Compare the Received headers to the "From" address. A mismatch between the originating IP address and the claimed sender's network is a strong indicator of spoofing.
 
+> ⚠️ **Important Limitation:**  
+> In most modern webmail services (such as Gmail, Outlook.com, or Yahoo), the sender’s actual device IP address is **not** exposed in the email headers.  
+> Instead, the `Received:` lines will typically show the IP address of the provider’s mail relay or proxy service.  
+> This is by design, to protect user privacy.  
+> Only in cases where the sender is using a **self-hosted mail server** or a **poorly configured system** will you sometimes see the true originating IP belonging to the sender’s ISP or device.  
+
+
 **OSINT Upgrade**:
 
 * Use tools like ipinfo.io, whois.domaintools.com, or AbuseIPDB to get ownership and abuse reports.  
