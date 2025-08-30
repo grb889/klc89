@@ -6,13 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
       
       
       
-        <link rel="prev" href="../OSINT_Environment_Kali_vs_Tails/">
       
-      
-        <link rel="next" href="../google_dork_osint/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Browser - OSINT Toolkit</title>
+        <title>Firefox Configuration for OSINT Investigations (Kali Linux – VirtualBox) - Practical OSINT Handbook</title>
       
     
     
@@ -62,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firefox-configuration-for-osint-investigations-kali-linux-virtualbox" class="md-skip">
+        <a href="#goal" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,13 +90,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OSINT Toolkit
+            Practical OSINT Handbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Browser
+              Firefox Configuration for OSINT Investigations (Kali Linux – VirtualBox)
             
           </span>
         </div>
@@ -174,15 +172,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    OSINT Toolkit
+    Practical OSINT Handbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -213,28 +213,31 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Environment Setup
+    1. Environment Setup
     
   </span>
   
@@ -242,10 +245,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Environment Setup
+            1. Environment Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -261,7 +264,7 @@
   
   
   <span class="md-ellipsis">
-    Kali Setup
+    Kali VirtualBox Setup
     
   </span>
   
@@ -284,7 +287,7 @@
   
   
   <span class="md-ellipsis">
-    Resize Kali VM
+    Resize Your VM
     
   </span>
   
@@ -307,278 +310,12 @@
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
+    Tails vs. Kali
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Browser
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-understanding-firefox-profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 1. Understanding Firefox Profiles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧱 1. Understanding Firefox Profiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-profile" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 What is a Profile?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 OSINT Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Linux Commands
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-multi-account-containers-mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 2. Multi-Account Containers (MAC)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧩 2. Multi-Account Containers (MAC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-are-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 What are Containers?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      🕵️ OSINT Application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setup-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Setup Notes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-arkenfox-userjs-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 3. Arkenfox User.js Hardening
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔐 3. Arkenfox User.js Hardening">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧬 Purpose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-optimized-userjs-place-in-each-profile-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ OSINT-Optimized user.js (Place in each profile dir)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-burner-profile-creation-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 4. Burner Profile Creation Script
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ 4. Burner Profile Creation Script">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#burner_firefoxsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔄 burner_firefox.sh
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-extension-handling-containers-ublock-etc" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 5. Extension Handling (Containers + uBlock etc.)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔚 Final Recommendations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-burner_firefoxsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Using burner_firefox.sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📁 Using burner_firefox.sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 How to Use
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -601,20 +338,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Core Tools & Techniques
+    2. Core Tools & Techniques
     
   </span>
   
@@ -625,7 +367,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Core Tools & Techniques
+            2. Core Tools & Techniques
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -641,7 +383,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -664,7 +406,7 @@
   
   
   <span class="md-ellipsis">
-    theHarvester Guide
+    theHarvester OSINT Guide
     
   </span>
   
@@ -698,6 +440,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -715,20 +480,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Real-World Use Cases
+    3. Real-World OSINT Use Cases
     
   </span>
   
@@ -739,7 +509,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Real-World Use Cases
+            3. Real-World OSINT Use Cases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -755,7 +525,7 @@
   
   
   <span class="md-ellipsis">
-    Website Monitoring
+    OSINT Website Monitoring & Security Checks
     
   </span>
   
@@ -773,12 +543,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Email%20Forensic%20Investigation/" class="md-nav__link">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Email Forensic Investigation
+    OSINT Email Forensics & Spoofing Analysis
     
   </span>
   
@@ -819,12 +589,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure_email_leak_guide/" class="md-nav__link">
+      <a href="../Burner_Accounts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
+    Burner Accounts
     
   </span>
   
@@ -849,233 +619,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-understanding-firefox-profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 1. Understanding Firefox Profiles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧱 1. Understanding Firefox Profiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-profile" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 What is a Profile?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 OSINT Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Linux Commands
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-multi-account-containers-mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 2. Multi-Account Containers (MAC)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧩 2. Multi-Account Containers (MAC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-are-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 What are Containers?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      🕵️ OSINT Application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setup-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Setup Notes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-arkenfox-userjs-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 3. Arkenfox User.js Hardening
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔐 3. Arkenfox User.js Hardening">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧬 Purpose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#osint-optimized-userjs-place-in-each-profile-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ OSINT-Optimized user.js (Place in each profile dir)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-burner-profile-creation-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 4. Burner Profile Creation Script
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ 4. Burner Profile Creation Script">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#burner_firefoxsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔄 burner_firefox.sh
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-extension-handling-containers-ublock-etc" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 5. Extension Handling (Containers + uBlock etc.)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔚 Final Recommendations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-burner_firefoxsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Using burner_firefox.sh
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📁 Using burner_firefox.sh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 How to Use
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1085,8 +628,8 @@
 
 
 
-<h1 id="firefox-configuration-for-osint-investigations-kali-linux-virtualbox">Firefox Configuration for OSINT Investigations (Kali Linux – VirtualBox)</h1>
-<h2 id="goal">🎯 Goal</h2>
+<h1 id="firefox-configuration-for-osint-investigations-kali-linux-virtualbox">Firefox Configuration for OSINT Investigations (Kali Linux – VirtualBox)<a class="headerlink" href="#firefox-configuration-for-osint-investigations-kali-linux-virtualbox" title="Permanent link">&para;</a></h1>
+<h2 id="goal">🎯 Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
 <p>To establish a hardened, compartmentalized, and anonymous browser setup for OSINT operations using:</p>
 <ul>
 <li><strong>Firefox ESR profiles</strong> (full separation of investigations)</li>
@@ -1094,8 +637,8 @@
 <li><strong>Arkenfox-based hardening</strong> (<code>user.js</code>)</li>
 <li><strong>Scripted automation</strong> for burner-profile creation</li>
 </ul>
-<h2 id="1-understanding-firefox-profiles">🧱 1. Understanding Firefox Profiles</h2>
-<h3 id="what-is-a-profile">🔍 What is a Profile?</h3>
+<h2 id="1-understanding-firefox-profiles">🧱 1. Understanding Firefox Profiles<a class="headerlink" href="#1-understanding-firefox-profiles" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-a-profile">🔍 What is a Profile?<a class="headerlink" href="#what-is-a-profile" title="Permanent link">&para;</a></h3>
 <p>A <strong>Firefox profile</strong> is a self-contained environment that stores:</p>
 <ul>
 <li>Browsing history, cache, cookies</li>
@@ -1103,7 +646,7 @@
 <li>Installed extensions</li>
 <li><code>about:config</code> settings</li>
 </ul>
-<h3 id="osint-usage">📦 OSINT Usage</h3>
+<h3 id="osint-usage">📦 OSINT Usage<a class="headerlink" href="#osint-usage" title="Permanent link">&para;</a></h3>
 <p>Each <strong>investigation target</strong> should get its own Firefox profile. This avoids:</p>
 <ul>
 <li>Cross-contamination of cookies, storage, fingerprinting trails</li>
@@ -1111,28 +654,28 @@
 <li>Correlating traffic from Target A and Target B</li>
 </ul>
 <p><strong>Best Practice:</strong> 1 Profile = 1 Target</p>
-<h3 id="linux-commands">🔧 Linux Commands</h3>
-<pre><code class="language-bash"># Create a profile
-firefox-esr -CreateProfile &quot;target-a&quot;
+<h3 id="linux-commands">🔧 Linux Commands<a class="headerlink" href="#linux-commands" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a profile</span>
+firefox-esr<span class="w"> </span>-CreateProfile<span class="w"> </span><span class="s2">&quot;target-a&quot;</span>
 
-# List profiles
-cat ~/.mozilla/firefox/profiles.ini
+<span class="c1"># List profiles</span>
+cat<span class="w"> </span>~/.mozilla/firefox/profiles.ini
 
-# Delete a profile manually
-rm -rf ~/.mozilla/firefox/*.target-a/
+<span class="c1"># Delete a profile manually</span>
+rm<span class="w"> </span>-rf<span class="w"> </span>~/.mozilla/firefox/*.target-a/
 
-# Launch a specific profile
-firefox-esr -P &quot;target-a&quot;
-</code></pre>
-<h2 id="2-multi-account-containers-mac">🧩 2. Multi-Account Containers (MAC)</h2>
-<h3 id="what-are-containers">🔐 What are Containers?</h3>
+<span class="c1"># Launch a specific profile</span>
+firefox-esr<span class="w"> </span>-P<span class="w"> </span><span class="s2">&quot;target-a&quot;</span>
+</code></pre></div>
+<h2 id="2-multi-account-containers-mac">🧩 2. Multi-Account Containers (MAC)<a class="headerlink" href="#2-multi-account-containers-mac" title="Permanent link">&para;</a></h2>
+<h3 id="what-are-containers">🔐 What are Containers?<a class="headerlink" href="#what-are-containers" title="Permanent link">&para;</a></h3>
 <p>Containers allow tab-level isolation <em>within a single profile</em>:</p>
 <ul>
 <li>Separate cookies, local storage, sessions</li>
 <li>Maintain multiple identities on the same site</li>
 <li>Reduce risk of cross-site tracking</li>
 </ul>
-<h3 id="osint-application">🕵️ OSINT Application</h3>
+<h3 id="osint-application">🕵️ OSINT Application<a class="headerlink" href="#osint-application" title="Permanent link">&para;</a></h3>
 <p>Use containers <strong>within an investigation profile</strong> to separate workflows:</p>
 <table>
 <thead>
@@ -1161,103 +704,103 @@ firefox-esr -P &quot;target-a&quot;
 </tbody>
 </table>
 <p><strong>Best Practice:</strong> 1 Profile → Multiple Containers (per investigation type)</p>
-<h3 id="setup-notes">🔧 Setup Notes</h3>
+<h3 id="setup-notes">🔧 Setup Notes<a class="headerlink" href="#setup-notes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The <strong>Multi-Account Containers extension</strong> can be pre-installed via <code>policies.json</code>.</li>
 <li>But <strong>domain-to-container bindings must be set manually</strong>.</li>
 <li>Containers do <strong>not sync</strong> between profiles.</li>
 </ul>
-<h2 id="3-arkenfox-userjs-hardening">🔐 3. Arkenfox User.js Hardening</h2>
-<h3 id="purpose">🧬 Purpose</h3>
+<h2 id="3-arkenfox-userjs-hardening">🔐 3. Arkenfox User.js Hardening<a class="headerlink" href="#3-arkenfox-userjs-hardening" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">🧬 Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
 <p>Arkenfox is a privacy-hardening configuration applied via a <code>user.js</code> file in each Firefox profile. It overrides <code>about:config</code> to:</p>
 <ul>
 <li>Disable tracking APIs</li>
 <li>Prevent fingerprinting</li>
 <li>Stop telemetry and WebRTC leaks</li>
 </ul>
-<h3 id="osint-optimized-userjs-place-in-each-profile-dir">⚙️ OSINT-Optimized <code>user.js</code> (Place in each profile dir)</h3>
-<pre><code class="language-js">// --- Privacy and Fingerprinting Protection ---
-user_pref(&quot;media.peerconnection.enabled&quot;, false); // WebRTC
-user_pref(&quot;geo.enabled&quot;, false);
-user_pref(&quot;dom.battery.enabled&quot;, false);
-user_pref(&quot;dom.gamepad.enabled&quot;, false);
-user_pref(&quot;device.sensors.enabled&quot;, false);
-user_pref(&quot;webgl.disabled&quot;, true);
-user_pref(&quot;dom.webnotifications.enabled&quot;, false);
-user_pref(&quot;dom.push.enabled&quot;, false);
-user_pref(&quot;beacon.enabled&quot;, false);
+<h3 id="osint-optimized-userjs-place-in-each-profile-dir">⚙️ OSINT-Optimized <code>user.js</code> (Place in each profile dir)<a class="headerlink" href="#osint-optimized-userjs-place-in-each-profile-dir" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// --- Privacy and Fingerprinting Protection ---</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;media.peerconnection.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// WebRTC</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;geo.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;dom.battery.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;dom.gamepad.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;device.sensors.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;webgl.disabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;dom.webnotifications.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;dom.push.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;beacon.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
-user_pref(&quot;privacy.resistFingerprinting&quot;, true);
-user_pref(&quot;privacy.resistFingerprinting.letterboxing&quot;, true);
-user_pref(&quot;privacy.resistFingerprinting.block_mozAddonManager&quot;, true);
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;privacy.resistFingerprinting&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;privacy.resistFingerprinting.letterboxing&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;privacy.resistFingerprinting.block_mozAddonManager&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
-user_pref(&quot;canvas.poisondata&quot;, true);
-user_pref(&quot;canvas.poisondata.enable&quot;, true);
-user_pref(&quot;canvas.capturestream.enabled&quot;, false);
-user_pref(&quot;dom.webaudio.enabled&quot;, false);
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;canvas.poisondata&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;canvas.poisondata.enable&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;canvas.capturestream.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;dom.webaudio.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
-user_pref(&quot;network.http.referer.XOriginTrimmingPolicy&quot;, 2);
-user_pref(&quot;network.http.referer.XOriginPolicy&quot;, 2);
-user_pref(&quot;network.dns.disablePrefetch&quot;, true);
-user_pref(&quot;network.prefetch-next&quot;, false);
-user_pref(&quot;network.predictor.enabled&quot;, false);
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.http.referer.XOriginTrimmingPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.http.referer.XOriginPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.dns.disablePrefetch&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.prefetch-next&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.predictor.enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
-user_pref(&quot;browser.formfill.enable&quot;, false);
-user_pref(&quot;network.cookie.cookieBehavior&quot;, 5);
-user_pref(&quot;privacy.partition.network_state.ocsp_cache&quot;, true);
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;browser.formfill.enable&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.cookie.cookieBehavior&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;privacy.partition.network_state.ocsp_cache&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
-// --- DNS over HTTPS ---
-user_pref(&quot;network.trr.mode&quot;, 2);
-user_pref(&quot;network.trr.uri&quot;, &quot;https://mozilla.cloudflare-dns.com/dns-query&quot;);
+<span class="c1">// --- DNS over HTTPS ---</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.trr.mode&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;network.trr.uri&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://mozilla.cloudflare-dns.com/dns-query&quot;</span><span class="p">);</span>
 
-// --- UI &amp; Session Behavior ---
-user_pref(&quot;browser.startup.page&quot;, 0);
-user_pref(&quot;signon.rememberSignons&quot;, false);
-user_pref(&quot;browser.sessionstore.privacy_level&quot;, 2);
-user_pref(&quot;browser.download.manager.addToRecentDocs&quot;, false);
-</code></pre>
-<h2 id="4-burner-profile-creation-script">⚙️ 4. Burner Profile Creation Script</h2>
-<h3 id="burner_firefoxsh">🔄 <code>burner_firefox.sh</code></h3>
-<pre><code class="language-bash">#!/bin/bash
+<span class="c1">// --- UI &amp; Session Behavior ---</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;browser.startup.page&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;signon.rememberSignons&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;browser.sessionstore.privacy_level&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">user_pref</span><span class="p">(</span><span class="s2">&quot;browser.download.manager.addToRecentDocs&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="4-burner-profile-creation-script">⚙️ 4. Burner Profile Creation Script<a class="headerlink" href="#4-burner-profile-creation-script" title="Permanent link">&para;</a></h2>
+<h3 id="burner_firefoxsh">🔄 <code>burner_firefox.sh</code><a class="headerlink" href="#burner_firefoxsh" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-# === CONFIGURATION ===
-PROFILE_NAME=&quot;burner-$(date +%s)&quot;
-FIREFOX_CMD=$(which firefox)
+<span class="c1"># === CONFIGURATION ===</span>
+<span class="nv">PROFILE_NAME</span><span class="o">=</span><span class="s2">&quot;burner-</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">FIREFOX_CMD</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>firefox<span class="k">)</span>
 
-# Check if Firefox is installed
-if [ -z &quot;$FIREFOX_CMD&quot; ]; then
-  echo &quot;❌ Firefox is not installed or not in PATH.&quot;
-  exit 1
-fi
+<span class="c1"># Check if Firefox is installed</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FIREFOX_CMD</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ Firefox is not installed or not in PATH.&quot;</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
 
-echo &quot;🌀 Creating Firefox burner profile: $PROFILE_NAME&quot;
-firefox -CreateProfile &quot;$PROFILE_NAME&quot;
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🌀 Creating Firefox burner profile: </span><span class="nv">$PROFILE_NAME</span><span class="s2">&quot;</span>
+firefox<span class="w"> </span>-CreateProfile<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PROFILE_NAME</span><span class="s2">&quot;</span>
 
-# Find profile folder
-PROFILE_DIR=$(find ~/.mozilla/firefox -maxdepth 1 -type d -name &quot;*.$PROFILE_NAME&quot; | head -n 1)
+<span class="c1"># Find profile folder</span>
+<span class="nv">PROFILE_DIR</span><span class="o">=</span><span class="k">$(</span>find<span class="w"> </span>~/.mozilla/firefox<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.</span><span class="nv">$PROFILE_NAME</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 
-if [ -z &quot;$PROFILE_DIR&quot; ]; then
-  echo &quot;❌ Failed to find profile directory.&quot;
-  exit 1
-fi
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PROFILE_DIR</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ Failed to find profile directory.&quot;</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
 
-echo &quot;📁 Profile created at: $PROFILE_DIR&quot;
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;📁 Profile created at: </span><span class="nv">$PROFILE_DIR</span><span class="s2">&quot;</span>
 
-# Download latest arkenfox user.js
-echo &quot;🌐 Downloading hardened user.js from arkenfox...&quot;
-curl -sSL https://raw.githubusercontent.com/arkenfox/user.js/master/user.js -o &quot;$PROFILE_DIR/user.js&quot;
+<span class="c1"># Download latest arkenfox user.js</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🌐 Downloading hardened user.js from arkenfox...&quot;</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/arkenfox/user.js/master/user.js<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PROFILE_DIR</span><span class="s2">/user.js&quot;</span>
 
-# Launch Firefox with that profile
-echo &quot;🚀 Launching Firefox with burner profile...&quot;
-firefox -no-remote -P &quot;$PROFILE_NAME&quot; &amp;
-</code></pre>
-<h2 id="5-extension-handling-containers-ublock-etc">🔁 5. Extension Handling (Containers + uBlock etc.)</h2>
+<span class="c1"># Launch Firefox with that profile</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🚀 Launching Firefox with burner profile...&quot;</span>
+firefox<span class="w"> </span>-no-remote<span class="w"> </span>-P<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PROFILE_NAME</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<h2 id="5-extension-handling-containers-ublock-etc">🔁 5. Extension Handling (Containers + uBlock etc.)<a class="headerlink" href="#5-extension-handling-containers-ublock-etc" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Extensions <strong>forced via <code>policies.json</code></strong> are installed into <strong>every profile</strong>, regardless of how it was created.</li>
 <li>Containers extension must be enabled in each profile even if pre-installed.</li>
 <li>Manual extension installs are profile-specific and <strong>do not cross over</strong>.</li>
 </ul>
-<h2 id="final-recommendations">🔚 Final Recommendations</h2>
+<h2 id="final-recommendations">🔚 Final Recommendations<a class="headerlink" href="#final-recommendations" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1285,30 +828,30 @@ firefox -no-remote -P &quot;$PROFILE_NAME&quot; &amp;
 </tbody>
 </table>
 <p>Use profiles as <strong>walls between investigations</strong> and containers as <strong>drawers inside each investigation</strong>. Harden each profile with Arkenfox or the lightweight <code>user.js</code>.</p>
-<h2 id="using-burner_firefoxsh">📁 Using <code>burner_firefox.sh</code></h2>
+<h2 id="using-burner_firefoxsh">📁 Using <code>burner_firefox.sh</code><a class="headerlink" href="#using-burner_firefoxsh" title="Permanent link">&para;</a></h2>
 <p>This script automates creation of a hardened Firefox profile for OSINT:</p>
-<h3 id="requirements">✅ Requirements</h3>
+<h3 id="requirements">✅ Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Firefox must be installed</li>
 <li>Run from any folder on a Linux system</li>
 </ul>
-<h3 id="how-to-use">🧾 How to Use</h3>
+<h3 id="how-to-use">🧾 How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Unzip the <code>burner_firefox.zip</code>:
-   <code>bash
-   unzip burner_firefox.zip
-   cd burner_firefox</code></p>
+   <div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>burner_firefox.zip
+<span class="nb">cd</span><span class="w"> </span>burner_firefox
+</code></pre></div></p>
 </li>
 <li>
 <p>Make the script executable:
-   <code>bash
-   chmod +x burner_firefox.sh</code></p>
+   <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>burner_firefox.sh
+</code></pre></div></p>
 </li>
 <li>
 <p>Run the script:
-   <code>bash
-   ./burner_firefox.sh</code></p>
+   <div class="highlight"><pre><span></span><code>./burner_firefox.sh
+</code></pre></div></p>
 </li>
 <li>
 <p>Firefox will launch with a hardened profile, using the latest Arkenfox <code>user.js</code>.</p>
@@ -1338,6 +881,12 @@ firefox -no-remote -P &quot;$PROFILE_NAME&quot; &amp;
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1366,7 +915,7 @@ firefox -no-remote -P &quot;$PROFILE_NAME&quot; &amp;
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

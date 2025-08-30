@@ -6,13 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
       
       
       
         <link rel="prev" href="../resize-kali-vm/">
       
       
-        <link rel="next" href="../firefox/">
+        <link rel="next" href="../google_dork_osint/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>OSINT Environment (Tails vs Kali) - OSINT Toolkit</title>
+        <title>Tails vs. Kali - Practical OSINT Handbook</title>
       
     
     
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#osint-environment-selection-kali-linux-vs-tails-os" class="md-skip">
+        <a href="#summary" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,13 +94,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OSINT Toolkit
+            Practical OSINT Handbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OSINT Environment (Tails vs Kali)
+              Tails vs. Kali
             
           </span>
         </div>
@@ -174,15 +176,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    OSINT Toolkit
+    Practical OSINT Handbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -221,20 +225,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Environment Setup
+    1. Environment Setup
     
   </span>
   
@@ -245,7 +254,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Environment Setup
+            1. Environment Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -261,7 +270,7 @@
   
   
   <span class="md-ellipsis">
-    Kali Setup
+    Kali VirtualBox Setup
     
   </span>
   
@@ -284,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Resize Kali VM
+    Resize Your VM
     
   </span>
   
@@ -308,15 +317,13 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
+    Tails vs. Kali
     
   </span>
   
@@ -329,7 +336,7 @@
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
+    Tails vs. Kali
     
   </span>
   
@@ -341,8 +348,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -507,29 +512,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../firefox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -547,20 +529,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Core Tools & Techniques
+    2. Core Tools & Techniques
     
   </span>
   
@@ -571,7 +558,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Core Tools & Techniques
+            2. Core Tools & Techniques
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -587,7 +574,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -610,7 +597,7 @@
   
   
   <span class="md-ellipsis">
-    theHarvester Guide
+    theHarvester OSINT Guide
     
   </span>
   
@@ -644,6 +631,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -661,20 +671,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Real-World Use Cases
+    3. Real-World OSINT Use Cases
     
   </span>
   
@@ -685,7 +700,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Real-World Use Cases
+            3. Real-World OSINT Use Cases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -701,7 +716,7 @@
   
   
   <span class="md-ellipsis">
-    Website Monitoring
+    OSINT Website Monitoring & Security Checks
     
   </span>
   
@@ -719,12 +734,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Email%20Forensic%20Investigation/" class="md-nav__link">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Email Forensic Investigation
+    OSINT Email Forensics & Spoofing Analysis
     
   </span>
   
@@ -765,12 +780,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure_email_leak_guide/" class="md-nav__link">
+      <a href="../Burner_Accounts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
+    Burner Accounts
     
   </span>
   
@@ -795,179 +810,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-tails-os" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ When to Use Tails OS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛡️ When to Use Tails OS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-tails-if" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Use Tails if:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pros" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Pros
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔴 Cons
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-actions-with-tails" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Key Actions with Tails
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-kali-linux-with-vpn" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 When to Use Kali Linux (with VPN)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧰 When to Use Kali Linux (with VPN)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-kali-if" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Use Kali if:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pros_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Pros
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔴 Cons
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-actions-with-kali" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 Key Actions with Kali
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decision-flow-tails-vs-kali-for-osint" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔄 Decision Flow: Tails vs Kali for OSINT
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-osint-best-practices-applies-to-both" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 General OSINT Best Practices (Applies to Both)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference-chart" class="md-nav__link">
-    <span class="md-ellipsis">
-      📷 Reference Chart
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-topics-to-explore-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      📎 Related Topics to Explore Next
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -977,12 +819,12 @@
 
 
 
-<h1 id="osint-environment-selection-kali-linux-vs-tails-os">🕵️ OSINT Environment Selection: Kali Linux vs Tails OS</h1>
+<h1 id="osint-environment-selection-kali-linux-vs-tails-os">🕵️ OSINT Environment Selection: Kali Linux vs Tails OS<a class="headerlink" href="#osint-environment-selection-kali-linux-vs-tails-os" title="Permanent link">&para;</a></h1>
 <p>When performing Open Source Intelligence (OSINT), selecting the right operating system is a foundational decision that impacts both your <strong>anonymity</strong> and your <strong>tooling capabilities</strong>. This guide compares <strong>Kali Linux</strong> (with VPN) and <strong>Tails OS</strong> (with Tor) to help you choose the best environment based on your investigative goals.</p>
 <hr />
 <p><img alt="Kali vs Tails Flow" src="../flow_kali_VS_Tail%20%281%29.png" /></p>
 <hr />
-<h2 id="summary">🧠 Summary</h2>
+<h2 id="summary">🧠 Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1035,60 +877,60 @@
 </tbody>
 </table>
 <hr />
-<h2 id="when-to-use-tails-os">🛡️ When to Use <strong>Tails OS</strong></h2>
+<h2 id="when-to-use-tails-os">🛡️ When to Use <strong>Tails OS</strong><a class="headerlink" href="#when-to-use-tails-os" title="Permanent link">&para;</a></h2>
 <p><strong>Tails</strong> (The Amnesic Incognito Live System) is built for privacy and anonymity. It is a live operating system you can start from a USB stick or DVD, and it <strong>leaves no trace</strong> on the machine unless explicitly configured to do so.</p>
-<h3 id="use-tails-if">✅ Use Tails if:</h3>
+<h3 id="use-tails-if">✅ Use Tails if:<a class="headerlink" href="#use-tails-if" title="Permanent link">&para;</a></h3>
 <ul>
 <li>You need <strong>maximum anonymity</strong> and <strong>zero traceability</strong>.</li>
 <li>You are conducting <strong>sensitive research</strong> (e.g., political, whistleblower, activist, or journalist work).</li>
 <li>You want a <strong>fresh, disposable environment</strong> every time you boot.</li>
 <li>You require all traffic to be routed through <strong>Tor</strong>.</li>
 </ul>
-<h3 id="pros">🟢 Pros</h3>
+<h3 id="pros">🟢 Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Amnesic: leaves no traces on disk.</li>
 <li>Built-in Tor routing for all traffic.</li>
 <li>Strong default security configurations.</li>
 <li>Ideal for short, secure browsing or intelligence gathering.</li>
 </ul>
-<h3 id="cons">🔴 Cons</h3>
+<h3 id="cons">🔴 Cons<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Limited built-in tools (can be extended with encrypted persistence).</li>
 <li>Slower due to Tor routing.</li>
 <li>Requires live boot; not ideal for long-term sessions.</li>
 <li>Persistence adds complexity and some OpSec risk.</li>
 </ul>
-<h3 id="key-actions-with-tails">🛠️ Key Actions with Tails</h3>
+<h3 id="key-actions-with-tails">🛠️ Key Actions with Tails<a class="headerlink" href="#key-actions-with-tails" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Always verify Tor connectivity: visit <a href="https://check.torproject.org">check.torproject.org</a>.</li>
 <li>Configure encrypted persistence <strong>only if necessary</strong>.</li>
 <li>Avoid logging into personal accounts or reusing identities.</li>
 </ul>
 <hr />
-<h2 id="when-to-use-kali-linux-with-vpn">🧰 When to Use <strong>Kali Linux (with VPN)</strong></h2>
+<h2 id="when-to-use-kali-linux-with-vpn">🧰 When to Use <strong>Kali Linux (with VPN)</strong><a class="headerlink" href="#when-to-use-kali-linux-with-vpn" title="Permanent link">&para;</a></h2>
 <p><strong>Kali Linux</strong> is a full-featured Linux distribution focused on penetration testing and security auditing, making it a powerful option for more <strong>tool-heavy OSINT work</strong>.</p>
-<h3 id="use-kali-if">✅ Use Kali if:</h3>
+<h3 id="use-kali-if">✅ Use Kali if:<a class="headerlink" href="#use-kali-if" title="Permanent link">&para;</a></h3>
 <ul>
 <li>You need access to a <strong>wide range of OSINT tools</strong> like theHarvester, Maltego, GHunt, Sherlock, etc.</li>
 <li>You are dealing with <strong>large datasets</strong>, scripting, or automation.</li>
 <li>The site or target you’re investigating <strong>blocks Tor</strong>.</li>
 <li>You need <strong>persistent storage</strong>, better performance, or virtualization.</li>
 </ul>
-<h3 id="pros_1">🟢 Pros</h3>
+<h3 id="pros_1">🟢 Pros<a class="headerlink" href="#pros_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Preloaded with hundreds of security and OSINT tools.</li>
 <li>Supports scripting, automation, and Python environments.</li>
 <li>Virtualization-friendly for snapshots, isolated environments.</li>
 <li>Better suited for intensive or long-term investigations.</li>
 </ul>
-<h3 id="cons_1">🔴 Cons</h3>
+<h3 id="cons_1">🔴 Cons<a class="headerlink" href="#cons_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Not anonymous by default — requires <strong>VPN configuration</strong>.</li>
 <li>Leaves traces on disk unless precautions are taken.</li>
 <li>OpSec is entirely your responsibility (DNS leaks, kill switches, firewall rules, etc.).</li>
 <li>VPN trust is critical — a bad provider defeats the purpose.</li>
 </ul>
-<h3 id="key-actions-with-kali">🔐 Key Actions with Kali</h3>
+<h3 id="key-actions-with-kali">🔐 Key Actions with Kali<a class="headerlink" href="#key-actions-with-kali" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use a <strong>reputable no-logs VPN</strong> (e.g., Mullvad, ProtonVPN, NordVPN).</li>
 <li>Always enable <strong>Kill Switch</strong> and check for <strong>DNS leaks</strong>.</li>
@@ -1096,7 +938,7 @@
 <li>Consider running Kali in a <strong>VM</strong> with snapshots for rollback.</li>
 </ul>
 <hr />
-<h2 id="decision-flow-tails-vs-kali-for-osint">🔄 Decision Flow: Tails vs Kali for OSINT</h2>
+<h2 id="decision-flow-tails-vs-kali-for-osint">🔄 Decision Flow: Tails vs Kali for OSINT<a class="headerlink" href="#decision-flow-tails-vs-kali-for-osint" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Use this logic tree to decide which platform fits your operation:</p>
 </blockquote>
@@ -1123,7 +965,7 @@
 </li>
 </ol>
 <hr />
-<h2 id="general-osint-best-practices-applies-to-both">🔐 General OSINT Best Practices (Applies to Both)</h2>
+<h2 id="general-osint-best-practices-applies-to-both">🔐 General OSINT Best Practices (Applies to Both)<a class="headerlink" href="#general-osint-best-practices-applies-to-both" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Threat Modeling</strong>: Define your adversary and threat level before starting.</li>
 <li><strong>Environment Isolation</strong>: Never mix personal and OSINT activities.</li>
@@ -1134,11 +976,11 @@
 <li><strong>Assume Compromise</strong>: Treat your environment as compromised at all times.</li>
 </ul>
 <hr />
-<h2 id="reference-chart">📷 Reference Chart</h2>
+<h2 id="reference-chart">📷 Reference Chart<a class="headerlink" href="#reference-chart" title="Permanent link">&para;</a></h2>
 <p>You can use the following image as a quick decision-making guide:</p>
 <p><img alt="Kali vs Tails Flow" src="../flow_kali_VS_Tail%20%281%29.png" /></p>
 <hr />
-<h2 id="related-topics-to-explore-next">📎 Related Topics to Explore Next</h2>
+<h2 id="related-topics-to-explore-next">📎 Related Topics to Explore Next<a class="headerlink" href="#related-topics-to-explore-next" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Installing Kali Linux in a Virtual Machine</li>
 <li>Using Tails with Encrypted Persistence</li>
@@ -1169,6 +1011,12 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1197,7 +1045,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
