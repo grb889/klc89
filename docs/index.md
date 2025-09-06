@@ -157,7 +157,7 @@ A comprehensive chapter on creating and operating burner identities, including t
 
 ## ⚔️ 4. Specialized Hacking and Auditing
 
-### 4.1 [Bluetooth Security Protocols and Vulnerabilities](Bluetooth Security Protocols .md)
+### 4.1 [Bluetooth Security Protocols and Vulnerabilities](Bluetooth_Security_Protocols.md)
 **Description:**
 A comprehensive guide to Bluetooth Classic and Low Energy (BLE) security, detailing the protocol stack, authentication methods, common vulnerabilities, and practical OSINT use cases.
 
@@ -170,7 +170,7 @@ A comprehensive guide to Bluetooth Classic and Low Energy (BLE) security, detail
 
 ---
 
-### 4.2 [Physical and Hardware-Based Bluetooth Attacks](Chapter 2_ Physical and Hardware-Based Bluetooth Attacks.md)
+### 4.2 [Physical and Hardware-Based Bluetooth Attacks](Physical_and_Hardware_Based_Bluetooth_Attacks.md)
 **Description:**
 An in-depth guide to hardware-based Bluetooth attacks, including passive sniffing, jamming, and RF signal analysis using tools like HackRF One and Ubertooth One.
 

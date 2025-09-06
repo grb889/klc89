@@ -38,8 +38,8 @@ nav:
       - Burner Accounts: Burner_Accounts.md
       - Finding Leaked Databases, Emails, and Passwords: white_hack.md
   - 4. Specialized Hacking and Auditing:
-      - Bluetooth Security Protocols: Bluetooth Security Protocols .md
-      - Physical and Hardware-Based Bluetooth Attacks: Chapter 2_ Physical and Hardware-Based Bluetooth Attacks.md
+      - Bluetooth Security Protocols: Bluetooth_Security_Protocols.md
+      - Physical and Hardware-Based Bluetooth Attacks: Physical_and_Hardware_Based_Bluetooth_Attacks.md
       - Comprehensive Bluetooth Security Testing and Hacking Guide: bluetooth_security_testing_guide.md
 
 markdown_extensions:
