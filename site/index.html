@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
       
       
       
@@ -18,7 +20,7 @@
     
     
       
-        <title>OSINT Toolkit</title>
+        <title>Practical OSINT Handbook</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practical-osint-handbook-table-of-contents" class="md-skip">
+        <a href="#1-environment-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href="." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -90,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OSINT Toolkit
+            Practical OSINT Handbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -172,15 +174,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href="." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    OSINT Toolkit
+    Practical OSINT Handbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -197,8 +201,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -231,8 +233,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -320,6 +320,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#24-unique-search-operators-in-bing-yandex" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Unique Search Operators in Bing &amp; Yandex
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -363,9 +372,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-secure-email-leak-monitoring-guide" class="md-nav__link">
+  <a href="#34-burner-accounts" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 Secure Email &amp; Leak Monitoring Guide
+      3.4 Burner Accounts
     </span>
   </a>
   
@@ -394,20 +403,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Environment Setup
+    1. Environment Setup
     
   </span>
   
@@ -418,7 +432,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Environment Setup
+            1. Environment Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -434,7 +448,7 @@
   
   
   <span class="md-ellipsis">
-    Kali Setup
+    Kali VirtualBox Setup
     
   </span>
   
@@ -457,7 +471,7 @@
   
   
   <span class="md-ellipsis">
-    Resize Kali VM
+    Resize Your VM
     
   </span>
   
@@ -480,30 +494,7 @@
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="firefox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
+    Tails vs. Kali
     
   </span>
   
@@ -531,20 +522,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Core Tools & Techniques
+    2. Core Tools & Techniques
     
   </span>
   
@@ -555,7 +551,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Core Tools & Techniques
+            2. Core Tools & Techniques
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -571,7 +567,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -594,7 +590,7 @@
   
   
   <span class="md-ellipsis">
-    theHarvester Guide
+    theHarvester OSINT Guide
     
   </span>
   
@@ -628,6 +624,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -645,20 +664,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Real-World Use Cases
+    3. Real-World OSINT Use Cases
     
   </span>
   
@@ -669,7 +693,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Real-World Use Cases
+            3. Real-World OSINT Use Cases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -685,7 +709,7 @@
   
   
   <span class="md-ellipsis">
-    Website Monitoring
+    OSINT Website Monitoring & Security Checks
     
   </span>
   
@@ -703,12 +727,12 @@
   
   
     <li class="md-nav__item">
-      <a href="Email%20Forensic%20Investigation/" class="md-nav__link">
+      <a href="Email_Forensic_Investigation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Email Forensic Investigation
+    OSINT Email Forensics & Spoofing Analysis
     
   </span>
   
@@ -749,12 +773,12 @@
   
   
     <li class="md-nav__item">
-      <a href="secure_email_leak_guide/" class="md-nav__link">
+      <a href="Burner_Accounts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
+    Burner Accounts
     
   </span>
   
@@ -779,167 +803,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-environment-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ 1. Environment Setup
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="⚙️ 1. Environment Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-kali-virtualbox-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 Kali VirtualBox Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-resize-your-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 Resize Your VM
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-tails-vs-kali" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 Tails vs. Kali
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-tools-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 2. Core Tools &amp; Techniques
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 2. Core Tools &amp; Techniques">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-google-dorking-for-osint" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Google Dorking for OSINT
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-theharvester-osint-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 theHarvester OSINT Guide
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-free-osint-tools-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Free OSINT Tools List
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-osint-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 3. Real-World OSINT Use Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧪 3. Real-World OSINT Use Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-osint-website-monitoring-security-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 OSINT Website Monitoring &amp; Security Checks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-osint-email-forensics-spoofing-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 OSINT Email Forensics &amp; Spoofing Analysis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-advanced-wireless-osint-wi-fi-bluetooth-investigations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Advanced Wireless OSINT: Wi-Fi &amp; Bluetooth Investigations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-secure-email-leak-monitoring-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Secure Email &amp; Leak Monitoring Guide
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -949,11 +812,11 @@
 
 
 
-<h1 id="practical-osint-handbook-table-of-contents">📚 Practical OSINT Handbook – Table of Contents</h1>
+<h1 id="practical-osint-handbook-table-of-contents">📚 Practical OSINT Handbook – Table of Contents<a class="headerlink" href="#practical-osint-handbook-table-of-contents" title="Permanent link">&para;</a></h1>
 <p>This repository contains improved and fully detailed Markdown documentation for OSINT operations, tools, and environments. Each document is designed for professionals with a technical background, such as computer science graduates or infosec practitioners entering the OSINT field.</p>
 <hr />
-<h2 id="1-environment-setup">⚙️ 1. Environment Setup</h2>
-<h3 id="11-kali-virtualbox-setup">1.1 <a href="kali-osint-virtualbox-setup/">Kali VirtualBox Setup</a></h3>
+<h2 id="1-environment-setup">⚙️ 1. Environment Setup<a class="headerlink" href="#1-environment-setup" title="Permanent link">&para;</a></h2>
+<h3 id="11-kali-virtualbox-setup">1.1 <a href="kali-osint-virtualbox-setup/">Kali VirtualBox Setup</a><a class="headerlink" href="#11-kali-virtualbox-setup" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Step-by-step instructions to install Kali Linux inside VirtualBox, configure the system for OSINT work, optimize browser hygiene, set up VPN, and take snapshots for reproducible environments.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -964,7 +827,7 @@ Step-by-step instructions to install Kali Linux inside VirtualBox, configure the
 - Installing and configuring NordVPN<br />
 - Snapshot and clean profile best practices  </p>
 <hr />
-<h3 id="12-resize-your-vm">1.2 <a href="resize-kali-vm/">Resize Your VM</a></h3>
+<h3 id="12-resize-your-vm">1.2 <a href="resize-kali-vm/">Resize Your VM</a><a class="headerlink" href="#12-resize-your-vm" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Complete guide to expanding the virtual hard disk size of a Kali Linux VM and resizing partitions within the guest system using GParted.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -972,7 +835,7 @@ Complete guide to expanding the virtual hard disk size of a Kali Linux VM and re
 - Install and use GParted inside Kali<br />
 - Confirming expanded disk space  </p>
 <hr />
-<h3 id="13-tails-vs-kali">1.3 <a href="OSINT_Environment_Kali_vs_Tails/">Tails vs. Kali</a></h3>
+<h3 id="13-tails-vs-kali">1.3 <a href="OSINT_Environment_Kali_vs_Tails/">Tails vs. Kali</a><a class="headerlink" href="#13-tails-vs-kali" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Comparative guide analyzing the use cases, pros, and cons of Tails vs. Kali Linux for OSINT tasks, along with operational security recommendations.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -981,8 +844,8 @@ Comparative guide analyzing the use cases, pros, and cons of Tails vs. Kali Linu
 - Threat modeling and OpSec best practices<br />
 - General legal/ethical guidance  </p>
 <hr />
-<h2 id="2-core-tools-techniques">🔧 2. Core Tools &amp; Techniques</h2>
-<h3 id="21-google-dorking-for-osint">2.1 <a href="google_dork_osint/">Google Dorking for OSINT</a></h3>
+<h2 id="2-core-tools-techniques">🔧 2. Core Tools &amp; Techniques<a class="headerlink" href="#2-core-tools-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="21-google-dorking-for-osint">2.1 <a href="google_dork_osint/">Google Dorking for OSINT</a><a class="headerlink" href="#21-google-dorking-for-osint" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Comprehensive tutorial and cheat sheet on Google Dorking, including operator syntax, filters, and OSINT-specific search tricks for identifying public information across the web.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -991,7 +854,7 @@ Comprehensive tutorial and cheat sheet on Google Dorking, including operator syn
 - Search templates for documents, backups, exposed directories<br />
 - Wildcarding and combining filters for precise queries  </p>
 <hr />
-<h3 id="22-theharvester-osint-guide">2.2 <a href="theHarvester_OSINT_Guide/">theHarvester OSINT Guide</a></h3>
+<h3 id="22-theharvester-osint-guide">2.2 <a href="theHarvester_OSINT_Guide/">theHarvester OSINT Guide</a><a class="headerlink" href="#22-theharvester-osint-guide" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 In-depth reference manual for using theHarvester for passive reconnaissance. Includes advanced command syntax, use cases, and integration with custom wordlists and external APIs.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -1000,7 +863,7 @@ In-depth reference manual for using theHarvester for passive reconnaissance. Inc
 - Screenshot capture, output formats, DNS options<br />
 - Wordlist management and batch scanning tips  </p>
 <hr />
-<h3 id="23-free-osint-tools-list">2.3 <a href="Free_OSINT_Tools_List/">Free OSINT Tools List</a></h3>
+<h3 id="23-free-osint-tools-list">2.3 <a href="Free_OSINT_Tools_List/">Free OSINT Tools List</a><a class="headerlink" href="#23-free-osint-tools-list" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 A curated directory of completely free and open-source OSINT tools across multiple domains—general reconnaissance, subdomain discovery, phone/email tracking, image metadata, dark web crawling, and username verification.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -1009,8 +872,17 @@ A curated directory of completely free and open-source OSINT tools across multip
 - Tools with no paid tiers or usage restrictions<br />
 - Includes Amass, IntelOwl, ExifTool, OnionScan, and more  </p>
 <hr />
-<h2 id="3-real-world-osint-use-cases">🧪 3. Real-World OSINT Use Cases</h2>
-<h3 id="31-osint-website-monitoring-security-checks">3.1 <a href="website_monitoring/">OSINT Website Monitoring &amp; Security Checks</a></h3>
+<h3 id="24-unique-search-operators-in-bing-yandex">2.4 <a href="Unique_SOperators_Bing_Yandex/">Unique Search Operators in Bing &amp; Yandex</a><a class="headerlink" href="#24-unique-search-operators-in-bing-yandex" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong><br />
+Reference guide to search operators exclusive to Bing and Yandex that can uncover content Google misses.  </p>
+<p><strong>Key Sections:</strong><br />
+- Bing-exclusive operators (ip:, hasfeed:, linkfromdomain:, etc.)<br />
+- Yandex-exclusive operators (rhost:, mime:, proximity search, etc.)<br />
+- Practical examples for OSINT workflows<br />
+- When to pivot from Google to alternative engines  </p>
+<hr />
+<h2 id="3-real-world-osint-use-cases">🧪 3. Real-World OSINT Use Cases<a class="headerlink" href="#3-real-world-osint-use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="31-osint-website-monitoring-security-checks">3.1 <a href="website_monitoring/">OSINT Website Monitoring &amp; Security Checks</a><a class="headerlink" href="#31-osint-website-monitoring-security-checks" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Guide to monitoring domains for uptime, blacklisting, changes, backlinks, and malware. Includes tools like UptimeRobot, Visualping, Ahrefs, and VirusTotal.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -1019,7 +891,7 @@ Guide to monitoring domains for uptime, blacklisting, changes, backlinks, and ma
 - Backlink discovery &amp; analysis<br />
 - Malware and suspicious activity checks  </p>
 <hr />
-<h3 id="32-osint-email-forensics-spoofing-analysis">3.2 <a href="Email%20Forensic%20Investigation/">OSINT Email Forensics &amp; Spoofing Analysis</a></h3>
+<h3 id="32-osint-email-forensics-spoofing-analysis">3.2 <a href="Email_Forensic_Investigation/">OSINT Email Forensics &amp; Spoofing Analysis</a><a class="headerlink" href="#32-osint-email-forensics-spoofing-analysis" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Step-by-step forensic methodology for investigating emails: uncovering spoofed senders, analyzing headers, and verifying SPF/DKIM/DMARC.  </p>
 <p><strong>Key Sections:</strong><br />
@@ -1028,7 +900,7 @@ Step-by-step forensic methodology for investigating emails: uncovering spoofed s
 - Sender authentication checks<br />
 - Content and attachment forensics  </p>
 <hr />
-<h3 id="33-advanced-wireless-osint-wi-fi-bluetooth-investigations">3.3 <a href="advanced_wireless_osint/">Advanced Wireless OSINT: Wi-Fi &amp; Bluetooth Investigations</a></h3>
+<h3 id="33-advanced-wireless-osint-wi-fi-bluetooth-investigations">3.3 <a href="advanced_wireless_osint/">Advanced Wireless OSINT: Wi-Fi &amp; Bluetooth Investigations</a><a class="headerlink" href="#33-advanced-wireless-osint-wi-fi-bluetooth-investigations" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
 Comprehensive workflow for leveraging wireless signals (Wi-Fi, Bluetooth) in OSINT. Captures probe requests, builds behavioral profiles, and uses WiGLE.net for geolocation.  </p>
 <p><strong>Quick Navigation:</strong><br />
@@ -1039,16 +911,17 @@ Comprehensive workflow for leveraging wireless signals (Wi-Fi, Bluetooth) in OSI
 - <a href="advanced_wireless_osint/#-defenses-limitations-and-advanced-techniques">Defenses &amp; Limitations</a><br />
 - <a href="advanced_wireless_osint/#-troubleshooting">Troubleshooting &amp; Compatibility</a>  </p>
 <hr />
-<h3 id="34-secure-email-leak-monitoring-guide">3.4 <a href="secure_email_leak_guide/">Secure Email &amp; Leak Monitoring Guide</a></h3>
+<h3 id="34-burner-accounts">3.4 <a href="Burner_Accounts/">Burner Accounts</a><a class="headerlink" href="#34-burner-accounts" title="Permanent link">&para;</a></h3>
 <p><strong>Description:</strong><br />
-Tutorial on creating secure, anonymous email accounts and monitoring leak-sharing forums. Focused on OpSec, anonymity, and investigative resilience.  </p>
-<p><strong>Key Sections:</strong><br />
-- Privacy-focused email providers<br />
-- Secure signup practices (VPN, Tor, Tails)<br />
-- Forums and content-sharing platforms<br />
-- Long-term OpSec best practices  </p>
+A comprehensive chapter on creating and operating burner identities, including temporary communication tools, sock puppets, secure email practices, and monitoring leak-sharing ecosystems.  </p>
+<p><strong>Key Sections (with side navigation enabled):</strong><br />
+- Part I: Temporary communication tools (emails, VoIP/SMS, international options)<br />
+- Part II: Sock puppet accounts and compartmented identities<br />
+- Part III: Secure email creation and OpSec best practices<br />
+- Part IV: Leak monitoring and content-sharing ecosystems<br />
+- Part V: End-to-end burner account workflow and lifecycle management  </p>
 <hr />
-<h1 id="final-notes">✅ Final Notes</h1>
+<h1 id="final-notes">✅ Final Notes<a class="headerlink" href="#final-notes" title="Permanent link">&para;</a></h1>
 <p>This handbook is divided into three layers:  </p>
 <ol>
 <li><strong>Environment Setup</strong> – build and secure your investigative workstation  </li>
@@ -1075,6 +948,12 @@ Tutorial on creating secure, anonymous email accounts and monitoring leak-sharin
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1104,7 +983,7 @@ Tutorial on creating secure, anonymous email accounts and monitoring leak-sharin
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>

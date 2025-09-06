@@ -145,6 +145,56 @@ A comprehensive chapter on creating and operating burner identities, including t
 
 ---
 
+### 3.5 [Finding Leaked Databases, Emails, and Passwords](white_hack.md)  
+**Description:** A guide for white-hat hackers and OSINT professionals on how to ethically find and use leaked credentials from data breaches to verify security posture and enhance cybersecurity.  
+
+**Key Sections:** - Key websites to check for leaked credentials  
+- Additional OSINT tools and techniques  
+- Important best practices for ethical use  
+- List of best GitHub repos for OSINT tools  
+
+---
+
+## ⚔️ 4. Specialized Hacking and Auditing
+
+### 4.1 [Bluetooth Security Protocols and Vulnerabilities](Bluetooth Security Protocols .md)
+**Description:**
+A comprehensive guide to Bluetooth Classic and Low Energy (BLE) security, detailing the protocol stack, authentication methods, common vulnerabilities, and practical OSINT use cases.
+
+**Key Sections:**
+- Bluetooth security foundations and architecture
+- Classic and BLE security features and pairing methods
+- Common vulnerabilities (e.g., pairing, cryptographic, privacy)
+- Attack vectors (Bluejacking, Bluesnarfing, BlueBorne, KNOB, BIAS)
+- Practical OSINT use cases for device discovery and tracking
+
+---
+
+### 4.2 [Physical and Hardware-Based Bluetooth Attacks](Chapter 2_ Physical and Hardware-Based Bluetooth Attacks.md)
+**Description:**
+An in-depth guide to hardware-based Bluetooth attacks, including passive sniffing, jamming, and RF signal analysis using tools like HackRF One and Ubertooth One.
+
+**Key Sections:**
+- Introduction to hardware platforms
+- RF signal analysis with Software-Defined Radios (SDR)
+- Hardware sniffing with Ubertooth
+- Advanced RF fingerprinting techniques
+
+---
+
+### 4.3 [Comprehensive Bluetooth Security Testing and Hacking Guide](bluetooth_security_testing_guide.md)
+**Description:**
+A practical, scenario-based guide for Bluetooth security testing, covering reconnaissance, attack vectors, hacking tools, and advanced post-exploitation techniques like data exfiltration and privilege escalation.
+
+**Key Sections:**
+- Linux Bluetooth commands and reconnaissance techniques
+- Advanced attack vectors (e.g., Bluesnarfing, BlueSmacking)
+- Essential hacking tools and frameworks
+- Practical walkthroughs for auditing devices like smart speakers and fitness trackers
+- Post-exploitation methods for data exfiltration and persistence
+
+---
+
 # ✅ Final Notes  
 
 This handbook is divided into three layers:  

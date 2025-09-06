@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../kali-osint-virtualbox-setup/">
+        <link rel="prev" href="../Free_OSINT_Tools_List/">
       
       
-        <link rel="next" href="../OSINT_Environment_Kali_vs_Tails/">
+        <link rel="next" href="../website_monitoring/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Resize Your VM - Practical OSINT Handbook</title>
+        <title>Unique Search Operators in Bing & Yandex - Practical OSINT Handbook</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#part-1-resize-the-virtual-disk-using-vboxmanage" class="md-skip">
+        <a href="#bing-operators-not-available-on-google" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resize Your VM
+              Unique Search Operators in Bing & Yandex
             
           </span>
         </div>
@@ -217,8 +217,6 @@
       
   
   
-    
-  
   
   
     
@@ -231,11 +229,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -251,7 +249,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             1. Environment Setup
@@ -285,30 +283,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Resize Your VM
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
         
   
   
@@ -319,153 +297,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-resize-the-virtual-disk-using-vboxmanage" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 PART 1: Resize the Virtual Disk Using VBoxManage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧱 PART 1: Resize the Virtual Disk Using VBoxManage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-shut-down-the-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 1: Shut Down the VM
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-open-command-prompt-as-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 2: Open Command Prompt as Administrator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-navigate-to-the-virtualbox-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 3: Navigate to the VirtualBox Directory
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-resize-the-vdi-virtual-disk-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 4: Resize the .vdi Virtual Disk File
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-resize-the-linux-partition-inside-kali" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 PART 2: Resize the Linux Partition Inside Kali
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧱 PART 2: Resize the Linux Partition Inside Kali">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-5-start-your-kali-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 5: Start Your Kali VM
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-install-gparted-partition-editor" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 6: Install GParted (Partition Editor)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-launch-gparted" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 7: Launch GParted
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-resize-the-main-partition" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 8: Resize the Main Partition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-9-confirm-the-new-disk-size" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 9: Confirm the New Disk Size
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Additional Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -505,8 +336,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -517,11 +350,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -537,7 +370,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             2. Core Tools & Techniques
@@ -617,10 +450,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -631,6 +484,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bing-operators-not-available-on-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bing Operators Not Available on Google
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yandex-operators-not-available-on-google-or-bing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Yandex Operators Not Available on Google or Bing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -801,129 +690,49 @@
 
 
 
-<h1 id="resize-your-kali-linux-virtual-machine-disk">🔧 Resize Your Kali Linux Virtual Machine Disk<a class="headerlink" href="#resize-your-kali-linux-virtual-machine-disk" title="Permanent link">&para;</a></h1>
-<p>This guide will walk you through the process of resizing your Kali Linux VM disk on a Windows host. This is useful if your virtual machine is running out of disk space and you need to expand it without reinstalling.</p>
-<p>You'll learn how to:</p>
-<ol>
-<li>Increase the size of the virtual hard disk using the <code>VBoxManage</code> command.</li>
-<li>Expand the disk partition inside Kali using GParted.</li>
-</ol>
+<h1 id="unique-search-operators-in-bing-and-yandex-not-available-in-google"><strong>Unique Search Operators in Bing and Yandex (Not Available in Google)</strong><a class="headerlink" href="#unique-search-operators-in-bing-and-yandex-not-available-in-google" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="part-1-resize-the-virtual-disk-using-vboxmanage">🧱 PART 1: Resize the Virtual Disk Using <code>VBoxManage</code><a class="headerlink" href="#part-1-resize-the-virtual-disk-using-vboxmanage" title="Permanent link">&para;</a></h2>
-<p>The <code>VBoxManage</code> tool allows you to modify VirtualBox VMs from the command line. We'll use it to resize your <code>.vdi</code> file (virtual disk image).</p>
-<h3 id="step-1-shut-down-the-vm">✅ Step 1: Shut Down the VM<a class="headerlink" href="#step-1-shut-down-the-vm" title="Permanent link">&para;</a></h3>
-<p>Make sure your Kali VM is <strong>completely powered off</strong> — not suspended or in a saved state.</p>
-<hr />
-<h3 id="step-2-open-command-prompt-as-administrator">✅ Step 2: Open Command Prompt as Administrator<a class="headerlink" href="#step-2-open-command-prompt-as-administrator" title="Permanent link">&para;</a></h3>
+<h2 id="bing-operators-not-available-on-google"><strong>🔹 Bing Operators Not Available on Google</strong><a class="headerlink" href="#bing-operators-not-available-on-google" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Press <code>Win + S</code> and type <code>cmd</code></li>
-<li>Right-click <strong>Command Prompt</strong> → choose <strong>Run as administrator</strong></li>
+<li>(Plus Symbol): Forces Bing to include a word that would normally be ignored as a stop word.<br />
+   Example: <code>search +the term</code></li>
 </ul>
+<p>ip: : Searches for sites hosted on a specific IP address.<br />
+ Example: <code>ip:192.168.1.1</code></p>
+<p>feed: or hasfeed: : Finds web pages that contain an RSS feed.<br />
+ Example: <code>site:example.com hasfeed:</code>, <code>feed:news</code></p>
+<p>language: : Restricts results by language directly from the search bar.<br />
+ Example: <code>language:en "search operators"</code></p>
+<p>loc: or location: : Filters results by a specific country or region code.<br />
+ Example: <code>loc:gb "football"</code></p>
+<p>prefer: : Tells Bing to prefer results that contain a certain word (not mandatory).<br />
+ Example: <code>AI prefer:ethics</code></p>
+<p>contains: : Finds pages that contain a specific file type (different from Google’s <code>filetype:</code>).<br />
+ Example: <code>report contains:pdf</code></p>
+<p>url: : Matches a full URL exactly.<br />
+ Example: <code>url:https://www.example.com/page.html</code></p>
+<p><strong>linkfromdomain:</strong> Finds all pages that a given domain <em>links out to</em> (outbound links).<br />
+ Example: <code>linkfromdomain:example.com -site:example.com</code></p>
+<p><strong>linkdomain:</strong> Finds all pages that <em>link to</em> a given domain (inbound backlinks).<br />
+ Example: <code>linkdomain:example.com</code></p>
 <hr />
-<h3 id="step-3-navigate-to-the-virtualbox-directory">✅ Step 3: Navigate to the VirtualBox Directory<a class="headerlink" href="#step-3-navigate-to-the-virtualbox-directory" title="Permanent link">&para;</a></h3>
-<p>If VirtualBox is not already in your system <code>PATH</code>, run this:</p>
-<div class="highlight"><pre><span></span><code>cd &quot;C:\Program Files\Oracle\VirtualBox&quot;
-</code></pre></div>
-<hr />
-<h3 id="step-4-resize-the-vdi-virtual-disk-file">✅ Step 4: Resize the <code>.vdi</code> Virtual Disk File<a class="headerlink" href="#step-4-resize-the-vdi-virtual-disk-file" title="Permanent link">&para;</a></h3>
-<p>Use the following command, <strong>replacing the path</strong> and size with your own values:</p>
-<div class="highlight"><pre><span></span><code>VBoxManage modifyhd &quot;C:\Users\YourName\VirtualBox VMs\Kali\Kali.vdi&quot; --resize 30000
-</code></pre></div>
-<ul>
-<li><code>"..."</code> = Path to your <code>.vdi</code> file</li>
-<li><code>30000</code> = New size in MB (e.g., 30 GB)</li>
-</ul>
-<blockquote>
-<p>💡 <strong>How to find the <code>.vdi</code> path:</strong>
-- Open VirtualBox
-- Right-click your Kali VM → <strong>Settings</strong> → <strong>Storage</strong>
-- Click your disk under "Controller: SATA"
-- Look at the bottom for the full file path</p>
-</blockquote>
-<p>If successful, you'll see the message:</p>
-<div class="highlight"><pre><span></span><code>0%...10%...20%...100%
-Image resized successfully.
-</code></pre></div>
-<hr />
-<h2 id="part-2-resize-the-linux-partition-inside-kali">🧱 PART 2: Resize the Linux Partition Inside Kali<a class="headerlink" href="#part-2-resize-the-linux-partition-inside-kali" title="Permanent link">&para;</a></h2>
-<p>After expanding the virtual disk, you must resize the Linux partition inside the OS to actually use the new space.</p>
-<hr />
-<h3 id="step-5-start-your-kali-vm">✅ Step 5: Start Your Kali VM<a class="headerlink" href="#step-5-start-your-kali-vm" title="Permanent link">&para;</a></h3>
-<p>Boot into Kali as usual.</p>
-<hr />
-<h3 id="step-6-install-gparted-partition-editor">✅ Step 6: Install GParted (Partition Editor)<a class="headerlink" href="#step-6-install-gparted-partition-editor" title="Permanent link">&para;</a></h3>
-<p>Open a terminal and run:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gparted
-</code></pre></div>
-<hr />
-<h3 id="step-7-launch-gparted">✅ Step 7: Launch GParted<a class="headerlink" href="#step-7-launch-gparted" title="Permanent link">&para;</a></h3>
-<p>In the terminal, type:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gparted
-</code></pre></div>
-<p>This opens the graphical partition editor.</p>
-<hr />
-<h3 id="step-8-resize-the-main-partition">✅ Step 8: Resize the Main Partition<a class="headerlink" href="#step-8-resize-the-main-partition" title="Permanent link">&para;</a></h3>
-<ol>
-<li>In GParted, locate your main partition (usually <code>/dev/sda1</code>)</li>
-<li>Right-click the partition → select <strong>Resize/Move</strong></li>
-<li>Drag the slider to <strong>use all unallocated space</strong></li>
-<li>Click <strong>Resize</strong></li>
-<li>Then click the <strong>green checkmark (✓)</strong> to apply changes</li>
-<li>Wait for the operation to finish</li>
-<li>Close GParted and <strong>reboot</strong> the VM</li>
-</ol>
-<hr />
-<h3 id="step-9-confirm-the-new-disk-size">✅ Step 9: Confirm the New Disk Size<a class="headerlink" href="#step-9-confirm-the-new-disk-size" title="Permanent link">&para;</a></h3>
-<p>After reboot, open a terminal and run:</p>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
-</code></pre></div>
-<p>You should now see increased space under <code>/dev/sda1</code> — for example:</p>
-<div class="highlight"><pre><span></span><code>Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1        30G   5G   25G  17% /
-</code></pre></div>
-<hr />
-<h2 id="additional-tips">🧠 Additional Tips<a class="headerlink" href="#additional-tips" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Always <strong>back up your VM</strong> before resizing to avoid accidental data loss.</li>
-<li>If you're using <strong>Snapshots</strong>, delete or merge them before resizing, as <code>VBoxManage modifyhd</code> won’t work on a snapshot chain.</li>
-<li>If you prefer a GUI alternative, you can clone the VDI and specify a larger size during the clone process.</li>
-</ul>
-<hr />
-<h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Tool Used</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Resize virtual disk</td>
-<td>VBoxManage</td>
-<td>Command line on Windows</td>
-</tr>
-<tr>
-<td>Install partitioning tool</td>
-<td>GParted</td>
-<td>Installed via <code>apt</code> inside Kali</td>
-</tr>
-<tr>
-<td>Resize Linux file system partition</td>
-<td>GParted GUI</td>
-<td>Drag slider to expand space</td>
-</tr>
-<tr>
-<td>Confirm new space</td>
-<td><code>df -h</code> command</td>
-<td>Should show increased size on <code>/dev/sda1</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>With this guide, you can now confidently expand your Kali Linux VM's disk size — a crucial skill when working with large datasets in OSINT investigations.</p>
+<h2 id="yandex-operators-not-available-on-google-or-bing"><strong>🔹 Yandex Operators Not Available on Google or Bing</strong><a class="headerlink" href="#yandex-operators-not-available-on-google-or-bing" title="Permanent link">&para;</a></h2>
+<p>** (Double Asterisk): Wildcard for two consecutive words.<br />
+ Example: <code>best ** game</code></p>
+<p>/number (Proximity Search): Ensures words are within a certain distance.<br />
+ Example: <code>"computer" /5 "network"</code></p>
+<p>cat: : Restricts results to a category in the Yandex Catalog.<br />
+ Example: <code>cat:travel "hotels in London"</code></p>
+<p>url: : Searches for a specific full URL.<br />
+ Example: <code>url:https://www.example.com/page.html</code></p>
+<p>rhost: : Searches pages hosted on an exact registered host (ignores subdomains).<br />
+ Example: <code>rhost:example.com "login"</code></p>
+<p>mime: : Searches by MIME type.<br />
+ Example: <code>report mime:application/pdf</code></p>
+<p>date: : Filters by publication date directly in query.<br />
+ Example: <code>"cyber attack" date:2025</code></p>
+<p>storage: : Restricts results to certain storage/hosting services.<br />
+ Example: <code>"project files" storage:disk</code></p>
 
 
 

@@ -6,13 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
       
       
       
-        <link rel="prev" href="../Email%20Forensic%20Investigation/">
+      
+        <link rel="prev" href="../Email_Forensic_Investigation/">
       
       
-        <link rel="next" href="../secure_email_leak_guide/">
+        <link rel="next" href="../Burner_Accounts/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Advanced Wireless OSINT - OSINT Toolkit</title>
+        <title>Advanced Wireless OSINT - Practical OSINT Handbook</title>
       
     
     
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-wireless-osint-workflow-a-comprehensive-guide" class="md-skip">
+        <a href="#foundational-concepts-and-theoretical-background" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OSINT Toolkit
+            Practical OSINT Handbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -174,15 +176,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    OSINT Toolkit
+    Practical OSINT Handbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -219,20 +223,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Environment Setup
+    1. Environment Setup
     
   </span>
   
@@ -243,7 +252,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Environment Setup
+            1. Environment Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -259,7 +268,7 @@
   
   
   <span class="md-ellipsis">
-    Kali Setup
+    Kali VirtualBox Setup
     
   </span>
   
@@ -282,7 +291,7 @@
   
   
   <span class="md-ellipsis">
-    Resize Kali VM
+    Resize Your VM
     
   </span>
   
@@ -305,30 +314,7 @@
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../firefox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
+    Tails vs. Kali
     
   </span>
   
@@ -356,20 +342,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Core Tools & Techniques
+    2. Core Tools & Techniques
     
   </span>
   
@@ -380,7 +371,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Core Tools & Techniques
+            2. Core Tools & Techniques
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -396,7 +387,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -419,7 +410,7 @@
   
   
   <span class="md-ellipsis">
-    theHarvester Guide
+    theHarvester OSINT Guide
     
   </span>
   
@@ -453,6 +444,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -472,20 +486,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Real-World Use Cases
+    3. Real-World OSINT Use Cases
     
   </span>
   
@@ -496,7 +515,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Real-World Use Cases
+            3. Real-World OSINT Use Cases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -512,7 +531,7 @@
   
   
   <span class="md-ellipsis">
-    Website Monitoring
+    OSINT Website Monitoring & Security Checks
     
   </span>
   
@@ -530,12 +549,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Email%20Forensic%20Investigation/" class="md-nav__link">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Email Forensic Investigation
+    OSINT Email Forensics & Spoofing Analysis
     
   </span>
   
@@ -558,8 +577,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -593,8 +610,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -978,12 +993,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure_email_leak_guide/" class="md-nav__link">
+      <a href="../Burner_Accounts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
+    Burner Accounts
     
   </span>
   
@@ -1008,392 +1023,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#foundational-concepts-and-theoretical-background" class="md-nav__link">
-    <span class="md-ellipsis">
-      📡 Foundational Concepts and Theoretical Background
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📡 Foundational Concepts and Theoretical Background">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-wi-fi-and-bluetooth-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔊 How Wi-Fi and Bluetooth Work
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-power-of-probe-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      📶 The Power of Probe Requests
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mac-address-randomization" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ MAC Address Randomization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-of-the-trade" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Tools of the Trade
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deeper-tool-specific-technical-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Deeper Tool-Specific Technical Details
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ Deeper Tool-Specific Technical Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-marauder" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ESP32 Marauder
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 ESP32 Marauder">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modes-of-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modes of Operation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#firmware-flashing-tutorial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Firmware Flashing Tutorial
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-via-web-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration via Web UI
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kismet" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Kismet
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 Kismet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setup &amp; Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-command-line-flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Command-Line Flags
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#querying-the-kismet-database" class="md-nav__link">
-    <span class="md-ellipsis">
-      Querying the Kismet Database
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wiglenet" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 WiGLE.net
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔹 WiGLE.net">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#search-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Search Types
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interpreting-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interpreting Results
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-osint-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Step-by-Step OSINT Workflow
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔁 Step-by-Step OSINT Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-on-site-reconnaissance-with-the-esp32-marauder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: On-Site Reconnaissance with the ESP32 Marauder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-continuous-logging-with-kismet-on-raspberry-pi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Continuous Logging with Kismet on Raspberry Pi
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-pattern-analysis-with-the-chasing-your-tail-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Pattern Analysis with the "Chasing Your Tail" Script
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-historical-context-and-corroboration-with-wiglenet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Historical Context and Corroboration with WiGLE.net
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-techniques-and-real-world-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Advanced Techniques and Real-World Scenarios
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔬 Advanced Techniques and Real-World Scenarios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ssid-based-geolocation-walkthrough-case-study" class="md-nav__link">
-    <span class="md-ellipsis">
-      📍 SSID-Based Geolocation Walkthrough (Case Study)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behavioral-profiling-and-motion-signatures" class="md-nav__link">
-    <span class="md-ellipsis">
-      👣 Behavioral Profiling and Motion Signatures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-vs-access-point-tracking" class="md-nav__link">
-    <span class="md-ellipsis">
-      📡 Client vs. Access Point Tracking
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#defenses-limitations-and-advanced-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Defenses, Limitations, and Advanced Techniques
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛡️ Defenses, Limitations, and Advanced Techniques">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#advanced-device-fingerprinting-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Device Fingerprinting Techniques
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-the-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Summary of the Workflow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Troubleshooting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#common-issues-and-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Common Issues and Fixes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hardware-and-software-compatibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      🖥️ Hardware and Software Compatibility
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#placement-in-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      📍 Placement in Document
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1403,12 +1032,12 @@
 
 
 
-<h1 id="advanced-wireless-osint-workflow-a-comprehensive-guide"><strong>🛰️ Advanced Wireless OSINT Workflow: A Comprehensive Guide</strong></h1>
+<h1 id="advanced-wireless-osint-workflow-a-comprehensive-guide"><strong>🛰️ Advanced Wireless OSINT Workflow: A Comprehensive Guide</strong><a class="headerlink" href="#advanced-wireless-osint-workflow-a-comprehensive-guide" title="Permanent link">&para;</a></h1>
 <p>This guide details a powerful, multi-tool workflow for conducting Open-Source Intelligence (OSINT) investigations using wireless signals. By combining a portable data capture device with advanced logging and analysis software, we can move beyond simple location data to build detailed behavioral profiles.</p>
 <p>```markdown</p>
-<h2 id="foundational-concepts-and-theoretical-background">📡 Foundational Concepts and Theoretical Background</h2>
+<h2 id="foundational-concepts-and-theoretical-background">📡 Foundational Concepts and Theoretical Background<a class="headerlink" href="#foundational-concepts-and-theoretical-background" title="Permanent link">&para;</a></h2>
 <p>Before applying the workflow and tools, it is essential to understand the underlying technologies and protocols that make wireless OSINT feasible. These concepts explain <strong>why</strong> the workflow works and highlight both its strengths and limitations.</p>
-<h3 id="how-wi-fi-and-bluetooth-work">🔊 How Wi-Fi and Bluetooth Work</h3>
+<h3 id="how-wi-fi-and-bluetooth-work">🔊 How Wi-Fi and Bluetooth Work<a class="headerlink" href="#how-wi-fi-and-bluetooth-work" title="Permanent link">&para;</a></h3>
 <p>Both Wi-Fi and Bluetooth operate using <strong>radio frequency (RF) communication</strong>, where devices encode and transmit data through radio waves. In Wi-Fi:</p>
 <ul>
 <li><strong>SSID (Service Set Identifier):</strong> A human-readable name of a wireless network (e.g., <code>HomeNetwork</code>, <code>Airport_Free_WiFi</code>). It is what users see when selecting a network.</li>
@@ -1417,7 +1046,7 @@
 <p>This distinction is crucial: while SSIDs indicate <em>what</em> a network is called, BSSIDs identify <em>where</em> and <em>which device</em> is broadcasting it.</p>
 <p>Bluetooth works similarly, using <strong>device identifiers</strong> (BD_ADDR) to manage connections. While less network-centric than Wi-Fi, Bluetooth advertising packets still reveal unique identifiers and device capabilities, which can be logged and analyzed in OSINT investigations.</p>
 <hr />
-<h3 id="the-power-of-probe-requests">📶 The Power of Probe Requests</h3>
+<h3 id="the-power-of-probe-requests">📶 The Power of Probe Requests<a class="headerlink" href="#the-power-of-probe-requests" title="Permanent link">&para;</a></h3>
 <p>When a Wi-Fi-enabled device (e.g., smartphone, laptop) is not connected to a network, it often sends out <strong>probe requests</strong>. These are broadcast frames asking: <em>“Is my known network here?”</em></p>
 <ul>
 <li>A probe request may contain the SSIDs of networks the device has previously connected to.</li>
@@ -1426,7 +1055,7 @@
 </ul>
 <p>This makes probe requests a <strong>goldmine for tracking</strong>. Even without connecting to any network, devices inadvertently leak valuable historical and behavioral data.</p>
 <hr />
-<h3 id="mac-address-randomization">🛡️ MAC Address Randomization</h3>
+<h3 id="mac-address-randomization">🛡️ MAC Address Randomization<a class="headerlink" href="#mac-address-randomization" title="Permanent link">&para;</a></h3>
 <p>Historically, probe requests revealed a device’s true MAC address, making long-term tracking trivial. To mitigate this, modern operating systems (iOS, Android, Windows, Linux) introduced <strong>MAC address randomization</strong>, which alters the device’s source MAC in probe requests.</p>
 <ul>
 <li><strong>Goal:</strong> Prevent persistent identification by changing the MAC each time (or at least periodically).</li>
@@ -1440,27 +1069,27 @@
 </ol>
 <p>Thus, while MAC randomization raises the bar, persistent identifiers and behavioral fingerprints remain exploitable.</p>
 <hr />
-<h2 id="tools-of-the-trade"><strong>🔧 Tools of the Trade</strong></h2>
+<h2 id="tools-of-the-trade"><strong>🔧 Tools of the Trade</strong><a class="headerlink" href="#tools-of-the-trade" title="Permanent link">&para;</a></h2>
 <p>This workflow is built on a synergistic combination of hardware and software.</p>
 <ul>
 <li><strong>ESP32 Marauder:</strong> A small, portable Wi-Fi and Bluetooth reconnaissance device. Its primary function in this workflow is to passively sniff and capture probe requests from nearby devices, logging their MAC addresses and SSID history.  </li>
 <li><strong>Raspberry Pi:</strong> A versatile, low-cost microcomputer. It serves as a dedicated, mobile platform for running the data logging and analysis software.  </li>
 <li><strong>Kismet:</strong> A powerful wireless network detector, packet sniffer, and intrusion detection system. It is the central hub for logging all captured wireless data into a structured database, which can be enriched with GPS coordinates if a module is connected.  </li>
-<li><strong>"Chasing Your Tail" Script:</strong> A Python-based analysis tool designed to work with the Kismet database. It specializes in detecting the persistent presence of a device over time, a key indicator of surveillance or a targeted individual's routine. The GitHub repository for the script is <strong>https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG</strong>.  </li>
+<li><strong>"Chasing Your Tail" Script:</strong> A Python-based analysis tool designed to work with the Kismet database. It specializes in detecting the persistent presence of a device over time, a key indicator of surveillance or a targeted individual's routine. The GitHub repository for the script is <strong><a href="https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG">https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG</a></strong>.  </li>
 <li><strong>WiGLE.net:</strong> A massive, crowdsourced database of wireless networks and their geographical locations. It is an invaluable resource for cross-referencing captured SSIDs with real-world locations.</li>
 </ul>
-<h2 id="deeper-tool-specific-technical-details">🛠️ Deeper Tool-Specific Technical Details</h2>
+<h2 id="deeper-tool-specific-technical-details">🛠️ Deeper Tool-Specific Technical Details<a class="headerlink" href="#deeper-tool-specific-technical-details" title="Permanent link">&para;</a></h2>
 <p>While the workflow introduces the tools conceptually, a practical OSINT investigation requires deeper technical mastery. This chapter provides a detailed breakdown of the most critical tools, their configuration, and hands-on usage strategies.</p>
 <hr />
-<h3 id="esp32-marauder">🔹 ESP32 Marauder</h3>
+<h3 id="esp32-marauder">🔹 ESP32 Marauder<a class="headerlink" href="#esp32-marauder" title="Permanent link">&para;</a></h3>
 <p>The <strong>ESP32 Marauder</strong> is a portable reconnaissance platform built on the ESP32 chipset. Its strength lies in its versatility and low-power portability.</p>
-<h4 id="modes-of-operation">Modes of Operation</h4>
+<h4 id="modes-of-operation">Modes of Operation<a class="headerlink" href="#modes-of-operation" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Probe Request Sniffer:</strong> Captures probe requests from nearby devices. This is the most relevant mode for OSINT, as it reveals SSID histories and device presence without transmitting.</li>
 <li><strong>Beacon Sniffer:</strong> Listens for beacon frames from access points. Useful for mapping local APs and correlating them with WiGLE data.</li>
 <li><strong>Deauthentication Attack:</strong> Forces clients to disconnect from APs by sending deauth frames. While technically supported, this is not typically relevant for ethical OSINT and crosses into offensive operations.</li>
 </ul>
-<h4 id="firmware-flashing-tutorial">Firmware Flashing Tutorial</h4>
+<h4 id="firmware-flashing-tutorial">Firmware Flashing Tutorial<a class="headerlink" href="#firmware-flashing-tutorial" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Install Prerequisites:</strong> Download and install <a href="https://github.com/espressif/esptool">esptool.py</a>.</li>
 <li><strong>Connect Device:</strong> Plug the ESP32 board into USB.</li>
@@ -1469,7 +1098,7 @@
    esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 firmware.bin</li>
 <li><strong>Access Interface:</strong> After boot, connect to the ESP32’s Wi-Fi AP (default SSID: <code>Marauder_AP</code>, password: <code>marauder</code>) and navigate to <code>192.168.4.1</code> in a browser.</li>
 </ol>
-<h4 id="configuration-via-web-ui"><strong>Configuration via Web UI</strong></h4>
+<h4 id="configuration-via-web-ui"><strong>Configuration via Web UI</strong><a class="headerlink" href="#configuration-via-web-ui" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Mode Selection:</strong> Choose “Sniffer” mode for passive OSINT.</p>
@@ -1482,9 +1111,9 @@
 </li>
 </ul>
 <hr />
-<h3 id="kismet"><strong>🔹 Kismet</strong></h3>
+<h3 id="kismet"><strong>🔹 Kismet</strong><a class="headerlink" href="#kismet" title="Permanent link">&para;</a></h3>
 <p>Kismet is the <strong>central data aggregation hub</strong> for wireless OSINT, providing structured databases and extensible analysis.</p>
-<h4 id="setup-configuration"><strong>Setup &amp; Configuration</strong></h4>
+<h4 id="setup-configuration"><strong>Setup &amp; Configuration</strong><a class="headerlink" href="#setup-configuration" title="Permanent link">&para;</a></h4>
 <p><strong>Enable Monitor Mode:</strong></p>
 <p><code>ip link set wlan1 down</code><br />
 <code>iw dev wlan1 set type monitor</code><br />
@@ -1497,7 +1126,7 @@
 <ol>
 <li>The <code>-c</code> flag specifies the capture interface.</li>
 </ol>
-<h4 id="common-command-line-flags"><strong>Common Command-Line Flags</strong></h4>
+<h4 id="common-command-line-flags"><strong>Common Command-Line Flags</strong><a class="headerlink" href="#common-command-line-flags" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><code>--no-ncurses</code>: Run headless without UI.</p>
@@ -1509,7 +1138,7 @@
 <p><code>--gps /dev/ttyUSB0</code>: Enable GPS logging if a module is attached.</p>
 </li>
 </ul>
-<h4 id="querying-the-kismet-database"><strong>Querying the Kismet Database</strong></h4>
+<h4 id="querying-the-kismet-database"><strong>Querying the Kismet Database</strong><a class="headerlink" href="#querying-the-kismet-database" title="Permanent link">&para;</a></h4>
 <p>Kismet stores captured data in <strong>SQLite format</strong> (<code>kismet.db</code>).</p>
 <p>Example queries using <code>sqlite3</code>:</p>
 <p>List all probed SSIDs:</p>
@@ -1529,9 +1158,9 @@
 </ul>
 <p>This transforms raw packet captures into actionable intelligence.</p>
 <hr />
-<h3 id="wiglenet"><strong>🔹 WiGLE.net</strong></h3>
+<h3 id="wiglenet"><strong>🔹 WiGLE.net</strong><a class="headerlink" href="#wiglenet" title="Permanent link">&para;</a></h3>
 <p>WiGLE is a <strong>global crowdsourced database</strong> of Wi-Fi networks, essential for contextualizing captured SSIDs.</p>
-<h4 id="search-types"><strong>Search Types</strong></h4>
+<h4 id="search-types"><strong>Search Types</strong><a class="headerlink" href="#search-types" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>SSID Search:</strong> Finds networks by their broadcast name. Good for matching common hotspots.</p>
@@ -1543,7 +1172,7 @@
 <p><strong>Map-Based Search:</strong> Allows geospatial exploration of networks. Useful when narrowing down probable locations of a target device’s known SSIDs.</p>
 </li>
 </ul>
-<h4 id="interpreting-results"><strong>Interpreting Results</strong></h4>
+<h4 id="interpreting-results"><strong>Interpreting Results</strong><a class="headerlink" href="#interpreting-results" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Number of Sightings:</strong> Indicates how many times the network has been reported to WiGLE. A higher count suggests it is a permanent or widely-used AP.</p>
@@ -1555,26 +1184,26 @@
 <p><strong>Coordinates:</strong> Provides latitude/longitude of sightings. These can be imported into mapping tools for travel pattern analysis.</p>
 </li>
 </ul>
-<h4 id="example-workflow"><strong>Example Workflow</strong></h4>
+<h4 id="example-workflow"><strong>Example Workflow</strong><a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Capture <code>CafeRoma_WiFi</code> in a probe request.</li>
 <li>Search on WiGLE by SSID → Results show multiple locations across the city.</li>
 <li>Refine with BSSID (if known) → Isolate the specific coffee shop branch frequented by the device owner.</li>
 </ol>
-<h2 id="step-by-step-osint-workflow"><strong>🔁 Step-by-Step OSINT Workflow</strong></h2>
+<h2 id="step-by-step-osint-workflow"><strong>🔁 Step-by-Step OSINT Workflow</strong><a class="headerlink" href="#step-by-step-osint-workflow" title="Permanent link">&para;</a></h2>
 <p>This process is a methodical progression from data capture to final analysis.</p>
-<h3 id="step-1-on-site-reconnaissance-with-the-esp32-marauder"><strong>Step 1: On-Site Reconnaissance with the ESP32 Marauder</strong></h3>
+<h3 id="step-1-on-site-reconnaissance-with-the-esp32-marauder"><strong>Step 1: On-Site Reconnaissance with the ESP32 Marauder</strong><a class="headerlink" href="#step-1-on-site-reconnaissance-with-the-esp32-marauder" title="Permanent link">&para;</a></h3>
 <p>The ESP32 Marauder is your primary field tool. Its small size and battery-powered operation make it ideal for discreet, on-the-go data collection. Simply power on the device and set it to Sniffer or Probe Request Monitor mode to begin.</p>
 <ul>
 <li><strong>Captured Data:</strong> The Marauder captures two critical pieces of information: the <strong>MAC address</strong> of the device sending the probe request and the <strong>SSID history</strong>—a list of network names the device is searching for. This history is essentially a digital breadcrumb trail of where the device has been.</li>
 </ul>
-<h3 id="step-2-continuous-logging-with-kismet-on-raspberry-pi"><strong>Step 2: Continuous Logging with Kismet on Raspberry Pi</strong></h3>
+<h3 id="step-2-continuous-logging-with-kismet-on-raspberry-pi"><strong>Step 2: Continuous Logging with Kismet on Raspberry Pi</strong><a class="headerlink" href="#step-2-continuous-logging-with-kismet-on-raspberry-pi" title="Permanent link">&para;</a></h3>
 <p>For a professional investigation, you need more than a simple list; you need a structured database.</p>
 <ul>
 <li><strong>Hardware Setup:</strong> Connect a Wi-Fi adapter that supports <strong>monitor mode</strong> to your Raspberry Pi. This is a crucial requirement, as it allows the device to passively listen to all network traffic without having to connect to a network.  </li>
 <li><strong>Data Aggregation:</strong> The data captured by the ESP32 Marauder can be streamed to a Kismet instance running on the Raspberry Pi. This creates a centralized, continuously updating database of all detected devices and networks, timestamped and, with a GPS module, geotagged.</li>
 </ul>
-<h3 id="step-3-pattern-analysis-with-the-chasing-your-tail-script"><strong>Step 3: Pattern Analysis with the "Chasing Your Tail" Script</strong></h3>
+<h3 id="step-3-pattern-analysis-with-the-chasing-your-tail-script"><strong>Step 3: Pattern Analysis with the "Chasing Your Tail" Script</strong><a class="headerlink" href="#step-3-pattern-analysis-with-the-chasing-your-tail-script" title="Permanent link">&para;</a></h3>
 <p>This is where the magic happens. The raw data is transformed into actionable intelligence. The "Chasing Your Tail" script analyzes the Kismet database to find patterns that human observation might miss.</p>
 <ul>
 <li><strong>Behavioral Profiling:</strong> The script looks for devices that repeatedly appear in the same location or in close proximity to the investigator's device over specific time intervals. By analyzing the frequency and timing of probe requests, it can identify a device's routine.  </li>
@@ -1587,16 +1216,16 @@
   "probe_ssids": ["HomeNetwork24", "CafeRoma_WiFi", "Airport_Free_WiFi"],<br />
   "locations_detected": ["Downtown Hub", "Transit Center"]<br />
 }</p>
-<h3 id="step-4-historical-context-and-corroboration-with-wiglenet"><strong>Step 4: Historical Context and Corroboration with WiGLE.net</strong></h3>
+<h3 id="step-4-historical-context-and-corroboration-with-wiglenet"><strong>Step 4: Historical Context and Corroboration with WiGLE.net</strong><a class="headerlink" href="#step-4-historical-context-and-corroboration-with-wiglenet" title="Permanent link">&para;</a></h3>
 <p>The final step is to validate the collected data with a historical record. The SSID list from the captured probe requests can be used as a primary pivot for searches.</p>
 <ul>
 <li><strong>Search and Correlate:</strong> Search for each captured SSID on WiGLE.net. The database will provide GPS coordinates, last seen dates, and the number of sightings for that network.  </li>
 <li><strong>Inference:</strong> By cross-referencing your live data with WiGLE's historical data, you can build a comprehensive location profile, inferring a person's probable home address, workplace, and travel habits.</li>
 </ul>
-<h2 id="advanced-techniques-and-real-world-scenarios">🔬 Advanced Techniques and Real-World Scenarios</h2>
+<h2 id="advanced-techniques-and-real-world-scenarios">🔬 Advanced Techniques and Real-World Scenarios<a class="headerlink" href="#advanced-techniques-and-real-world-scenarios" title="Permanent link">&para;</a></h2>
 <p>Once the basics of wireless capture and logging are understood, the next step is to transform raw data into <strong>actionable intelligence</strong>. This section expands on advanced analysis strategies, case studies, and the real-world implications of probe request–based investigations.</p>
 <hr />
-<h3 id="ssid-based-geolocation-walkthrough-case-study">📍 SSID-Based Geolocation Walkthrough (Case Study)</h3>
+<h3 id="ssid-based-geolocation-walkthrough-case-study">📍 SSID-Based Geolocation Walkthrough (Case Study)<a class="headerlink" href="#ssid-based-geolocation-walkthrough-case-study" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1 – Capture</strong><br />
 Suppose a probe request capture yields the following SSID list from a single device:</p>
 <p>{
@@ -1618,7 +1247,7 @@ Suppose a probe request capture yields the following SSID list from a single dev
 </ul>
 <p><strong>Inference:</strong> This person likely lives in the identified suburb, commutes into the city, and travels frequently via the named airport.</p>
 <hr />
-<h3 id="behavioral-profiling-and-motion-signatures"><strong>👣 Behavioral Profiling and Motion Signatures</strong></h3>
+<h3 id="behavioral-profiling-and-motion-signatures"><strong>👣 Behavioral Profiling and Motion Signatures</strong><a class="headerlink" href="#behavioral-profiling-and-motion-signatures" title="Permanent link">&para;</a></h3>
 <p>The <strong>“Chasing Your Tail”</strong> script can be extended beyond simple time stamps to create <strong>motion signatures</strong>:</p>
 <ul>
 <li>
@@ -1633,7 +1262,7 @@ Suppose a probe request capture yields the following SSID list from a single dev
 </ul>
 <p>This transforms sporadic probe requests into a <strong>predictive behavioral model</strong>.</p>
 <hr />
-<h3 id="client-vs-access-point-tracking"><strong>📡 Client vs. Access Point Tracking</strong></h3>
+<h3 id="client-vs-access-point-tracking"><strong>📡 Client vs. Access Point Tracking</strong><a class="headerlink" href="#client-vs-access-point-tracking" title="Permanent link">&para;</a></h3>
 <p>It is critical to distinguish between <strong>client devices</strong> (phones, laptops) and <strong>access points</strong> (home routers, hotspots):</p>
 <ul>
 <li>
@@ -1657,13 +1286,13 @@ Suppose a probe request capture yields the following SSID list from a single dev
 </ul>
 <p><strong>Key Point:</strong><br />
  WiGLE’s strength lies in its <strong>AP-based indexing</strong> (SSID + BSSID). Client devices cannot be directly searched in WiGLE; instead, the SSIDs probed by clients must be cross-referenced against the AP database.</p>
-<h2 id="defenses-limitations-and-advanced-techniques"><strong>🛡️ Defenses, Limitations, and Advanced Techniques</strong></h2>
+<h2 id="defenses-limitations-and-advanced-techniques"><strong>🛡️ Defenses, Limitations, and Advanced Techniques</strong><a class="headerlink" href="#defenses-limitations-and-advanced-techniques" title="Permanent link">&para;</a></h2>
 <p>While this workflow is powerful, it is not foolproof. A skilled OSINT practitioner must be aware of its limitations.</p>
 <ul>
 <li><strong>MAC Randomization:</strong> Modern devices randomize their MAC addresses to prevent tracking. The "Chasing Your Tail" script's reliance on SSID patterns and device persistence helps mitigate this limitation.  </li>
 <li><strong>WiGLE.net Constraints:</strong> The WiGLE database does not index client device MAC addresses. Only SSIDs and access point MAC addresses (BSSIDs) are searchable.</li>
 </ul>
-<h3 id="advanced-device-fingerprinting-techniques"><strong>Advanced Device Fingerprinting Techniques</strong></h3>
+<h3 id="advanced-device-fingerprinting-techniques"><strong>Advanced Device Fingerprinting Techniques</strong><a class="headerlink" href="#advanced-device-fingerprinting-techniques" title="Permanent link">&para;</a></h3>
 <p>To overcome the challenges of MAC randomization, an analyst can employ advanced fingerprinting techniques:</p>
 <ul>
 <li><strong>SSID Patterns:</strong> The unique combination of SSIDs a device probes for can be a unique identifier.  </li>
@@ -1672,7 +1301,7 @@ Suppose a probe request capture yields the following SSID list from a single dev
 <li><strong>Signal Strength Profile:</strong> Tracking the Received Signal Strength Indicator (RSSI) of a device over time creates a "motion signature" that can be used to identify it.</li>
 </ul>
 <p>By combining these indicators, it's possible to build a persistent and accurate profile of a device even when its MAC address is randomized.</p>
-<h2 id="summary-of-the-workflow"><strong>✅ Summary of the Workflow</strong></h2>
+<h2 id="summary-of-the-workflow"><strong>✅ Summary of the Workflow</strong><a class="headerlink" href="#summary-of-the-workflow" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1700,10 +1329,10 @@ Suppose a probe request capture yields the following SSID list from a single dev
 </tbody>
 </table>
 <p>This workflow provides a comprehensive, ethical, and powerful approach to wireless OSINT by combining real-time capture, automated logging, and powerful analysis to move from simple data collection to actionable intelligence.</p>
-<h2 id="troubleshooting">🔧 Troubleshooting</h2>
+<h2 id="troubleshooting">🔧 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Even with a well-structured workflow, technical obstacles are common in wireless OSINT. This section provides a set of practical remedies for frequent issues, along with notes on hardware and software compatibility. By consulting this reference, analysts can minimize downtime and ensure smoother field operations.</p>
 <hr />
-<h3 id="common-issues-and-fixes">⚠️ Common Issues and Fixes</h3>
+<h3 id="common-issues-and-fixes">⚠️ Common Issues and Fixes<a class="headerlink" href="#common-issues-and-fixes" title="Permanent link">&para;</a></h3>
 <p><strong>1. Wi-Fi Adapter Will Not Enter Monitor Mode</strong><br />
 - <strong>Cause:</strong> Not all Wi-Fi adapters support monitor mode or packet injection.<br />
 - <strong>Fix:</strong><br />
@@ -1738,7 +1367,7 @@ Suppose a probe request capture yields the following SSID list from a single dev
   - Disable non-essential logging modules.<br />
   - Offload analysis to a laptop after capture.  </p>
 <hr />
-<h3 id="hardware-and-software-compatibility">🖥️ Hardware and Software Compatibility</h3>
+<h3 id="hardware-and-software-compatibility">🖥️ Hardware and Software Compatibility<a class="headerlink" href="#hardware-and-software-compatibility" title="Permanent link">&para;</a></h3>
 <p><strong>Recommended Wi-Fi Adapters (Monitor Mode &amp; Injection Support):</strong><br />
 - Alfa AWUS036NHA (Atheros AR9271 chipset, robust for field work).<br />
 - Alfa AWUS036ACH (Realtek RTL8812AU, requires driver install).<br />
@@ -1751,7 +1380,7 @@ Suppose a probe request capture yields the following SSID list from a single dev
 - <strong>Raspberry Pi OS Lite:</strong> Lightweight, stable base for Kismet.<br />
 - <strong>Ubuntu Server for ARM:</strong> Also compatible, but ensure latest kernel/driver packages are installed.  </p>
 <hr />
-<h2 id="placement-in-document">📍 Placement in Document</h2>
+<h2 id="placement-in-document">📍 Placement in Document<a class="headerlink" href="#placement-in-document" title="Permanent link">&para;</a></h2>
 <p>Insert this <strong>Troubleshooting</strong> section <strong>after</strong> the current <strong>“✅ Summary of the Workflow”</strong>.<br />
 This placement ensures readers finish the methodological workflow, then have immediate access to practical solutions if problems arise during replication.</p>
 
@@ -1773,6 +1402,12 @@ This placement ensures readers finish the methodological workflow, then have imm
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1802,7 +1437,7 @@ This placement ensures readers finish the methodological workflow, then have imm
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

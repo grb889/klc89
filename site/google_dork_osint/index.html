@@ -6,10 +6,12 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
       
       
       
-        <link rel="prev" href="../firefox/">
+      
+        <link rel="prev" href="../OSINT_Environment_Kali_vs_Tails/">
       
       
         <link rel="next" href="../theHarvester_OSINT_Guide/">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Google Dorking - OSINT Toolkit</title>
+        <title>Google Dorking for OSINT - Practical OSINT Handbook</title>
       
     
     
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-dorking-for-osint" class="md-skip">
+        <a href="#what-is-google-dorking" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OSINT Toolkit" class="md-header__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,13 +94,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OSINT Toolkit
+            Practical OSINT Handbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Dorking
+              Google Dorking for OSINT
             
           </span>
         </div>
@@ -174,15 +176,17 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OSINT Toolkit" class="md-nav__button md-logo" aria-label="OSINT Toolkit" data-md-component="logo">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    OSINT Toolkit
+    Practical OSINT Handbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -219,20 +223,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Environment Setup
+    1. Environment Setup
     
   </span>
   
@@ -243,7 +252,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Environment Setup
+            1. Environment Setup
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -259,7 +268,7 @@
   
   
   <span class="md-ellipsis">
-    Kali Setup
+    Kali VirtualBox Setup
     
   </span>
   
@@ -282,7 +291,7 @@
   
   
   <span class="md-ellipsis">
-    Resize Kali VM
+    Resize Your VM
     
   </span>
   
@@ -305,30 +314,7 @@
   
   
   <span class="md-ellipsis">
-    OSINT Environment (Tails vs Kali)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../firefox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Browser
+    Tails vs. Kali
     
   </span>
   
@@ -358,20 +344,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Core Tools & Techniques
+    2. Core Tools & Techniques
     
   </span>
   
@@ -382,7 +373,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Core Tools & Techniques
+            2. Core Tools & Techniques
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -399,15 +390,13 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -420,7 +409,7 @@
   
   
   <span class="md-ellipsis">
-    Google Dorking
+    Google Dorking for OSINT
     
   </span>
   
@@ -432,8 +421,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -609,6 +596,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ai-powered-and-automated-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI-Powered and Automated Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sheet-list-from-the-web" class="md-nav__link">
     <span class="md-ellipsis">
       Sheet List from the web :
@@ -643,7 +639,7 @@
   
   
   <span class="md-ellipsis">
-    theHarvester Guide
+    theHarvester OSINT Guide
     
   </span>
   
@@ -677,6 +673,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -694,20 +713,25 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Real-World Use Cases
+    3. Real-World OSINT Use Cases
     
   </span>
   
@@ -718,7 +742,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Real-World Use Cases
+            3. Real-World OSINT Use Cases
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -734,7 +758,7 @@
   
   
   <span class="md-ellipsis">
-    Website Monitoring
+    OSINT Website Monitoring & Security Checks
     
   </span>
   
@@ -752,12 +776,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Email%20Forensic%20Investigation/" class="md-nav__link">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Email Forensic Investigation
+    OSINT Email Forensics & Spoofing Analysis
     
   </span>
   
@@ -798,12 +822,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure_email_leak_guide/" class="md-nav__link">
+      <a href="../Burner_Accounts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Secure Email & Leak Monitoring
+    Burner Accounts
     
   </span>
   
@@ -828,212 +852,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-google-dorking" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 What Is Google Dorking?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-use-case-find-only-face-images-of-a-person" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Example Use Case: Find Only Face Images of a Person
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧠 Example Use Case: Find Only Face Images of a Person">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-step:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Result:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-google-dork-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Core Google Dork Operators
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-dorking-techniques" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Advanced Dorking Techniques
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔍 Advanced Dorking Techniques">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-search-for-exposed-files-in-open-directories" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Search for Exposed Files in Open Directories
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-locate-documents-on-misconfigured-file-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Locate Documents on Misconfigured File Servers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-discover-documents-in-backup-folders" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Discover Documents in Backup Folders
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-target-government-or-organization-sites" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Target Government or Organization Sites
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-multi-parameter-search-query-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Multi-parameter search query 1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-multi-parameter-search-query2" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Multi-parameter search query(2)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-tips-for-effective-dorking" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Practical Tips for Effective Dorking
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legal-and-ethical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚖️ Legal and Ethical Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#suggested-next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📎 Suggested Next Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📎 Suggested Next Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sheet-list-from-the-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sheet List from the web :
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1043,10 +861,10 @@
 
 
 
-<h1 id="google-dorking-for-osint">📚 Google Dorking for OSINT</h1>
+<h1 id="google-dorking-for-osint">📚 Google Dorking for OSINT<a class="headerlink" href="#google-dorking-for-osint" title="Permanent link">&para;</a></h1>
 <p><strong>Google Dorking</strong> (also known as Google hacking) refers to using advanced search operators in Google to find specific, often hidden, pieces of information. It's a powerful and beginner-friendly OSINT technique used by cybersecurity professionals, journalists, and investigators.</p>
 <hr />
-<h2 id="what-is-google-dorking">🔍 What Is Google Dorking?</h2>
+<h2 id="what-is-google-dorking">🔍 What Is Google Dorking?<a class="headerlink" href="#what-is-google-dorking" title="Permanent link">&para;</a></h2>
 <p>Google Dorking leverages the way Google indexes web content. By combining search terms with advanced operators, you can:</p>
 <ul>
 <li>Discover publicly exposed files</li>
@@ -1059,24 +877,27 @@
 <p>⚠️ <strong>Ethical Reminder:</strong> Use Google Dorking responsibly. Only access information that is publicly available and not protected by authentication or privacy settings.</p>
 </blockquote>
 <hr />
-<h2 id="example-use-case-find-only-face-images-of-a-person">🧠 Example Use Case: Find Only Face Images of a Person</h2>
+<h2 id="example-use-case-find-only-face-images-of-a-person">🧠 Example Use Case: Find Only Face Images of a Person<a class="headerlink" href="#example-use-case-find-only-face-images-of-a-person" title="Permanent link">&para;</a></h2>
 <p>This trick lets you refine Google Images to only show <strong>face-type</strong> images:</p>
-<h3 id="step-by-step">Step-by-step:</h3>
+<h3 id="step-by-step">Step-by-step:<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Search the name using quotes</strong> for accuracy:
-   <code>"Elon Musk"</code></p>
+   <div class="highlight"><pre><span></span><code>&quot;Elon Musk&quot;
+</code></pre></div></p>
 </li>
 <li>
 <p><strong>Click on the 'Images' tab</strong> on Google.</p>
 </li>
 <li>
 <p>Click on:
-   <code>Tools → Type → Clipart</code></p>
+   <div class="highlight"><pre><span></span><code>Tools → Type → Clipart
+</code></pre></div></p>
 </li>
 <li>
 <p>In the <strong>URL</strong>, find this parameter:
-   <code>tbs=itp:clipart</code></p>
+   <div class="highlight"><pre><span></span><code>tbs=itp:clipart
+</code></pre></div></p>
 </li>
 <li>
 <p><strong>Replace</strong> <code>itp:clipart</code> with <code>itp:face</code></p>
@@ -1085,21 +906,23 @@
 <p>Press Enter.</p>
 </li>
 </ol>
-<h3 id="result">✅ Result:</h3>
+<h3 id="result">✅ Result:<a class="headerlink" href="#result" title="Permanent link">&para;</a></h3>
 <p>Only face images of the target (e.g., Elon Musk) will be displayed.</p>
-<h3 id="example">Example:</h3>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Original:
-  <code>https://www.google.com/search?q="Elon+Musk"&amp;...&amp;tbs=itp:clipart</code></p>
+  <div class="highlight"><pre><span></span><code>https://www.google.com/search?q=&quot;Elon+Musk&quot;&amp;...&amp;tbs=itp:clipart
+</code></pre></div></p>
 </li>
 <li>
 <p>Modified:
-  <code>https://www.google.com/search?q="Elon+Musk"&amp;...&amp;tbs=itp:face</code></p>
+  <div class="highlight"><pre><span></span><code>https://www.google.com/search?q=&quot;Elon+Musk&quot;&amp;...&amp;tbs=itp:face
+</code></pre></div></p>
 </li>
 </ul>
 <hr />
-<h2 id="core-google-dork-operators">🛠️ Core Google Dork Operators</h2>
+<h2 id="core-google-dork-operators">🛠️ Core Google Dork Operators<a class="headerlink" href="#core-google-dork-operators" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1182,52 +1005,52 @@
 </tbody>
 </table>
 <hr />
-<h2 id="advanced-dorking-techniques">🔍 Advanced Dorking Techniques</h2>
-<h3 id="1-search-for-exposed-files-in-open-directories">1. Search for Exposed Files in Open Directories</h3>
-<pre><code class="language-text">intitle:&quot;index of&quot; &quot;cisco&quot; (pdf | doc | ppt)
-</code></pre>
-<p>Finds public folders listing Cisco-related documents.</p>
+<h2 id="advanced-dorking-techniques">🔍 Advanced Dorking Techniques<a class="headerlink" href="#advanced-dorking-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="1-search-for-exposed-files-in-open-directories">1. Search for Exposed Files in Open Directories<a class="headerlink" href="#1-search-for-exposed-files-in-open-directories" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>intitle:&quot;index of&quot; &quot;cisco&quot; (pdf | doc | ppt)
+</code></pre></div>
+Finds public folders listing Cisco-related documents.</p>
 <hr />
-<h3 id="2-locate-documents-on-misconfigured-file-servers">2. Locate Documents on Misconfigured File Servers</h3>
-<pre><code class="language-text">inurl:&quot;/files/&quot; &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Targets URLs with <code>/files/</code>, a common folder on unsecured servers.</p>
+<h3 id="2-locate-documents-on-misconfigured-file-servers">2. Locate Documents on Misconfigured File Servers<a class="headerlink" href="#2-locate-documents-on-misconfigured-file-servers" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>inurl:&quot;/files/&quot; &quot;cisco&quot; filetype:pdf
+</code></pre></div>
+Targets URLs with <code>/files/</code>, a common folder on unsecured servers.</p>
 <hr />
-<h3 id="3-discover-documents-in-backup-folders">3. Discover Documents in Backup Folders</h3>
-<pre><code class="language-text">inurl:backup &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Identifies documents stored in backup folders—often overlooked during security audits.</p>
+<h3 id="3-discover-documents-in-backup-folders">3. Discover Documents in Backup Folders<a class="headerlink" href="#3-discover-documents-in-backup-folders" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>inurl:backup &quot;cisco&quot; filetype:pdf
+</code></pre></div>
+Identifies documents stored in backup folders—often overlooked during security audits.</p>
 <hr />
-<h3 id="4-target-government-or-organization-sites">4. Target Government or Organization Sites</h3>
-<pre><code class="language-text">site:.gov &quot;cisco&quot; filetype:pdf
-</code></pre>
-<p>Refines results to government domains. You can change <code>.gov</code> to <code>.edu</code>, <code>.org</code>, or country-specific domains like <code>.fr</code>, <code>.de</code>.</p>
+<h3 id="4-target-government-or-organization-sites">4. Target Government or Organization Sites<a class="headerlink" href="#4-target-government-or-organization-sites" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>site:.gov &quot;cisco&quot; filetype:pdf
+</code></pre></div>
+Refines results to government domains. You can change <code>.gov</code> to <code>.edu</code>, <code>.org</code>, or country-specific domains like <code>.fr</code>, <code>.de</code>.</p>
 <hr />
-<h3 id="5-multi-parameter-search-query-1">5.  Multi-parameter search query 1</h3>
-<pre><code class="language-text">(&quot;Spiderfoot&quot;) (intext:tutorial OR intext:&quot;cheat sheet&quot;) (filetype:pdf OR filetype:ppt OR filetype:pptx)
-</code></pre>
-<p>Each group is in parentheses for clarity.Google treats whitespace as AND by default.</p>
+<h3 id="5-multi-parameter-search-query-1">5.  Multi-parameter search query 1<a class="headerlink" href="#5-multi-parameter-search-query-1" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>(&quot;Spiderfoot&quot;) (intext:tutorial OR intext:&quot;cheat sheet&quot;) (filetype:pdf OR filetype:ppt OR filetype:pptx)
+</code></pre></div>
+Each group is in parentheses for clarity.Google treats whitespace as AND by default.</p>
 <hr />
-<h3 id="6-multi-parameter-search-query2">6.  Multi-parameter search query(2)</h3>
-<pre><code class="language-text">&quot;Google Dork&quot; site:github.com (sheet OR list OR query OR advanced OR osint) after:2021-01-01
-</code></pre>
-<p>OR — any of these related keywords</p>
+<h3 id="6-multi-parameter-search-query2">6.  Multi-parameter search query(2)<a class="headerlink" href="#6-multi-parameter-search-query2" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code>&quot;Google Dork&quot; site:github.com (sheet OR list OR query OR advanced OR osint) after:2021-01-01
+</code></pre></div>
+OR — any of these related keywords</p>
 <hr />
-<h2 id="practical-tips-for-effective-dorking">🎯 Practical Tips for Effective Dorking</h2>
+<h2 id="practical-tips-for-effective-dorking">🎯 Practical Tips for Effective Dorking<a class="headerlink" href="#practical-tips-for-effective-dorking" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use quotes for <strong>exact phrases</strong>: <code>"john smith"</code> instead of <code>john smith</code></li>
 <li>Combine operators for precise results:
-  <code>text
-  site:linkedin.com "@gmail.com" "CTO"</code></li>
+  <div class="highlight"><pre><span></span><code>site:linkedin.com &quot;@gmail.com&quot; &quot;CTO&quot;
+</code></pre></div></li>
 <li>Wildcard <code>*</code> helps to guess unknown terms:
-  <code>text
-  "CEO of * Corporation"</code></li>
+  <div class="highlight"><pre><span></span><code>&quot;CEO of * Corporation&quot;
+</code></pre></div></li>
 <li>Use <code>numrange:</code> to filter by years or values:
-  <code>text
-  cyberattack statistics numrange:2010-2023</code></li>
+  <div class="highlight"><pre><span></span><code>cyberattack statistics numrange:2010-2023
+</code></pre></div></li>
 </ul>
 <hr />
-<h2 id="legal-and-ethical-considerations">⚖️ Legal and Ethical Considerations</h2>
+<h2 id="legal-and-ethical-considerations">⚖️ Legal and Ethical Considerations<a class="headerlink" href="#legal-and-ethical-considerations" title="Permanent link">&para;</a></h2>
 <p>Google Dorking uses public search data indexed by Google. However:</p>
 <ul>
 <li>Do <strong>not</strong> access pages protected by login or authorization.</li>
@@ -1235,17 +1058,29 @@
 <li>Use this technique for ethical research, journalism, education, or organizational security testing with permission.</li>
 </ul>
 <hr />
-<h2 id="summary">✅ Summary</h2>
+<h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>Google Dorking is an essential OSINT skill that transforms basic search into a precision reconnaissance tool. By mastering search operators and refining queries, you can uncover valuable data hiding in plain sight.</p>
 <hr />
-<h2 id="suggested-next-steps">📎 Suggested Next Steps</h2>
+<h2 id="suggested-next-steps">📎 Suggested Next Steps<a class="headerlink" href="#suggested-next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Practice with safe searches like:
-  <code>text
-  site:gov.uk "cybersecurity"
-  intitle:"index of" filetype:pdf</code></li>
+  <div class="highlight"><pre><span></span><code>site:gov.uk &quot;cybersecurity&quot;
+intitle:&quot;index of&quot; filetype:pdf
+</code></pre></div></li>
 <li>Combine this with tools like <strong>SpiderFoot</strong>, <strong>theHarvester</strong>, or <strong>Recon-ng</strong> for automated data extraction.</li>
 <li>Add browser extensions like <strong>Shodan Plugin</strong> to enhance in-browser reconnaissance.</li>
+</ul>
+<hr />
+<h3 id="ai-powered-and-automated-tools"><strong>AI-Powered and Automated Tools</strong><a class="headerlink" href="#ai-powered-and-automated-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>DorkGPT</strong> — An AI-powered tool that generates Google Dorking queries based on natural language prompts.<br />
+   👉 <a href="https://www.dorkgpt.com/?utm_source=chatgpt.com">https://www.dorkgpt.com/</a></p>
+</li>
+<li>
+<p><strong>IntelTechniques Search Tool</strong> — A comprehensive collection of OSINT search tools, including a Google Dork search interface that automates queries across multiple search engines and databases.<br />
+   👉 <a href="https://inteltechniques.com/tools/Search.html?utm_source=chatgpt.com">https://inteltechniques.com/tools/Search.html</a></p>
+</li>
 </ul>
 <hr />
 <p>🕵️‍♂️ Google Dorks Cheat Sheet for Hidden Paths &amp; Exposed Files</p>
@@ -1319,7 +1154,7 @@ Original author unknown. All credit to the creator.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="sheet-list-from-the-web">Sheet List from the web :</h3>
+<h3 id="sheet-list-from-the-web">Sheet List from the web :<a class="headerlink" href="#sheet-list-from-the-web" title="Permanent link">&para;</a></h3>
 <p>-
          - <a href="https://hackersonlineclub.com/google-hacking/">hackersonlineclub.com/google-hacking</a>
          - <a href="https://www.boxpiper.com/posts/google-dork-list">www.boxpiper.com/posts/google-dork-list</a>
@@ -1343,6 +1178,12 @@ Original author unknown. All credit to the creator.</p>
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1372,7 +1213,7 @@ Original author unknown. All credit to the creator.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

@@ -36,6 +36,11 @@ nav:
       - OSINT Email Forensics & Spoofing Analysis: "Email_Forensic_Investigation.md"
       - Advanced Wireless OSINT: advanced_wireless_osint.md
       - Burner Accounts: Burner_Accounts.md
+      - Finding Leaked Databases, Emails, and Passwords: white_hack.md
+  - 4. Specialized Hacking and Auditing:
+      - Bluetooth Security Protocols: Bluetooth Security Protocols .md
+      - Physical and Hardware-Based Bluetooth Attacks: Chapter 2_ Physical and Hardware-Based Bluetooth Attacks.md
+      - Comprehensive Bluetooth Security Testing and Hacking Guide: bluetooth_security_testing_guide.md
 
 markdown_extensions:
   - admonition

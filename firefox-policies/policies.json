@@ -1,5 +1,73 @@
 {
   "policies": {
+    "ManagedBookmarks": [
+      {
+        "toplevel_name": "Fav"
+      },
+      {
+        "name": "Google Hacking DB",
+        "url": "https://www.exploit-db.com/google-hacking-database"
+      },
+      {
+        "name": "URLScan.io",
+        "url": "https://urlscan.io"
+      },
+      {
+        "name": "VirusTotal",
+        "url": "https://www.virustotal.com/"
+      },
+      {
+        "name": "URLClean",
+        "url": "https://urlclean.github.io/"
+      },
+      {
+        "name": "Phone Number Search (CZ)",
+        "url": "https://www.truecaller.com/"
+      },
+      {
+        "name": "PDF to PPT Converter",
+        "url": "https://www.ilovepdf.com/pdf_to_powerpoint"
+      },
+      {
+        "name": "IntelX",
+        "url": "https://intelx.io"
+      },
+      {
+        "name": "Archive.today",
+        "url": "https://archive.today"
+      },
+      {
+        "name": "Whois Lookup",
+        "url": "https://who.is/"
+      },
+      {
+        "name": "IP Info",
+        "url": "https://ipinfo.io/"
+      },
+      {
+        "name": "Censys",
+        "url": "https://search.censys.io/"
+      },
+      {
+        "name": "Wayback Machine",
+        "url": "https://web.archive.org/"
+      },
+      {
+        "name": "SpiderFoot (demo)",
+        "url": "https://demo.spiderfoot.net/"
+      }
+    ],
+    "Preferences": {
+      "media.peerconnection.enabled": false,
+      "geo.enabled": false
+    },
+    "DisablePrivateBrowsing": false,
+    "DisableFirefoxAccounts": true,
+    "BlockAboutConfig": true,
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "ProviderURL": "https://mozilla.cloudflare-dns.com/dns-query"
+    },
     "ExtensionSettings": {
       "*": {
         "installation_mode": "allowed"
@@ -33,10 +101,9 @@
         "installation_mode": "force_installed"
       },
       "{292b92dc-b295-45e6-add6-a5ce6911a544}": {
-  "install_url": "https://addons.mozilla.org/firefox/downloads/file/3958866/copywebtables-0.1.1.xpi",
-  "installation_mode": "force_installed"
-},
-
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3958866/copywebtables-0.1.1.xpi",
+        "installation_mode": "force_installed"
+      },
       "{aea49ee9-c3aa-4841-9752-e84a28adff4b}": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/shodan/latest.xpi",
         "installation_mode": "force_installed"
@@ -45,78 +112,6 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
         "installation_mode": "force_installed"
       }
-    },
-   "Bookmarks": [
-  {
-    "Title": "default",
-    "Placement": "toolbar",
-    "Children": [
-      {
-        "Title": "Google Hacking DB",
-        "URL": "https://www.exploit-db.com/google-hacking-database"
-      },
-      {
-        "Title": "URLScan.io",
-        "URL": "https://urlscan.io"
-      },
-      {
-        "Title": "VirusTotal",
-        "URL": "https://www.virustotal.com/"
-      },
-      {
-        "Title": "URLClean",
-        "URL": "https://urlclean.github.io/"
-      },
-      {
-        "Title": "Phone Number Search (CZ)",
-        "URL": "https://www.truecaller.com/"
-      },
-      {
-        "Title": "PDF to PPT Converter",
-        "URL": "https://www.ilovepdf.com/pdf_to_powerpoint"
-      },
-      {
-        "Title": "IntelX",
-        "URL": "https://intelx.io"
-      },
-      {
-        "Title": "Archive.today",
-        "URL": "https://archive.today"
-      },
-      {
-        "Title": "Whois Lookup",
-        "URL": "https://who.is/"
-      },
-      {
-        "Title": "IP Info",
-        "URL": "https://ipinfo.io/"
-      },
-      {
-        "Title": "Censys",
-        "URL": "https://search.censys.io/"
-      },
-      {
-        "Title": "Wayback Machine",
-        "URL": "https://web.archive.org/"
-      },
-      {
-        "Title": "SpiderFoot (demo)",
-        "URL": "https://demo.spiderfoot.net/"
-      }
-    ]
-  }
-],
-
-    "Preferences": {
-      "media.peerconnection.enabled": false,
-      "geo.enabled": false
-    },
-    "DisablePrivateBrowsing": false,
-    "DisableFirefoxAccounts": true,
-    "BlockAboutConfig": true,
-    "DNSOverHTTPS": {
-      "Enabled": true,
-      "ProviderURL": "https://mozilla.cloudflare-dns.com/dns-query"
     }
   }
 }
