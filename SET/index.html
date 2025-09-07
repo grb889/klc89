@@ -1,0 +1,1435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
+      
+      
+      
+        <link rel="prev" href="../bluetooth_security_testing_guide/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>The Social-Engineer Toolkit (SET) — Comprehensive Master Guide - Practical OSINT Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practical OSINT Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Social-Engineer Toolkit (SET) — Comprehensive Master Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Practical OSINT Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Environment Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Environment Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kali-osint-virtualbox-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali VirtualBox Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Your VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tails vs. Kali
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Core Tools & Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Core Tools & Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking for OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester OSINT Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Free OSINT Tools List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Real-World OSINT Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Real-World OSINT Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Website Monitoring & Security Checks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Email Forensics & Spoofing Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_wireless_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Wireless OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Burner_Accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burner Accounts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_hack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finding Leaked Databases, Emails, and Passwords
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Specialized Hacking and Auditing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Specialized Hacking and Auditing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bluetooth_Security_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bluetooth Security Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Physical_and_Hardware_Based_Bluetooth_Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical and Hardware-Based Bluetooth Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth_security_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comprehensive Bluetooth Security Testing and Hacking Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    The Social-Engineer Toolkit (SET) — Comprehensive Master Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Social-Engineer Toolkit (SET) — Comprehensive Master Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-social-engineer-toolkit-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the Social-Engineer Toolkit (SET)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-a-step-by-step-tutorial-for-beginners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started: A Step-by-Step Tutorial for Beginners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started: A Step-by-Step Tutorial for Beginners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-launch-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Launch SET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-navigate-the-main-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Navigate the Main Menu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-spear-phishing-attack-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Spear-Phishing Attack Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Spear-Phishing Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-spear-phishing-campaign-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Case: Spear-Phishing Campaign Simulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-website-attack-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Website Attack Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Website Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-credential-harvesting-with-a-cloned-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Credential Harvesting with a Cloned Website
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-infectious-media-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Infectious Media Generator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Infectious Media Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-usb-based-payload-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: USB-Based Payload Delivery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-create-a-payload-and-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Create a Payload and Listener
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Create a Payload and Listener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-metasploit-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Metasploit Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mass-mailer-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mass Mailer Attack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mass Mailer Attack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-broad-phishing-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Broad Phishing Campaign
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-arduino-based-attack-vector-teensy-usb-hid-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Arduino-Based Attack Vector (Teensy USB HID Attack)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Arduino-Based Attack Vector (Teensy USB HID Attack)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-physical-usb-drop-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Physical USB Drop Attack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wireless-access-point-attack-vector-evil-twin-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Wireless Access Point Attack Vector (Evil Twin Attack)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Wireless Access Point Attack Vector (Evil Twin Attack)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-rogue-access-point-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Rogue Access Point Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-qrcode-generator-attack-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. QRCode Generator Attack Vector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. QRCode Generator Attack Vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-qr-code-phishing-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: QR Code Phishing Campaign
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-powershell-attack-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Powershell Attack Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Powershell Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-fileless-powershell-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Fileless PowerShell Attack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-third-party-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Third Party Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Third Party Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-extending-sets-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial: Extending SET's Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-and-best-practices-for-beginners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation and Best Practices for Beginners
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="the-social-engineer-toolkit-set-comprehensive-master-guide">The Social-Engineer Toolkit (SET) — Comprehensive Master Guide<a class="headerlink" href="#the-social-engineer-toolkit-set-comprehensive-master-guide" title="Permanent link">&para;</a></h1>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<p>1.  [Spear-Phishing Attack Vectors](#spear-phishing-attack-vectors)<br />
+2.  [Website Attack Vectors](#website-attack-vectors)<br />
+3.  [Infectious Media Generator](#infectious-media-generator)<br />
+4.  [Create a Payload and Listener](#create-a-payload-and-listener)<br />
+5.  [Mass Mailer Attack](#mass-mailer-attack)<br />
+6.  [Arduino-Based Attack Vector](#arduino-based-attack-vector)<br />
+7.  [Wireless Access Point Attack Vector](#wireless-access-point-attack-vector)<br />
+8.  [QRCode Generator Attack Vector](#qrcode-generator-attack-vector)<br />
+9.  [Powershell Attack Vectors](#powershell-attack-vectors)<br />
+10. [Third Party Modules](#third-party-modules)</p>
+<p>---</p>
+<h2 id="introduction-to-the-social-engineer-toolkit-set"><strong>Introduction to the Social-Engineer Toolkit (SET)</strong><a class="headerlink" href="#introduction-to-the-social-engineer-toolkit-set" title="Permanent link">&para;</a></h2>
+<p>The Social-Engineer Toolkit (SET) is a Python-driven, open-source penetration testing framework used for social engineering attacks. It's designed to test an organization's security by simulating real-world attacks that target the human element, often the weakest link in security. SET is bundled with Kali Linux and has millions of downloads. It is intended strictly for ethical use with explicit consent.</p>
+<p>---</p>
+<h2 id="getting-started-a-step-by-step-tutorial-for-beginners"><strong>Getting Started: A Step-by-Step Tutorial for Beginners</strong><a class="headerlink" href="#getting-started-a-step-by-step-tutorial-for-beginners" title="Permanent link">&para;</a></h2>
+<p>SET is menu-driven, making it accessible even for novices.</p>
+<h3 id="step-1-launch-set"><strong>Step 1: Launch SET</strong><a class="headerlink" href="#step-1-launch-set" title="Permanent link">&para;</a></h3>
+<p>Run the following in Kali Linux terminal (may require root):<br />
+```bash<br />
+sudo setoolkit<br />
+```<br />
+Upon launch, it may check for updates then present the main menu.</p>
+<h3 id="step-2-navigate-the-main-menu"><strong>Step 2: Navigate the Main Menu</strong><a class="headerlink" href="#step-2-navigate-the-main-menu" title="Permanent link">&para;</a></h3>
+<p>Options:<br />
+1. Social-Engineering Attacks (primary for most use cases)<br />
+2. Penetration Testing (Fast-Track)<br />
+3. Third Party Modules<br />
+4. Update the Social-Engineer Toolkit<br />
+5. Update SET Configuration<br />
+6. Help, Credits, and About<br />
+7. Exit SET</p>
+<p>For beginners, choose option <strong>1) Social-Engineering Attacks</strong>. You will then see the list of attack vectors that form the basis of this guide.</p>
+<p>---</p>
+<h2 id="1-spear-phishing-attack-vectors"><strong>1. Spear-Phishing Attack Vectors</strong><a class="headerlink" href="#1-spear-phishing-attack-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="use-case-spear-phishing-campaign-simulation"><strong>Use Case: Spear-Phishing Campaign Simulation</strong><a class="headerlink" href="#use-case-spear-phishing-campaign-simulation" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> A penetration tester is tasked with evaluating an organization's employee vulnerability to targeted phishing attacks using customized emails tailored with personal information gathered from OSINT.</p>
+<p><strong>Objective:</strong> To assess employee response to spear-phishing emails and gather data on successful clicks or credential submissions.</p>
+<p><strong>Step-by-Step Tutorial:</strong><br />
+1.  Launch SET (`sudo setoolkit`).<br />
+2.  Select Option 1: Social-Engineering Attacks.<br />
+3.  Select <strong>"Spear-Phishing Attack Vectors."</strong><br />
+4.  Choose <strong>"Spear-Phishing Email Attack."</strong><br />
+5.  Import a pre-created email list containing targeted employee emails.<br />
+6.  Customize the email template with personal details (e.g., name, position, company projects) to increase authenticity.<br />
+7.  Select to send the phishing email with a link to a cloned login page hosted on the tester's server (credential harvester).<br />
+8.  Monitor SET terminal for any credentials or user interactions captured.<br />
+9.  Document findings to provide feedback and improve company security awareness.</p>
+<p><strong>Explanation:</strong> This use case shows how SET can be leveraged to simulate highly targeted phishing attacks, critical for assessing real-world risks. The tester must have permission, use safe lab environments, and ensure employees are debriefed afterward on recognizing social engineering attacks.</p>
+<p>---</p>
+<h2 id="2-website-attack-vectors"><strong>2. Website Attack Vectors</strong><a class="headerlink" href="#2-website-attack-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-credential-harvesting-with-a-cloned-website"><strong>Tutorial: Credential Harvesting with a Cloned Website</strong><a class="headerlink" href="#tutorial-credential-harvesting-with-a-cloned-website" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> An ethical hacker simulates a phishing test on their organization by cloning a common login page to assess employee awareness. This is a common attack that aims to capture a user's username and password by luring them to a fake website.</p>
+<p><strong>Step-by-Step Instructions:</strong></p>
+<ol>
+<li>From the SET menu, select <strong>"Website Attack Vectors"</strong>.  </li>
+<li>Choose <strong>"Credential Harvester Attack Method"</strong>.  </li>
+<li>Select <strong>"Site Cloner"</strong>.  </li>
+<li>Enter the URL to clone, e.g., <a href="https://www.facebook.com">https://www.facebook.com</a> or your target's internal webmail portal.  </li>
+<li>SET will now ask for your IP address. <strong>This is the critical part.</strong> You must provide the IP address of your Kali machine, as it will act as the web server to host the cloned page and a listener to capture the credentials. If the target is on your local network, use your local IP (e.g., 192.168.1.50). If the target is external, you'll need to use a public IP address and configure port forwarding or use a tunneling service like ngrok.  </li>
+<li>SET will automatically clone the site and start the web server and listener. When the victim enters their credentials on your fake site, the data will be sent (POSTed) back to your Kali machine and displayed in your terminal.</li>
+</ol>
+<p>---</p>
+<h2 id="3-infectious-media-generator"><strong>3. Infectious Media Generator</strong><a class="headerlink" href="#3-infectious-media-generator" title="Permanent link">&para;</a></h2>
+<h4 id="tutorial-usb-based-payload-delivery"><strong>Tutorial: USB-Based Payload Delivery</strong><a class="headerlink" href="#tutorial-usb-based-payload-delivery" title="Permanent link">&para;</a></h4>
+<p><strong>Scenario:</strong> A curious employee picks up a USB drive labeled "Confidential Employee Salaries" that was intentionally left in a public area of an office. They plug it into their computer, and a malicious payload executes, giving you a remote backdoor.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>A USB drive.  </li>
+<li>The <strong>"Create a Payload and Listener"</strong> module must be run <strong>before</strong> deploying the USB drive to set up your handler.</li>
+</ul>
+<p><strong>Step-by-Step Instructions:</strong></p>
+<ol>
+<li>From the main SET menu, choose <strong>"Infectious Media Generator"</strong>.  </li>
+<li>Select a payload method (e.g., <strong>"File-Format Exploits"</strong> or <strong>"Standard Metasploit Executable"</strong>).  </li>
+<li>Choose a specific payload (e.g., a Windows reverse TCP shell).  </li>
+<li>SET will generate the malicious file (e.g., a .pdf.exe or a .exe).  </li>
+<li>Configure the LHOST (your Kali machine's IP) and LPORT (e.g., 4444) for the connection.  </li>
+<li>Transfer the generated malicious file to a USB drive and name it something enticing like 2025_Q4_Salary_Adjustments.xls.exe.  </li>
+<li>Once the victim plugs in the drive and runs the file, a connection will be established to the listener you have already set up.</li>
+</ol>
+<p><em>This attack tests physical security controls and user willingness to run unknown files.</em></p>
+<p>---</p>
+<h2 id="4-create-a-payload-and-listener"><strong>4. Create a Payload and Listener</strong><a class="headerlink" href="#4-create-a-payload-and-listener" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-metasploit-integration"><strong>Tutorial: Metasploit Integration</strong><a class="headerlink" href="#tutorial-metasploit-integration" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> This module is the foundation for all attacks in SET that involve a payload calling back to your machine. It's a critical utility used to generate standalone payloads and, most importantly, to start the <strong>Multi/Handler listener</strong> in Metasploit. The handler is a listener that sits in a listening state waiting for an incoming connection from a malicious payload that has been executed on a target machine. This is a crucial step that must be completed <strong>before</strong> you attempt to run any payload-based attack.</p>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  Select <strong>"Create a Payload and Listener"</strong> from the SET menu.<br />
+2.  Choose <strong>"Listener Options"</strong>.<br />
+3.  Select <strong>"Start Multi/Handler"</strong>.<br />
+4.  Configure the payload type (e.g., `windows/meterpreter/reverse_tcp`), LHOST, and LPORT.<br />
+5.  SET will launch the Metasploit handler in the background. This listener is essential for receiving connections from:<br />
+    *   Infectious Media payloads<br />
+    *   PowerShell attacks<br />
+    *   Arduino-based attacks<br />
+    *   Any other payload that calls back to your machine.</p>
+<p>---</p>
+<h2 id="5-mass-mailer-attack"><strong>5. Mass Mailer Attack</strong><a class="headerlink" href="#5-mass-mailer-attack" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-broad-phishing-campaign"><strong>Tutorial: Broad Phishing Campaign</strong><a class="headerlink" href="#tutorial-broad-phishing-campaign" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> Unlike the targeted spear-phishing option, the Mass Mailer is designed to send a generic phishing email to a large list of addresses. It's useful for testing baseline awareness across a whole organization.</p>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  Select <strong>"Mass Mailer Attack"</strong>.<br />
+2.  Choose to use a pre-built HTML email template or create your own.<br />
+3.  Provide the path to a text file containing the list of email addresses.<br />
+4.  Set the "From" address to something seemingly legitimate (e.g., `<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#73;&#84;&#45;&#83;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#111;&#117;&#114;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;">&#73;&#84;&#45;&#83;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#111;&#117;&#114;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</a>`).<br />
+5.  Configure your email relay (e.g., a local SMTP server or Gmail app password).<br />
+6.  Send the email and monitor the credential harvester or other linked attack vector for results.</p>
+<p>---</p>
+<h2 id="6-arduino-based-attack-vector-teensy-usb-hid-attack"><strong>6. Arduino-Based Attack Vector (Teensy USB HID Attack)</strong><a class="headerlink" href="#6-arduino-based-attack-vector-teensy-usb-hid-attack" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-physical-usb-drop-attack"><strong>Tutorial: Physical USB Drop Attack</strong><a class="headerlink" href="#tutorial-physical-usb-drop-attack" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> This attack uses a programmable microcontroller board like a Teensy or Arduino Leonardo. These devices can be programmed to emulate a Human Interface Device (HID), like a keyboard. When plugged into a target computer, they are automatically recognized, and the device can be pre-programmed to execute a series of keystrokes at lightning speed to open a terminal and download/execute a malicious payload.</p>
+<p><strong>Scenario:</strong> A physical penetration tester gains brief access to a target's office. They plug a pre-programmed Teensy device into an unattended computer to establish a remote backdoor.</p>
+<p><strong>Prerequisites:</strong><br />
+<em>   A Teensy++ USB 2.0 development board (or similar HID-compatible Arduino).<br />
+</em>   The `teensy_loader` software on your Kali machine (`sudo apt install teensy-loader`).</p>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  <strong>Launch SET and select the vector:</strong><br />
+    ```bash<br />
+    sudo setoolkit<br />
+    ```<br />
+    Select: <strong>1) Social-Engineering Attacks</strong><br />
+    Select: <strong>6) Arduino-Based Attack Vector</strong></p>
+<p>2.  <strong>Configure the Payload:</strong><br />
+    *   SET will present a menu of pre-configured attack payloads. A common choice is:<br />
+        *   <strong>1) Windows Reverse TCP Shell</strong> - Creates a shell that calls back to your machine.<br />
+    *   You will be prompted for your Kali Linux machine's <strong>LHOST</strong> (your IP address) and <strong>LPORT</strong> (a port to listen on, e.g., 443 or 4444).</p>
+<p>3.  <strong>Generate and Prepare the Payload:</strong><br />
+    *   SET will generate the malicious C++ code designed for the Teensy and save it to a file. It will display the path (e.g., `/usr/share/set/src/teensy/teensy.ino`).<br />
+    *   <strong>Critical Step:</strong> You must now open the Arduino IDE on your Kali machine.<br />
+    *   Install the Teensyduino add-on for the IDE (from the PJRC website).<br />
+    *   Open the `.ino` file generated by SET in the Arduino IDE.<br />
+    *   Select the correct board (e.g., Teensy++ 2.0) and USB Type (usually "Keyboard").<br />
+    *   Verify and compile the code. With the Teensy board plugged in, press its program button and upload the code from the Arduino IDE.</p>
+<p>4.  <strong>Set Up the Listener:</strong><br />
+    *   Before deploying the device, you must start a listener to catch the reverse shell connection. In SET's main menu, use:<br />
+        *   <strong>4) Create a Payload and Listener</strong> -&gt; <strong>Listener Options</strong> -&gt; <strong>Start Multi/Handler</strong><br />
+    *   Configure the handler with the same LHOST and LPORT you used for the payload.</p>
+<p>5.  <strong>Deploy:</strong><br />
+    *   The Teensy is now a malicious USB stick. Plug it into the target machine. It will impersonate a keyboard and automatically type the commands to establish a reverse connection to your machine, granting you access.</p>
+<p><strong>Warning:</strong> This is a highly invasive physical attack. Explicit permission for physical testing is an absolute requirement.</p>
+<p>---</p>
+<h2 id="7-wireless-access-point-attack-vector-evil-twin-attack"><strong>7. Wireless Access Point Attack Vector (Evil Twin Attack)</strong><a class="headerlink" href="#7-wireless-access-point-attack-vector-evil-twin-attack" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-rogue-access-point-setup"><strong>Tutorial: Rogue Access Point Setup</strong><a class="headerlink" href="#tutorial-rogue-access-point-setup" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> SET can help you create a rogue wireless access point (an "Evil Twin") that mimics a legitimate corporate or public network (e.g., "Company_Guest"). When users connect to this malicious Wi-Fi, you can intercept their traffic, perform SSL stripping, and redirect them to credential-harvesting portals.</p>
+<p><strong>Scenario:</strong> Testing the awareness of employees regarding Wi-Fi security. The tester sets up a malicious AP with a name similar to the corporate network in a nearby location.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>A Kali Linux machine.  </li>
+<li><strong>A wireless card capable of monitor mode and packet injection.</strong> This is a significant hardware requirement that many standard laptops do not meet. It's often easier to use a USB-based wireless card designed for penetration testing.  </li>
+<li>Knowledge of the target's legitimate SSID (network name).</li>
+</ul>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  <strong>Launch SET and select the vector:</strong><br />
+    ```bash<br />
+    sudo setoolkit<br />
+    ```<br />
+    Select: <strong>1) Social-Engineering Attacks</strong><br />
+    Select: <strong>7) Wireless Access Point Attack Vector</strong></p>
+<p>2.  <strong>Configure the Rogue Access Point:</strong><br />
+    *   SET will guide you through configuration. First, it will likely ask for the interface for the rogue AP (e.g., `wlan0`).<br />
+    *   It will then ask for the SSID. Enter a convincing name (e.g., `CompanyName_Public`).<br />
+    *   You will be asked to select a network type. For a credential harvester, choose:<br />
+        *   <strong>1) Fake AP - Harvest Credentials without Jamming</strong><br />
+    *   SET will now set up the rogue AP and a DHCP server and may automatically launch a credential harvester.</p>
+<p>3.  <strong>Integrate with a Cloned Site:</strong><br />
+    *   During the setup, SET will likely prompt you to clone a website for credential harvesting. You can enter the URL of the target's captive portal or a common site like a webmail login.<br />
+    *   Any user who connects and tries to browse will be presented with this cloned login page. Their credentials will be captured in the SET terminal.</p>
+<p>4.  <strong>Deploy and Monitor:</strong><br />
+    *   Let the rogue AP run. Users might connect automatically if their devices have connected to a similarly named network before.<br />
+    *   Monitor the SET terminal for any captured credentials and HTTP traffic.</p>
+<p><strong>Note:</strong> This attack is often combined with manual jamming of the real access point using a tool like `mdk4` to force devices to connect to your stronger malicious signal.</p>
+<p>---</p>
+<h2 id="8-qrcode-generator-attack-vector"><strong>8. QRCode Generator Attack Vector</strong><a class="headerlink" href="#8-qrcode-generator-attack-vector" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-qr-code-phishing-campaign"><strong>Tutorial: QR Code Phishing Campaign</strong><a class="headerlink" href="#tutorial-qr-code-phishing-campaign" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> This technique leverages the widespread trust and use of QR codes. SET generates a QR code that embeds a malicious URL. When scanned, the victim is redirected to a credential-harvesting site or a payload-dropping page, all while believing they are interacting with a legitimate, physical object like a poster or flyer.</p>
+<p><strong>Why it's effective:</strong><br />
+<em>   </em><em>Obfuscates the URL:</em><em> The victim never sees the suspicious link.<br />
+</em>   <strong>High Trust Factor:</strong> QR codes are used by reputable companies everywhere.<br />
+<em>   </em><em>Physical World Bypass:</em>* This attack bridges the digital and physical social engineering worlds, bypassing email filters entirely.</p>
+<p><strong>Scenario:</strong> A penetration tester places a professionally printed poster with a QR code in common areas offering a fake "Free Company Swag" giveaway.</p>
+<p><strong>Prerequisites:</strong><br />
+<em>   Kali Linux machine with SET.<br />
+</em>   The machine's IP address.<br />
+*   A simple web server (like Apache) started: `sudo systemctl start apache2`.</p>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  <strong>Launch SET and Navigate to the Attack Vector:</strong><br />
+    ```bash<br />
+    sudo setoolkit<br />
+    ```<br />
+    Select: <strong>1) Social-Engineering Attacks</strong><br />
+    Select: <strong>8) QR Code Generator Attack Vector</strong></p>
+<p>2.  <strong>Configure the QR Code Attack:</strong><br />
+    *   SET will ask for the IP address for the POSTING server. This is your Kali machine's IP (e.g., `192.168.1.50`).<br />
+    *   Next, you will be prompted to select the attack type. Choose:<br />
+        *   <strong>1) URL (Phishing or Other)</strong> for a credential harvester.<br />
+    *   Enter the full URL you want the victim to be redirected to. To integrate with SET's harvester, you can use `http://\&lt;YOUR_KALI_IP&gt;/`.</p>
+<p>3.  <strong>Generate the QR Code:</strong><br />
+    *   SET will generate a PNG image file (`/var/www/html/qrcode_attack.png`) and host it automatically.<br />
+    *   <strong>Crucially, it will also display the QR code directly in the terminal.</strong> You can take a screenshot of this terminal output to test with your phone.</p>
+<p>4.  <strong>Deploy the QR Code:</strong><br />
+    *   The generated PNG is placed in Kali's web root (`/var/www/html/`). You can download it by visiting `http://\&lt;YOUR_KALI_IP&gt;/qrcode_attack.png` from another machine on the network.<br />
+    *   Print this QR code and place it on a realistic poster or flyer.</p>
+<p>5.  <strong>Capture Credentials:</strong><br />
+    *   When an employee scans the code, their phone will open the malicious login page you configured.<br />
+    *   Any credentials they enter will be captured and saved by SET, and you will see the data in real-time within the SET terminal window.</p>
+<p><strong>Post-Test Analysis:</strong> Document how many times the QR code was scanned and how many credentials were submitted.</p>
+<p>---</p>
+<h2 id="9-powershell-attack-vectors"><strong>9. Powershell Attack Vectors</strong><a class="headerlink" href="#9-powershell-attack-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-fileless-powershell-attack"><strong>Tutorial: Fileless PowerShell Attack</strong><a class="headerlink" href="#tutorial-fileless-powershell-attack" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> PowerShell is a powerful scripting language built into Windows that is often overlooked by traditional antivirus software. SET's PowerShell attacks generate malicious scripts that can be delivered via email or a website to download and execute payloads entirely in memory, leaving minimal traces on the target's disk.</p>
+<p><strong>Scenario:</strong> Bypassing antivirus software during a spear-phishing campaign by embedding a malicious PowerShell command in a Word document or a link within an email.</p>
+<p><strong>Step-by-Step Instructions:</strong><br />
+1.  <strong>Launch SET and select the vector:</strong><br />
+    ```bash<br />
+    sudo setoolkit<br />
+    ```<br />
+    Select: <strong>1) Social-Engineering Attacks</strong><br />
+    Select: <strong>9) Powershell Attack Vectors</strong></p>
+<p>2.  <strong>Choose an Attack Method:</strong><br />
+    SET offers several PowerShell options. The most common is:<br />
+    *   <strong>1) Powershell Alphanumeric Shellcode Injector</strong> - This encodes a payload into an alphanumeric string that can be executed via a single PowerShell command.</p>
+<p>3.  <strong>Generate the Payload:</strong><br />
+    *   Select your payload type (e.g., <strong>1) Windows Reverse TCP Shell</strong>).<br />
+    *   Enter your <strong>LHOST</strong> (Kali IP) and <strong>LPORT</strong> (listening port).<br />
+    *   SET will generate a long, obfuscated PowerShell command. It will look something like:<br />
+        `powershell -Ep Bypass -Command "&amp; { ... [LONG_ALPHANUMERIC_STRING] ... }"`<br />
+    *   <strong>Copy this entire command.</strong></p>
+<p>4.  <strong>Delivery and Execution:</strong><br />
+    *   <strong>Email Delivery:</strong> Paste this command into a Word macro. When the document is opened and macros are enabled, it will execute the PowerShell payload.<br />
+    *   <strong>Web Delivery:</strong> You can serve this command from a website. A common trick is to have a victim copy and paste a "fix" or "plugin installer" command directly into their PowerShell terminal.<br />
+    *   SET can automate this web delivery through the <strong>2) Web Attack Vectors</strong> -&gt; <strong>3) PowerShell Alphanumeric Shellcode Injector</strong> menu.</p>
+<p>5.  <strong>Catch the Shell:</strong><br />
+    *   Before the victim executes the payload, set up a listener in SET (<strong>4) Create a Payload and Listener</strong> -&gt; <strong>Listener Options</strong> -&gt; <strong>Start Multi/Handler</strong>).<br />
+    *   Once the victim runs the command, you will receive a reverse shell on your listener.</p>
+<p>---</p>
+<h2 id="10-third-party-modules"><strong>10. Third Party Modules</strong><a class="headerlink" href="#10-third-party-modules" title="Permanent link">&para;</a></h2>
+<h3 id="tutorial-extending-sets-capabilities"><strong>Tutorial: Extending SET's Capabilities</strong><a class="headerlink" href="#tutorial-extending-sets-capabilities" title="Permanent link">&para;</a></h3>
+<p><strong>Concept:</strong> This menu option allows you to import and use external modules that are not officially part of the core SET framework. These can be custom attack vectors, new integration tools, or scripts written by the community.</p>
+<p><strong>How to Use:</strong><br />
+1.  Select <strong>"Third Party Modules"</strong> from the main SET menu.<br />
+2.  You will be presented with a list of available modules that have been added to the appropriate directory.<br />
+3.  Select a module to execute it.<br />
+4.  These modules often come with their own setup and configuration instructions. Always read any provided README files.</p>
+<p><strong>Note:</strong> The availability and functionality of these modules depend on the user manually adding them. The core SET installation may not have any third-party modules by default.</p>
+<p>---</p>
+<h2 id="navigation-and-best-practices-for-beginners"><strong>Navigation and Best Practices for Beginners</strong><a class="headerlink" href="#navigation-and-best-practices-for-beginners" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Always</strong> test in isolated environments with explicit, written permission. Never test on unauthorized systems.  </li>
+<li>Understand the legal implications of each attack vector, especially physical (Arduino) and wireless ones.  </li>
+<li>Read prompts and settings carefully. A misconfigured IP address will cause the attack to fail.  </li>
+<li>Combine SET with frameworks like Metasploit for advanced payload handling and persistence.  </li>
+<li>For web attacks, ensure your Apache server is running: `sudo systemctl start apache2`.  </li>
+<li>Maintain ethical standards. <strong>Always debrief</strong> targets after a test to turn the attack into a training opportunity. The goal is to improve security, not to punish users.  </li>
+<li>Stay updated. Use option <strong>4) Update the Social-Engineer Toolkit</strong> regularly to get the latest features and security patches.  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
