@@ -195,6 +195,20 @@ A practical, scenario-based guide for Bluetooth security testing, covering recon
 
 ---
 
+### 4.4 [The Social-Engineer Toolkit (SET) — Comprehensive Master Guide](SET.md)
+**Description:**
+A comprehensive tutorial and reference for using the Social-Engineer Toolkit (SET) for ethical social engineering attacks, including credential harvesting, malicious media, and physical attacks.
+
+**Key Sections:**
+- Introduction to SET and its ethical use
+- Credential harvesting with cloned websites
+- USB-based payload delivery with Infectious Media
+- Creating a payload and listener with Metasploit
+- Physical attacks using Arduino-based HID devices
+- Wireless attacks with Evil Twin access points
+- QR code and PowerShell attack vectors
+---
+
 # ✅ Final Notes  
 
 This handbook is divided into three layers:  

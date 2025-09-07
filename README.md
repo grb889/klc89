@@ -1,7 +1,7 @@
 # Kali OSINT Setup
 
 This repo provides a one-step install script and guidance to turn your Kali Linux VM into a full-featured OSINT workstation.
-📘 **View the full documentation here** 👉 [kali-osint-setup Docs](https://alex2t.github.io/kali-osint-setup/)
+📘 **View the full documentation here** 👉 [kali-osint-setup Docs](https://grb889.github.io/klc89/)
 
 ## 🚀 Quick Start
 

@@ -1,0 +1,1731 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
+      
+      
+      
+        <link rel="prev" href="../Bluetooth_Security_Protocols/">
+      
+      
+        <link rel="next" href="../bluetooth_security_testing_guide/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Physical and Hardware-Based Bluetooth Attacks - Practical OSINT Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practical OSINT Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Physical and Hardware-Based Bluetooth Attacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Practical OSINT Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Environment Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Environment Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kali-osint-virtualbox-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali VirtualBox Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Your VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tails vs. Kali
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Core Tools & Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Core Tools & Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking for OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester OSINT Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Free OSINT Tools List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Real-World OSINT Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Real-World OSINT Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Website Monitoring & Security Checks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Email Forensics & Spoofing Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_wireless_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Wireless OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Burner_Accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burner Accounts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_hack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finding Leaked Databases, Emails, and Passwords
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Specialized Hacking and Auditing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Specialized Hacking and Auditing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bluetooth_Security_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bluetooth Security Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Physical and Hardware-Based Bluetooth Attacks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical and Hardware-Based Bluetooth Attacks
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-hardware-based-bluetooth-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Hardware-Based Bluetooth Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Hardware-Based Bluetooth Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-hardware-platforms-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Hardware Platforms Overview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rf-signal-analysis-with-software-defined-radios" class="md-nav__link">
+    <span class="md-ellipsis">
+      RF Signal Analysis with Software-Defined Radios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RF Signal Analysis with Software-Defined Radios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hackrf-one-setup-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      HackRF One Setup and Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HackRF One Setup and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup-and-driver-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Setup and Driver Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnu-radio-setup-for-bluetooth-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      GNU Radio Setup for Bluetooth Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-spectrum-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Spectrum Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Spectrum Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-rf-spectrum-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic RF Spectrum Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-rf-fingerprinting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced RF Fingerprinting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-sniffing-with-ubertooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Sniffing with Ubertooth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Sniffing with Ubertooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubertooth-one-setup-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubertooth One Setup and Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ubertooth One Setup and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passive-bluetooth-sniffing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passive Bluetooth Sniffing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passive Bluetooth Sniffing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-packet-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Packet Capture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-sniffing-with-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Sniffing with Filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth_security_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comprehensive Bluetooth Security Testing and Hacking Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-2-physical-and-hardware-based-bluetooth-attacks"><strong>Chapter 2: Physical and Hardware-Based Bluetooth Attacks</strong><a class="headerlink" href="#chapter-2-physical-and-hardware-based-bluetooth-attacks" title="Permanent link">&para;</a></h1>
+<h2 id="table-of-contents"><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduction-to-hardware-based-bluetooth-attacks">Introduction to Hardware-Based Bluetooth Attacks</a>  </li>
+<li><a href="#rf-signal-analysis-with-software-defined-radios">RF Signal Analysis with Software-Defined Radios</a>  </li>
+<li><a href="#hardware-sniffing-with-ubertooth">Hardware Sniffing with Ubertooth</a>  </li>
+<li><a href="#advanced-hardware-attack-platforms">Advanced Hardware Attack Platforms</a>  </li>
+<li><a href="#bluetooth-jamming-and-denial-of-service">Bluetooth Jamming and Denial of Service</a>  </li>
+<li><a href="#physical-layer-attack-scenarios">Physical Layer Attack Scenarios</a>  </li>
+<li><a href="#hardware-based-post-exploitation">Hardware-Based Post-Exploitation</a>  </li>
+<li><a href="#countermeasures-and-detection">Countermeasures and Detection</a>  </li>
+</ol>
+<h2 id="introduction-to-hardware-based-bluetooth-attacks"><strong>Introduction to Hardware-Based Bluetooth Attacks</strong><a class="headerlink" href="#introduction-to-hardware-based-bluetooth-attacks" title="Permanent link">&para;</a></h2>
+<p>Hardware-based Bluetooth attacks operate at the physical (RF) and link layers, providing capabilities that software-only approaches cannot achieve. These attacks can:</p>
+<ul>
+<li><strong>Capture encrypted traffic</strong> during pairing exchanges  </li>
+<li><strong>Perform passive monitoring</strong> without device interaction  </li>
+<li><strong>Execute jamming attacks</strong> to disrupt communications  </li>
+<li><strong>Analyze RF characteristics</strong> for device fingerprinting  </li>
+<li><strong>Bypass software-level security controls</strong></li>
+</ul>
+<h3 id="key-hardware-platforms-overview"><strong>Key Hardware Platforms Overview</strong><a class="headerlink" href="#key-hardware-platforms-overview" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Frequency Range</th>
+<th>Bluetooth Support</th>
+<th>Cost Range</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubertooth One</td>
+<td>2.4 GHz ISM</td>
+<td>BR/EDR, BLE</td>
+<td>$120-150</td>
+<td>Passive sniffing, jamming</td>
+</tr>
+<tr>
+<td>HackRF One</td>
+<td>1 MHz - 6 GHz</td>
+<td>All (with software)</td>
+<td>$300-400</td>
+<td>RF analysis, signal generation</td>
+</tr>
+<tr>
+<td>BladeRF 2.0</td>
+<td>47 MHz - 6 GHz</td>
+<td>All (with software)</td>
+<td>$420-680</td>
+<td>High-performance SDR</td>
+</tr>
+<tr>
+<td>LimeSDR</td>
+<td>100 kHz - 3.8 GHz</td>
+<td>All (with software)</td>
+<td>$300-500</td>
+<td>Full-duplex operations</td>
+</tr>
+<tr>
+<td>YARD Stick One</td>
+<td>Sub-1 GHz</td>
+<td>None (different bands)</td>
+<td>$100-150</td>
+<td>IoT/Sub-GHz analysis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rf-signal-analysis-with-software-defined-radios"><strong>RF Signal Analysis with Software-Defined Radios</strong><a class="headerlink" href="#rf-signal-analysis-with-software-defined-radios" title="Permanent link">&para;</a></h2>
+<h3 id="hackrf-one-setup-and-configuration"><strong>HackRF One Setup and Configuration</strong><a class="headerlink" href="#hackrf-one-setup-and-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="initial-setup-and-driver-installation"><strong>Initial Setup and Driver Installation</strong><a class="headerlink" href="#initial-setup-and-driver-installation" title="Permanent link">&para;</a></h4>
+<p># Install HackRF drivers and tools<br />
+sudo apt-get update<br />
+sudo apt-get install hackrf libhackrf-dev hackrf-tools</p>
+<p># Verify HackRF detection<br />
+hackrf_info</p>
+<p># Update firmware if needed<br />
+hackrf_spiflash -w hackrf_one_usb.bin</p>
+<p># Test basic functionality<br />
+hackrf_transfer -r test_capture.bin -f 2400000000 -s 20000000 -n 1000000</p>
+<h4 id="gnu-radio-setup-for-bluetooth-analysis"><strong>GNU Radio Setup for Bluetooth Analysis</strong><a class="headerlink" href="#gnu-radio-setup-for-bluetooth-analysis" title="Permanent link">&para;</a></h4>
+<p># Install GNU Radio and additional modules<br />
+sudo apt-get install gnuradio gnuradio-dev gr-osmosdr</p>
+<p># Install Bluetooth-specific GNU Radio blocks<br />
+git clone <a href="https://github.com/greatscottgadgets/gr-bluetooth.git">https://github.com/greatscottgadgets/gr-bluetooth.git</a><br />
+cd gr-bluetooth<br />
+mkdir build &amp;&amp; cd build<br />
+cmake ..<br />
+make -j4<br />
+sudo make install<br />
+sudo ldconfig</p>
+<p># Install additional analysis tools<br />
+pip3 install matplotlib scipy numpy</p>
+<h3 id="bluetooth-spectrum-analysis"><strong>Bluetooth Spectrum Analysis</strong><a class="headerlink" href="#bluetooth-spectrum-analysis" title="Permanent link">&para;</a></h3>
+<h4 id="basic-rf-spectrum-monitoring"><strong>Basic RF Spectrum Monitoring</strong><a class="headerlink" href="#basic-rf-spectrum-monitoring" title="Permanent link">&para;</a></h4>
+<p>#!/usr/bin/env python3<br />
+"""<br />
+Bluetooth RF Spectrum Analyzer<br />
+Monitors 2.4 GHz ISM band for Bluetooth activity<br />
+"""</p>
+<p>import numpy as np<br />
+import matplotlib.pyplot as plt<br />
+from gnuradio import gr, blocks, analog, filter<br />
+from gnuradio import uhd<br />
+import time<br />
+import threading</p>
+<p>class BluetoothSpectrumAnalyzer:<br />
+    def __init__(self, center_freq=2.44e9, sample_rate=20e6, gain=30):<br />
+        self.center_freq \= center_freq<br />
+        self.sample_rate \= sample_rate<br />
+        self.gain \= gain<br />
+        self.fft_size \= 2048<br />
+        self.running \= False  </p>
+<div class="highlight"><pre><span></span><code>def setup\_flowgraph(self):  
+    &quot;&quot;&quot;Setup GNU Radio flowgraph for spectrum analysis&quot;&quot;&quot;  
+    self.tb \= gr.top\_block()
+
+    \# HackRF source  
+    self.hackrf\_source \= osmosdr.source(args=&quot;hackrf=0&quot;)  
+    self.hackrf\_source.set\_center\_freq(self.center\_freq)  
+    self.hackrf\_source.set\_sample\_rate(self.sample\_rate)  
+    self.hackrf\_source.set\_freq\_corr(0)  
+    self.hackrf\_source.set\_gain(self.gain)
+
+    \# FFT and power calculation  
+    self.fft \= filter.fft\_vcc(self.fft\_size, True, (), True)  
+    self.c2mag2 \= blocks.complex\_to\_mag\_squared(self.fft\_size)  
+    self.integrate \= blocks.integrate\_ff(1000, self.fft\_size)  
+    self.sink \= blocks.vector\_sink\_f(self.fft\_size)
+
+    \# Connect blocks  
+    self.tb.connect(self.hackrf\_source, self.fft, self.c2mag2,   
+                   self.integrate, self.sink)
+
+def analyze\_bluetooth\_channels(self):  
+    &quot;&quot;&quot;Analyze Bluetooth channel activity&quot;&quot;&quot;  
+    \# Bluetooth channels: 2402 MHz \+ k MHz, k \= 0,1,2...78  
+    bluetooth\_channels \= \[2402 \+ k for k in range(79)\]  
+    channel\_power \= {}
+
+    print(&quot;Analyzing Bluetooth channel activity...&quot;)
+
+    for channel\_freq in bluetooth\_channels:  
+        print(f&quot;Scanning channel {channel\_freq \- 2402}: {channel\_freq} MHz&quot;)
+
+        \# Tune to channel frequency  
+        self.hackrf\_source.set\_center\_freq(channel\_freq \* 1e6)  
+        time.sleep(0.1)  \# Allow settling
+
+        \# Collect samples  
+        self.tb.start()  
+        time.sleep(1)  \# 1 second capture  
+        self.tb.stop()
+
+        \# Calculate average power  
+        data \= np.array(self.sink.data())  
+        avg\_power \= np.mean(data) if len(data) \&gt; 0 else 0  
+        channel\_power\[channel\_freq \- 2402\] \= avg\_power
+
+        \# Clear sink for next iteration  
+        self.sink.reset()
+
+    return channel\_power
+
+def detect\_bluetooth\_devices(self):  
+    &quot;&quot;&quot;Detect active Bluetooth devices based on RF patterns&quot;&quot;&quot;  
+    print(&quot;Starting Bluetooth device detection...&quot;)
+
+    \# Monitor frequency hopping patterns  
+    hop\_sequence \= \[\]  
+    detection\_time \= 30  \# seconds
+
+    start\_time \= time.time()  
+    while time.time() \- start\_time \&lt; detection\_time:  
+        \# Quick scan across all channels  
+        for channel in range(79):  
+            freq \= (2402 \+ channel) \* 1e6  
+            self.hackrf\_source.set\_center\_freq(freq)
+
+            \# Brief capture  
+            self.tb.start()  
+            time.sleep(0.01)  \# 10ms  
+            self.tb.stop()
+
+            \# Check for activity  
+            data \= np.array(self.sink.data())  
+            if len(data) \&gt; 0 and np.max(data) \&gt; np.mean(data) \* 2:  
+                hop\_sequence.append((time.time(), channel))
+
+            self.sink.reset()
+
+    return self.analyze\_hopping\_patterns(hop\_sequence)
+
+def analyze\_hopping\_patterns(self, hop\_sequence):  
+    &quot;&quot;&quot;Analyze frequency hopping to identify devices&quot;&quot;&quot;  
+    devices \= \[\]
+
+    if len(hop\_sequence) \&lt; 10:  
+        return devices
+
+    \# Group hops by time windows (625μs slots)  
+    time\_windows \= {}  
+    for timestamp, channel in hop\_sequence:  
+        window \= int(timestamp \* 1600\)  \# 625μs slots  
+        if window not in time\_windows:  
+            time\_windows\[window\] \= \[\]  
+        time\_windows\[window\].append(channel)
+
+    \# Identify potential piconets  
+    for window, channels in time\_windows.items():  
+        if len(channels) \&gt; 5:  \# Minimum activity threshold  
+            device \= {  
+                &#39;timestamp&#39;: window / 1600.0,  
+                &#39;channels&#39;: channels,  
+                &#39;pattern\_strength&#39;: len(channels)  
+            }  
+            devices.append(device)
+
+    return devices
+</code></pre></div>
+<p># Usage example<br />
+if __name__ \== "__main__":<br />
+    analyzer \= BluetoothSpectrumAnalyzer()<br />
+    analyzer.setup_flowgraph()  </p>
+<div class="highlight"><pre><span></span><code>\# Analyze channel activity  
+channel\_activity \= analyzer.analyze\_bluetooth\_channels()
+
+\# Display results  
+active\_channels \= \[(ch, power) for ch, power in channel\_activity.items()   
+                  if power \&gt; np.mean(list(channel\_activity.values())) \* 1.5\]
+
+print(f&quot;\\nActive Bluetooth channels detected: {len(active\_channels)}&quot;)  
+for channel, power in active\_channels:  
+    print(f&quot;Channel {channel}: {power:.2e} power units&quot;)
+</code></pre></div>
+<h4 id="advanced-rf-fingerprinting"><strong>Advanced RF Fingerprinting</strong><a class="headerlink" href="#advanced-rf-fingerprinting" title="Permanent link">&para;</a></h4>
+<p>#!/usr/bin/env python3<br />
+"""<br />
+Bluetooth Device RF Fingerprinting<br />
+Identifies devices based on RF characteristics<br />
+"""</p>
+<p>import numpy as np<br />
+import scipy.signal as signal<br />
+from scipy.fft import fft, fftfreq<br />
+import matplotlib.pyplot as plt</p>
+<p>class BluetoothRFFingerprinter:<br />
+    def __init__(self, sample_rate=20e6):<br />
+        self.sample_rate \= sample_rate<br />
+        self.device_signatures \= {}  </p>
+<div class="highlight"><pre><span></span><code>def capture\_device\_signature(self, device\_mac, duration=10):  
+    &quot;&quot;&quot;Capture RF signature for a specific device&quot;&quot;&quot;  
+    print(f&quot;Capturing RF signature for device {device\_mac}&quot;)
+
+    \# This would interface with your SDR hardware  
+    \# For example purposes, we&#39;ll simulate the process  
+    signature\_data \= self.extract\_rf\_features(device\_mac, duration)  
+    self.device\_signatures\[device\_mac\] \= signature\_data
+
+    return signature\_data
+
+def extract\_rf\_features(self, device\_mac, duration):  
+    &quot;&quot;&quot;Extract RF fingerprinting features&quot;&quot;&quot;  
+    features \= {}
+
+    \# Simulate RF capture \- in real implementation, this would  
+    \# interface with HackRF or similar SDR
+
+    \# 1\. Carrier Frequency Offset (CFO)  
+    features\[&#39;cfo&#39;\] \= self.measure\_carrier\_offset(device\_mac)
+
+    \# 2\. I/Q Imbalance  
+    features\[&#39;iq\_imbalance&#39;\] \= self.measure\_iq\_imbalance(device\_mac)
+
+    \# 3\. Phase Noise Characteristics  
+    features\[&#39;phase\_noise&#39;\] \= self.measure\_phase\_noise(device\_mac)
+
+    \# 4\. Power Spectral Density  
+    features\[&#39;psd&#39;\] \= self.measure\_power\_spectrum(device\_mac)
+
+    \# 5\. Modulation Characteristics  
+    features\[&#39;modulation&#39;\] \= self.analyze\_modulation(device\_mac)
+
+    return features
+
+def measure\_carrier\_offset(self, device\_mac):  
+    &quot;&quot;&quot;Measure carrier frequency offset&quot;&quot;&quot;  
+    \# Placeholder for CFO measurement  
+    \# In practice, this would analyze the received signal  
+    \# to determine frequency offset from expected carrier  
+    return np.random.normal(0, 1000\)  \# Hz offset
+
+def measure\_iq\_imbalance(self, device\_mac):  
+    &quot;&quot;&quot;Measure I/Q imbalance characteristics&quot;&quot;&quot;  
+    \# I/Q imbalance affects constellation  
+    amplitude\_imbalance \= np.random.normal(0, 0.1)  
+    phase\_imbalance \= np.random.normal(0, 0.05)
+
+    return {  
+        &#39;amplitude&#39;: amplitude\_imbalance,  
+        &#39;phase&#39;: phase\_imbalance  
+    }
+
+def measure\_phase\_noise(self, device\_mac):  
+    &quot;&quot;&quot;Analyze phase noise characteristics&quot;&quot;&quot;  
+    \# Phase noise affects signal quality  
+    close\_in\_noise \= np.random.normal(-80, 5\)  \# dBc/Hz  
+    far\_out\_noise \= np.random.normal(-120, 10\)  \# dBc/Hz
+
+    return {  
+        &#39;close\_in&#39;: close\_in\_noise,  
+        &#39;far\_out&#39;: far\_out\_noise  
+    }
+
+def measure\_power\_spectrum(self, device\_mac):  
+    &quot;&quot;&quot;Analyze power spectral density&quot;&quot;&quot;  
+    \# Create synthetic PSD for demonstration  
+    freqs \= np.linspace(-10e6, 10e6, 1000\)
+
+    \# Bluetooth signal has characteristic spectral shape  
+    center\_power \= np.random.normal(-30, 5\)  
+    spectral\_rolloff \= np.random.normal(0.8, 0.1)
+
+    psd \= center\_power \- spectral\_rolloff \* np.abs(freqs) / 1e6
+
+    return {  
+        &#39;frequencies&#39;: freqs.tolist(),  
+        &#39;power&#39;: psd.tolist(),  
+        &#39;center\_power&#39;: center\_power,  
+        &#39;rolloff&#39;: spectral\_rolloff  
+    }
+
+def analyze\_modulation(self, device\_mac):  
+    &quot;&quot;&quot;Analyze modulation characteristics&quot;&quot;&quot;  
+    \# Bluetooth uses GFSK modulation  
+    modulation\_index \= np.random.normal(0.32, 0.05)  \# Typical for Bluetooth  
+    symbol\_rate \= 1e6  \# 1 Msps for Bluetooth
+
+    return {  
+        &#39;type&#39;: &#39;GFSK&#39;,  
+        &#39;modulation\_index&#39;: modulation\_index,  
+        &#39;symbol\_rate&#39;: symbol\_rate  
+    }
+
+def compare\_signatures(self, signature1, signature2):  
+    &quot;&quot;&quot;Compare two RF signatures for similarity&quot;&quot;&quot;  
+    similarity\_score \= 0  
+    total\_features \= 0
+
+    \# Compare CFO  
+    cfo\_diff \= abs(signature1\[&#39;cfo&#39;\] \- signature2\[&#39;cfo&#39;\])  
+    cfo\_similarity \= max(0, 1 \- cfo\_diff / 5000\)  \# Normalize by 5kHz  
+    similarity\_score \+= cfo\_similarity  
+    total\_features \+= 1
+
+    \# Compare I/Q imbalance  
+    iq\_diff \= abs(signature1\[&#39;iq\_imbalance&#39;\]\[&#39;amplitude&#39;\] \-   
+                 signature2\[&#39;iq\_imbalance&#39;\]\[&#39;amplitude&#39;\])  
+    iq\_similarity \= max(0, 1 \- iq\_diff / 0.5)  
+    similarity\_score \+= iq\_similarity  
+    total\_features \+= 1
+
+    \# Compare phase noise  
+    phase\_diff \= abs(signature1\[&#39;phase\_noise&#39;\]\[&#39;close\_in&#39;\] \-   
+                    signature2\[&#39;phase\_noise&#39;\]\[&#39;close\_in&#39;\])  
+    phase\_similarity \= max(0, 1 \- phase\_diff / 20\)  
+    similarity\_score \+= phase\_similarity  
+    total\_features \+= 1
+
+    return similarity\_score / total\_features
+
+def identify\_device(self, unknown\_signature, threshold=0.8):  
+    &quot;&quot;&quot;Identify device based on RF signature&quot;&quot;&quot;  
+    best\_match \= None  
+    best\_score \= 0
+
+    for known\_mac, known\_signature in self.device\_signatures.items():  
+        score \= self.compare\_signatures(unknown\_signature, known\_signature)
+
+        if score \&gt; best\_score:  
+            best\_score \= score  
+            best\_match \= known\_mac
+
+    if best\_score \&gt; threshold:  
+        return best\_match, best\_score  
+    else:  
+        return None, best\_score
+</code></pre></div>
+<p># Advanced spectrum analysis functions<br />
+def analyze_bluetooth_interference():<br />
+    """Analyze interference sources in 2.4 GHz band"""<br />
+    interference_sources \= {<br />
+        'wifi_channels': [2412, 2437, 2462],  # MHz<br />
+        'microwave': 2450,<br />
+        'zigbee': [2405, 2410, 2415, 2420, 2425, 2430, 2435, 2440, 2445, 2450,<br />
+                  2455, 2460, 2465, 2470, 2475, 2480]<br />
+    }  </p>
+<div class="highlight"><pre><span></span><code>print(&quot;Analyzing 2.4 GHz band interference...&quot;)
+
+\# This would use actual SDR measurements  
+for source, frequencies in interference\_sources.items():  
+    print(f&quot;\\n{source.upper()} Analysis:&quot;)  
+    if isinstance(frequencies, list):  
+        for freq in frequencies:  
+            print(f&quot;  {freq} MHz: Analyzing...&quot;)  
+    else:  
+        print(f&quot;  {frequencies} MHz: Analyzing...&quot;)
+</code></pre></div>
+<p># Signal jamming detection<br />
+def detect_jamming_attacks():<br />
+    """Detect potential jamming attacks on Bluetooth"""<br />
+    print("Monitoring for Bluetooth jamming attacks...")  </p>
+<div class="highlight"><pre><span></span><code>\# Monitor power levels across Bluetooth spectrum  
+normal\_noise\_floor \= \-90  \# dBm  
+jamming\_threshold \= \-60   \# dBm
+
+\# This would interface with actual SDR hardware  
+for channel in range(79):  
+    freq \= 2402 \+ channel  
+    \# power\_level \= measure\_power\_at\_frequency(freq)  
+    power\_level \= np.random.normal(-85, 10\)  \# Simulated
+
+    if power\_level \&gt; jamming\_threshold:  
+        print(f&quot;WARNING: Potential jamming detected on channel {channel} &quot;  
+              f&quot;({freq} MHz): {power\_level:.1f} dBm&quot;)
+</code></pre></div>
+<h2 id="hardware-sniffing-with-ubertooth"><strong>Hardware Sniffing with Ubertooth</strong><a class="headerlink" href="#hardware-sniffing-with-ubertooth" title="Permanent link">&para;</a></h2>
+<h3 id="ubertooth-one-setup-and-configuration"><strong>Ubertooth One Setup and Configuration</strong><a class="headerlink" href="#ubertooth-one-setup-and-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="initial-setup"><strong>Initial Setup</strong><a class="headerlink" href="#initial-setup" title="Permanent link">&para;</a></h4>
+<p># Install Ubertooth tools<br />
+sudo apt-get install ubertooth</p>
+<p># Update Ubertooth firmware<br />
+ubertooth-dfu -d bluetooth_rxtx.dfu</p>
+<p># Verify installation<br />
+ubertooth-util -v</p>
+<p># Basic spectrum analysis<br />
+ubertooth-specan -G</p>
+<p># Start basic packet capture<br />
+ubertooth-rx -f capture.pcap</p>
+<h3 id="passive-bluetooth-sniffing"><strong>Passive Bluetooth Sniffing</strong><a class="headerlink" href="#passive-bluetooth-sniffing" title="Permanent link">&para;</a></h3>
+<h4 id="basic-packet-capture"><strong>Basic Packet Capture</strong><a class="headerlink" href="#basic-packet-capture" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash<br />
+# Comprehensive Ubertooth sniffing setup</p>
+<p>echo "=== UBERTOOTH PASSIVE SNIFFING SETUP \==="</p>
+<p># Step 1: Prepare capture environment<br />
+CAPTURE_DIR="bluetooth_capture_$(date +%Y%m%d_%H%M%S)"<br />
+mkdir -p $CAPTURE_DIR<br />
+cd $CAPTURE_DIR</p>
+<p># Step 2: Start spectrum analysis to identify active channels<br />
+echo "Step 1: Analyzing spectrum for active channels..."<br />
+ubertooth-specan -G &gt; spectrum_analysis.txt &amp;<br />
+SPECAN_PID=$!<br />
+sleep 30<br />
+kill $SPECAN_PID</p>
+<p># Step 3: Identify target devices<br />
+echo "Step 2: Identifying target devices..."<br />
+ubertooth-rx -t 30 &gt; device_discovery.txt</p>
+<p># Parse discovered devices<br />
+echo "Discovered devices:"<br />
+grep -E "([0-9A-F]{2}:){5}[0-9A-F]{2}" device_discovery.txt | sort -u</p>
+<p># Step 4: Start comprehensive packet capture<br />
+echo "Step 3: Starting packet capture..."<br />
+ubertooth-rx -f bluetooth_packets.pcap &amp;<br />
+RX_PID=$!</p>
+<p># Step 5: BLE advertising packet capture<br />
+echo "Step 4: Capturing BLE advertising packets..."<br />
+ubertooth-btle -f -t 300 &gt; ble_advertising.txt &amp;<br />
+BLE_PID=$!</p>
+<p>echo "Capture running... Press Ctrl+C to stop"<br />
+trap "kill $RX_PID $BLE_PID; exit" INT<br />
+wait</p>
+<h4 id="advanced-sniffing-with-filtering"><strong>Advanced Sniffing with Filtering</strong><a class="headerlink" href="#advanced-sniffing-with-filtering" title="Permanent link">&para;</a></h4>
+<p>#!/usr/bin/env python3<br />
+"""<br />
+Advanced Ubertooth packet analysis and filtering<br />
+"""</p>
+<p>import subprocess<br />
+import time<br />
+import json<br />
+import re<br />
+from datetime import datetime</p>
+<p>class UbertoothAdvancedSniffer:<br />
+    def __init__(self, output_dir="capture_session"):<br />
+        self.output_dir \= output_dir<br />
+        self.target_devices \= []<br />
+        self.capture_filters \= {}  </p>
+<div class="highlight"><pre><span></span><code>def setup\_capture\_session(self):  
+    &quot;&quot;&quot;Setup comprehensive capture session&quot;&quot;&quot;  
+    subprocess.run(\[&#39;mkdir&#39;, &#39;-p&#39;, self.output\_dir\])
+
+    \# Create session configuration  
+    session\_config \= {  
+        &#39;start\_time&#39;: datetime.now().isoformat(),  
+        &#39;target\_devices&#39;: self.target\_devices,  
+        &#39;filters&#39;: self.capture\_filters  
+    }
+
+    with open(f&quot;{self.output\_dir}/session\_config.json&quot;, &#39;w&#39;) as f:  
+        json.dump(session\_config, f, indent=2)
+
+def discover\_active\_devices(self, duration=60):  
+    &quot;&quot;&quot;Discover active Bluetooth devices&quot;&quot;&quot;  
+    print(f&quot;Discovering devices for {duration} seconds...&quot;)
+
+    \# Run device discovery  
+    cmd \= \[&#39;ubertooth-rx&#39;, &#39;-t&#39;, str(duration)\]  
+    result \= subprocess.run(cmd, capture\_output=True, text=True)
+
+    \# Parse MAC addresses from output  
+    mac\_pattern \= r&#39;(\[0-9A-F\]{2}:){5}\[0-9A-F\]{2}&#39;  
+    discovered\_macs \= re.findall(mac\_pattern, result.stdout)
+
+    \# Remove duplicates and store  
+    unique\_macs \= list(set(\[&#39;&#39;.join(mac) for mac in discovered\_macs\]))  
+    self.target\_devices \= unique\_macs
+
+    print(f&quot;Discovered {len(unique\_macs)} unique devices&quot;)  
+    return unique\_macs
+
+def capture\_pairing\_exchange(self, target\_mac=None, timeout=300):  
+    &quot;&quot;&quot;Capture Bluetooth pairing exchange&quot;&quot;&quot;  
+    print(&quot;Monitoring for pairing exchanges...&quot;)
+
+    output\_file \= f&quot;{self.output\_dir}/pairing\_capture.pcap&quot;
+
+    if target\_mac:  
+        \# Target specific device  
+        cmd \= \[&#39;ubertooth-rx&#39;, &#39;-f&#39;, output\_file, &#39;-t&#39;, str(timeout)\]  
+    else:  
+        \# Monitor all devices  
+        cmd \= \[&#39;ubertooth-rx&#39;, &#39;-f&#39;, output\_file, &#39;-t&#39;, str(timeout)\]
+
+    \# Start capture process  
+    process \= subprocess.Popen(cmd, stdout=subprocess.PIPE,   
+                             stderr=subprocess.PIPE, text=True)
+
+    \# Monitor for pairing indicators  
+    pairing\_detected \= False  
+    start\_time \= time.time()
+
+    while time.time() \- start\_time \&lt; timeout:  
+        \# Check for pairing-related packets  
+        if process.poll() is None:  \# Process still running  
+            time.sleep(1)  
+            \# In a real implementation, you&#39;d parse the live output  
+            \# to detect pairing-specific packet types  
+        else:  
+            break
+
+    process.terminate()  
+    return output\_file
+
+def analyze\_frequency\_hopping(self, target\_mac, duration=120):  
+    &quot;&quot;&quot;Analyze frequency hopping patterns&quot;&quot;&quot;  
+    print(f&quot;Analyzing frequency hopping for {target\_mac}&quot;)
+
+    hop\_log \= f&quot;{self.output\_dir}/hopping\_analysis.txt&quot;
+
+    \# Capture hopping sequence  
+    cmd \= \[&#39;ubertooth-rx&#39;, &#39;-t&#39;, str(duration)\]  
+    process \= subprocess.Popen(cmd, stdout=subprocess.PIPE,   
+                             stderr=subprocess.PIPE, text=True)
+
+    hop\_sequence \= \[\]  
+    for line in iter(process.stdout.readline, &#39;&#39;):  
+        if target\_mac in line:  
+            \# Extract channel information  
+            \# This is simplified \- real implementation would parse  
+            \# actual packet headers for channel information  
+            timestamp \= time.time()  
+            \# channel \= extract\_channel\_from\_packet(line)  
+            channel \= hash(line) % 79  \# Simplified for example  
+            hop\_sequence.append((timestamp, channel))
+
+    \# Analyze hopping pattern  
+    return self.analyze\_hopping\_sequence(hop\_sequence)
+
+def analyze\_hopping\_sequence(self, hop\_sequence):  
+    &quot;&quot;&quot;Analyze frequency hopping sequence for patterns&quot;&quot;&quot;  
+    if len(hop\_sequence) \&lt; 10:  
+        return {&quot;error&quot;: &quot;Insufficient data for analysis&quot;}
+
+    channels \= \[hop\[1\] for hop in hop\_sequence\]  
+    timestamps \= \[hop\[0\] for hop in hop\_sequence\]
+
+    \# Calculate hop timing  
+    hop\_intervals \= \[timestamps\[i+1\] \- timestamps\[i\]   
+                    for i in range(len(timestamps)-1)\]
+
+    analysis \= {  
+        &#39;total\_hops&#39;: len(hop\_sequence),  
+        &#39;unique\_channels&#39;: len(set(channels)),  
+        &#39;avg\_hop\_interval&#39;: sum(hop\_intervals) / len(hop\_intervals),  
+        &#39;channel\_distribution&#39;: {ch: channels.count(ch) for ch in set(channels)}  
+    }
+
+    return analysis
+
+def capture\_ble\_advertising(self, duration=300):  
+    &quot;&quot;&quot;Capture BLE advertising packets&quot;&quot;&quot;  
+    print(&quot;Capturing BLE advertising packets...&quot;)
+
+    output\_file \= f&quot;{self.output\_dir}/ble\_advertising.txt&quot;  
+    cmd \= \[&#39;ubertooth-btle&#39;, &#39;-f&#39;, &#39;-t&#39;, str(duration)\]
+
+    with open(output\_file, &#39;w&#39;) as f:  
+        subprocess.run(cmd, stdout=f, stderr=subprocess.PIPE)
+
+    return self.parse\_ble\_advertising(output\_file)
+
+def parse\_ble\_advertising(self, input\_file):  
+    &quot;&quot;&quot;Parse BLE advertising packets for device information&quot;&quot;&quot;  
+    devices \= {}
+
+    with open(input\_file, &#39;r&#39;) as f:  
+        for line in f:  
+            if &#39;ADV\_IND&#39; in line or &#39;ADV\_NONCONN\_IND&#39; in line:  
+                \# Parse advertising packet  
+                \# This is simplified \- real parsing would handle  
+                \# the complete BLE advertising packet structure
+
+                \# Extract MAC address  
+                mac\_match \= re.search(r&#39;(\[0-9A-F\]{2}:){5}\[0-9A-F\]{2}&#39;, line)  
+                if mac\_match:  
+                    mac \= mac\_match.group(0)
+
+                    if mac not in devices:  
+                        devices\[mac\] \= {  
+                            &#39;first\_seen&#39;: time.time(),  
+                            &#39;packet\_count&#39;: 0,  
+                            &#39;advertisement\_types&#39;: set(),  
+                            &#39;rssi\_values&#39;: \[\]  
+                        }
+
+                    devices\[mac\]\[&#39;packet\_count&#39;\] \+= 1  
+                    devices\[mac\]\[&#39;last\_seen&#39;\] \= time.time()
+
+                    \# Extract RSSI if available  
+                    rssi\_match \= re.search(r&#39;RSSI:\\s\*(-?\\d+)&#39;, line)  
+                    if rssi\_match:  
+                        devices\[mac\]\[&#39;rssi\_values&#39;\].append(int(rssi\_match.group(1)))
+
+    return devices
+</code></pre></div>
+<p># Example usage<br />
+if __name__ \== "__main__":<br />
+    sniffer \= UbertoothAdvancedSniffer("bluetooth_analysis_session")<br />
+    sniffer.setup_capture_session()  </p>
+<div class="highlight"><pre><span></span><code>\# Discover devices  
+devices \= sniffer.discover\_active\_devices(duration=30)
+
+if devices:  
+    print(f&quot;\\nMonitoring devices: {devices}&quot;)
+
+    \# Capture pairing if available  
+    pairing\_file \= sniffer.capture\_pairing\_exchange(timeout=60)
+
+    \# Analyze frequency hopping for first device  
+    if devices:  
+        hopping\_analysis \= sniffer.analyze\_frequency\_hopping(devices\[0\], duration=60)  
+        print(f&quot;\\nHopping analysis: {hopping\_analysis}&quot;)
+
+    \# Capture BLE advertising  
+    ble\_devices \= sniffer.capture\_ble\_advertising(duration=60)  
+    print(f&quot;\\nBLE devices discovered: {len(ble\_devices)}&quot;)
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

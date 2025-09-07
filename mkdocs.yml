@@ -9,7 +9,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
+   #  - navigation.sections
     - navigation.top
     - toc.integrate
 
@@ -41,6 +41,7 @@ nav:
       - Bluetooth Security Protocols: Bluetooth_Security_Protocols.md
       - Physical and Hardware-Based Bluetooth Attacks: Physical_and_Hardware_Based_Bluetooth_Attacks.md
       - Comprehensive Bluetooth Security Testing and Hacking Guide: bluetooth_security_testing_guide.md
+      - The Social-Engineer Toolkit (SET) — Comprehensive Master Guide: "SET.md"
 
 markdown_extensions:
   - admonition

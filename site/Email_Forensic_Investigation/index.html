@@ -1,0 +1,1123 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Improved, detailed documentation for OSINT operations, tools, and environments.">
+      
+      
+      
+      
+        <link rel="prev" href="../website_monitoring/">
+      
+      
+        <link rel="next" href="../advanced_wireless_osint/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>OSINT Email Forensics & Spoofing Analysis - Practical OSINT Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#email-forensic-investigation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Practical OSINT Handbook" class="md-header__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practical OSINT Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSINT Email Forensics & Spoofing Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Practical OSINT Handbook" class="md-nav__button md-logo" aria-label="Practical OSINT Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Practical OSINT Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Environment Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Environment Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kali-osint-virtualbox-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali VirtualBox Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resize-kali-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resize Your VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSINT_Environment_Kali_vs_Tails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tails vs. Kali
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Core Tools & Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Core Tools & Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_dork_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorking for OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theHarvester_OSINT_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    theHarvester OSINT Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Free_OSINT_Tools_List/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Free OSINT Tools List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unique_SOperators_Bing_Yandex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Search Operators in Bing & Yandex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Real-World OSINT Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Real-World OSINT Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website_monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Website Monitoring & Security Checks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OSINT Email Forensics & Spoofing Analysis
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT Email Forensics & Spoofing Analysis
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#email-forensic-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email Forensic Investigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-initial-data-collection-and-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Initial Data Collection and Verification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-pre-built-spoofing-phishing-kits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Pre-Built Spoofing &amp; Phishing Kits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of Pre-Built Spoofing &amp; Phishing Kits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blackeye" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlackEye
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zphisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZPhisher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socialfish" class="md-nav__link">
+    <span class="md-ellipsis">
+      SocialFish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evilginx2-advanced-mitm-phishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evilginx2 (Advanced MITM Phishing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-deciphering-the-headers-the-digital-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Deciphering the Headers - The Digital Trail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-content-metadata-and-osint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Content, Metadata, and OSINT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-spam-vs-spoof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Spam vs. Spoof
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_wireless_osint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Wireless OSINT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Burner_Accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burner Accounts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white_hack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finding Leaked Databases, Emails, and Passwords
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Specialized Hacking and Auditing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Specialized Hacking and Auditing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bluetooth_Security_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bluetooth Security Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Physical_and_Hardware_Based_Bluetooth_Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical and Hardware-Based Bluetooth Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth_security_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comprehensive Bluetooth Security Testing and Hacking Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>OSINT Email Forensics & Spoofing Analysis</h1>
+
+<h3 id="email-forensic-investigation"><strong>Email Forensic Investigation</strong><a class="headerlink" href="#email-forensic-investigation" title="Permanent link">&para;</a></h3>
+<p>An email is more than just a simple message; it is a digital artifact containing a wealth of technical information. This document outlines a professional, step-by-step methodology for conducting a full email forensic investigation to uncover the true origin of a message and determine if it is legitimate, spam, or a sophisticated spoof.</p>
+<h3 id="phase-1-initial-data-collection-and-verification"><strong>Phase 1: Initial Data Collection and Verification</strong><a class="headerlink" href="#phase-1-initial-data-collection-and-verification" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Understand the Deception of the "From" Field</strong></p>
+<p>The "From" field, as displayed in an email client, is the easiest part of an email to forge and should never be trusted as the sole indicator of authenticity. This is due to the foundational design of the Simple Mail Transfer Protocol (SMTP), which did not prioritize security in its early development.</p>
+<p>An email address in the SMTP protocol has two key components:</p>
+<ul>
+<li><strong>The "Envelope From" (MAIL FROM):</strong> This is the address used by mail servers for delivery and for sending non-delivery reports, also known as "bounces".  </li>
+<li><strong>The "Header From" (From):</strong> This is the address that appears to the recipient in their email client.</li>
+</ul>
+<p>A crucial flaw in the system is that these two addresses do not have to match. An attacker can tell a mail server to send a message from one address (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#112;&#97;&#109;&#109;&#101;&#114;&#64;&#49;&#50;&#51;&#46;&#110;&#101;&#116;">&#115;&#112;&#97;&#109;&#109;&#101;&#114;&#64;&#49;&#50;&#51;&#46;&#110;&#101;&#116;</a>) while displaying a completely different one (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#101;&#115;&#105;&#100;&#101;&#110;&#116;&#64;&#119;&#104;&#105;&#116;&#101;&#104;&#111;&#117;&#115;&#101;&#46;&#103;&#111;&#118;">&#112;&#114;&#101;&#115;&#105;&#100;&#101;&#110;&#116;&#64;&#119;&#104;&#105;&#116;&#101;&#104;&#111;&#117;&#115;&#101;&#46;&#103;&#111;&#118;</a>) in the header. They achieve this without needing to compromise the target's account credentials, simply by using a malicious mail server or script to forge the email headers.</p>
+<p>Attackers commonly achieve this through three primary methods:</p>
+<ul>
+<li><strong>Using an Open Relay Server:</strong> A misconfigured mail server that allows anyone on the internet to send email through it. An attacker can connect and specify any "From" address they choose.  </li>
+<li><strong>Using a Malicious/Rogue SMTP Server:</strong> A spoofer can operate their own email server, allowing them to program it to generate and send emails with any From header they desire.  </li>
+<li><strong>Phishing Kits and Automated Tools:</strong> Pre-packaged tools widely available on the dark web make it easy for even non-technical individuals to craft and send spoofed emails in bulk.</li>
+</ul>
+<hr />
+<h2 id="examples-of-pre-built-spoofing-phishing-kits"><strong>Examples of Pre-Built Spoofing &amp; Phishing Kits</strong><a class="headerlink" href="#examples-of-pre-built-spoofing-phishing-kits" title="Permanent link">&para;</a></h2>
+<h3 id="blackeye"><strong>BlackEye</strong><a class="headerlink" href="#blackeye" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Very popular phishing toolkit (open-source, also cloned by threat actors).  </li>
+<li>Provides ready-made templates to mimic Facebook, Gmail, Instagram, PayPal, etc.  </li>
+<li>Often used with tunneling services (Ngrok, Serveo) to make phishing pages publicly accessible.  </li>
+<li><strong>OSINT clue:</strong> If you see <code>ngrok.io</code> or <code>serveo.net</code> URLs in phishing campaigns, they may be BlackEye-based.  </li>
+</ul>
+<h3 id="zphisher"><strong>ZPhisher</strong><a class="headerlink" href="#zphisher" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bash-based toolkit, successor to BlackEye in some ways.  </li>
+<li>30 phishing templates for major platforms (Netflix, LinkedIn, Twitter, etc.).  </li>
+<li>Simplifies credential capture by generating fake login pages quickly.  </li>
+</ul>
+<h3 id="socialfish"><strong>SocialFish</strong><a class="headerlink" href="#socialfish" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Phishing framework with Python backend.  </li>
+<li>Integrates with Ngrok for easy public hosting.  </li>
+<li>Known for its modular design: attackers can pick a template, deploy it in minutes.  </li>
+</ul>
+<h3 id="evilginx2-advanced-mitm-phishing"><strong>Evilginx2 (Advanced MITM Phishing)</strong><a class="headerlink" href="#evilginx2-advanced-mitm-phishing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unlike template kits, this performs a <strong>reverse proxy attack</strong>.  </li>
+<li>Intercepts traffic between user and legitimate site → can steal <strong>session cookies</strong> (bypasses 2FA).  </li>
+<li><strong>OSINT marker:</strong> SSL certificates from Let’s Encrypt, suspicious subdomains mimicking real services.  </li>
+</ul>
+<hr />
+<p><strong>OSINT Upgrade: Open Relay Identification</strong></p>
+<ul>
+<li>Use OSINT tools like <strong>Shodan</strong> or <strong>Censys</strong> to identify open relay mail servers still exposed on the internet. This provides actionable intelligence on the types of infrastructure attackers can leverage.</li>
+</ul>
+<hr />
+<h3 id="phase-2-deciphering-the-headers-the-digital-trail"><strong>Phase 2: Deciphering the Headers - The Digital Trail</strong><a class="headerlink" href="#phase-2-deciphering-the-headers-the-digital-trail" title="Permanent link">&para;</a></h3>
+<p><strong>Step 2: Obtain the Full Email Headers</strong></p>
+<p>The full email headers are the most critical evidence in any investigation. They contain the true technical routing information and act as a log of the email's journey from its origin.</p>
+<ul>
+<li><strong>How to retrieve them:</strong> Every major email client has an option to view the "original" or "full" headers.  </li>
+<li><strong>Outlook:</strong> File -&gt; Properties -&gt; Internet headers   </li>
+<li><strong>Gmail:</strong> More options (three dots) -&gt; Show original   </li>
+<li><strong>Apple Mail:</strong> View -&gt; Message -&gt; Raw Source </li>
+</ul>
+<p>The headers will be a block of text containing fields like</p>
+<p>Received, Return-Path, SPF, DKIM, and Message-ID. Copy this entire block into a text editor for analysis.</p>
+<p><strong>Step 3: Analyze the Received Headers</strong></p>
+<p>The Received headers are a chain of records, each added by a server that handled the email. They must be read from the bottom up to trace the email's path from its origin to you.</p>
+<ul>
+<li><strong>IP Addresses:</strong> Use tools like <strong>nslookup</strong> or <strong>whois</strong> to check the IP addresses in the Received headers and identify the server's location and owner.  </li>
+<li><strong>Timestamps:</strong> Analyze the timestamps. A large time gap between servers could indicate a delay or manipulation, while a suspiciously short gap between distant servers could be a red flag.  </li>
+<li><strong>Consistency Check:</strong> Compare the Received headers to the "From" address. A mismatch between the originating IP address and the claimed sender's network is a strong indicator of spoofing.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Important Limitation:</strong><br />
+In most modern webmail services (such as Gmail, Outlook.com, or Yahoo), the sender’s actual device IP address is <strong>not</strong> exposed in the email headers.<br />
+Instead, the <code>Received:</code> lines will typically show the IP address of the provider’s mail relay or proxy service.<br />
+This is by design, to protect user privacy.<br />
+Only in cases where the sender is using a <strong>self-hosted mail server</strong> or a <strong>poorly configured system</strong> will you sometimes see the true originating IP belonging to the sender’s ISP or device.  </p>
+</blockquote>
+<p><strong>OSINT Upgrade</strong>:</p>
+<ul>
+<li>Use tools like ipinfo.io, whois.domaintools.com, or AbuseIPDB to get ownership and abuse reports.  </li>
+<li>Cross-reference IP with public blacklists (Spamhaus, Talos Intelligence).  </li>
+<li>If IP belongs to a cloud provider (AWS, GCP, OVH), suspect throwaway virtual machines.</li>
+</ul>
+<p><strong>Step 4: Check the Return-Path and Message-ID</strong></p>
+<ul>
+<li><strong>Return-Path:</strong> This header specifies where non-delivery or "bounce" messages should be sent. This is often the true sender's address. If the  </li>
+<li>Return-Path differs from the From address, it is a significant red flag for spoofing.  </li>
+<li><strong>Message-ID:</strong> This is a unique identifier assigned by the sending server. Its format can offer clues about the software used.</li>
+</ul>
+<p><strong>Step 5: Verify Sender Authentication</strong></p>
+<p>Modern email systems use three primary authentication methods to combat spoofing. These are critical for determining an email's legitimacy.</p>
+<ul>
+<li><strong>SPF (Sender Policy Framework):</strong> A DNS record that specifies which mail servers are authorized to send email for a domain. A  </li>
+<li>pass result confirms authorization, while fail or softfail indicates an unauthorized server.  </li>
+<li><strong>DKIM (DomainKeys Identified Mail):</strong> Adds a digital signature to the email header to verify that the content has not been tampered with and that the sender is legitimate. A valid signature indicates authenticity.  </li>
+<li><strong>DMARC (Domain-based Message Authentication, Reporting &amp; Conformance):</strong> A policy that tells a receiving mail server what to do with an email that fails SPF or DKIM check. Look for  </li>
+<li>Authentication-Results headers for the final verdict.</li>
+</ul>
+<p><strong>OSINT Upgrade</strong>:</p>
+<ul>
+<li>Use <strong>mxtoolbox.com</strong> or <strong>dmarcian.com</strong> to query SPF/DKIM/DMARC.  </li>
+<li>Note: Many phishing domains lack DMARC, or set DMARC to “none” to avoid rejection.  </li>
+<li>If DKIM fails → extract <strong>d=domain.com</strong> value → investigate domain age and registrar.</li>
+</ul>
+<p><strong>Tutorial Using <code>mxtoolbox.com</code>:</strong></p>
+<ol>
+<li>Open your web browser and navigate to <code>mxtoolbox.com</code>.  </li>
+<li>In the main search bar, enter the domain name you wish to investigate (e.g., <code>google.com</code>).  </li>
+<li>Click the dropdown menu next to the search bar and select the specific record type you want to query: <code>SPF Record Lookup</code>, <code>DKIM Record Lookup</code>, or <code>DMARC Record Lookup</code>.  </li>
+<li>Click the search button. The tool will display the DNS record, providing details about the sender authentication configuration for that domain.</li>
+</ol>
+<p><strong>Tutorial Using <code>dmarcian.com</code>:</strong></p>
+<ol>
+<li>Navigate to <code>dmarcian.com/dmarc-inspector/</code>.  </li>
+<li>In the input field, enter the domain name you're investigating.  </li>
+<li>The tool will automatically run a DMARC check and provide a simple report on the domain's DMARC, SPF, and DKIM statu</li>
+</ol>
+<hr />
+<h3 id="phase-3-content-metadata-and-osint"><strong>Phase 3: Content, Metadata, and OSINT</strong><a class="headerlink" href="#phase-3-content-metadata-and-osint" title="Permanent link">&para;</a></h3>
+<p><strong>Step 6: Analyze Message Body, URLs, and Attachments</strong></p>
+<p>Even with valid headers, the content can reveal a fraudulent intent.</p>
+<ul>
+<li><strong>Suspicious URLs:</strong> Hover over links without clicking them. Check if the URL matches the company it claims to represent. Use URL reputation tools to check for known malicious links.  </li>
+<li><strong>Urgency and Threats:</strong> Emails that demand immediate action or threaten account suspension are classic social engineering tactics.  </li>
+<li><strong>Metadata in Attachments:</strong> Do not open attachments directly. Analyze their metadata using a viewer to find clues such as the author's name, the program used to create the file, or the computer's name.</li>
+</ul>
+<p><strong>Attachment Analysis</strong>:</p>
+<ul>
+<li>Extract metadata with <code>exiftool</code>, <code>oletools</code>, or <strong>VirusTotal</strong>.  </li>
+<li>Malicious docs may contain macros → sandbox in <strong>Cuckoo Sandbox</strong> or <strong>Any.Run</strong>.</li>
+</ul>
+<p><strong>OSINT Upgrade: Researching Phishing Infrastructure</strong></p>
+<ul>
+<li><a href="https://github.com/topics/phishing-kit"><strong>GitHub Repositories</strong></a><strong>:</strong> These resources provide practical examples of tools used by attackers, which can be useful for studying phishing infrastructure:  </li>
+<li><strong>M4cs/BlackEye-Python:</strong> A phishing kit with Serveo subdomain creation support, useful for studying infrastructure design.  </li>
+<li><strong>Err0r-ICA/Phishbait:</strong> A working phishing tool with templates for numerous websites, useful for understanding contemporary tactics.  </li>
+<li><strong>curtbraz/PhishAPI:</strong> A web-based phishing suite with real-time alerting, an excellent case study in automated phishing.  </li>
+<li><strong>0xDanielLopez/phishing_kits:</strong> Catalogs real-world phishing kits for exploring attacker tactics.  </li>
+<li><strong>t4d/StalkPhish:</strong> A Python tool that aggregates phishing kits for investigative research and threat hunting.  </li>
+<li><strong>duo-labs/phish-collect:</strong> A project designed to harvest phishing kits at scale, useful for studying automation techniques.  </li>
+<li><strong>Sample Phishing Emails:</strong> Collect sample emails from public repositories like <strong>PhishTank</strong> or <strong>Spamhaus</strong> for pattern recognition training.</li>
+</ul>
+<h3 id="summary-spam-vs-spoof"><strong>Summary: Spam vs. Spoof</strong><a class="headerlink" href="#summary-spam-vs-spoof" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Spam:</strong> Often has a valid sender and may pass some or all authentication checks. The headers are usually consistent with the sender's mail server. The goal is mass distribution for advertising or scams.  </li>
+<li><strong>Spoof:</strong> The headers are manipulated to impersonate a legitimate sender. Key indicators include a mismatch between the  </li>
+<li>From and Return-Path headers, failed SPF/DKIM/DMARC checks, and an originating IP address that is not from the claimed sender's network.</li>
+</ul>
+<p>By following this comprehensive methodology, you can move past the surface-level deception and uncover the true origins of a malicious email. This skill is fundamental to protecting yourself and your organization from a wide range of cyber threats.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
