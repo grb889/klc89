@@ -1117,27 +1117,28 @@
 
 <h1 id="the-social-engineer-toolkit-set-comprehensive-master-guide">The Social-Engineer Toolkit (SET) — Comprehensive Master Guide<a class="headerlink" href="#the-social-engineer-toolkit-set-comprehensive-master-guide" title="Permanent link">&para;</a></h1>
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
-<p>1.  [Spear-Phishing Attack Vectors](#spear-phishing-attack-vectors)<br />
-2.  [Website Attack Vectors](#website-attack-vectors)<br />
-3.  [Infectious Media Generator](#infectious-media-generator)<br />
-4.  [Create a Payload and Listener](#create-a-payload-and-listener)<br />
-5.  [Mass Mailer Attack](#mass-mailer-attack)<br />
-6.  [Arduino-Based Attack Vector](#arduino-based-attack-vector)<br />
-7.  [Wireless Access Point Attack Vector](#wireless-access-point-attack-vector)<br />
-8.  [QRCode Generator Attack Vector](#qrcode-generator-attack-vector)<br />
-9.  [Powershell Attack Vectors](#powershell-attack-vectors)<br />
-10. [Third Party Modules](#third-party-modules)</p>
-<p>---</p>
+<ol>
+<li><a href="#1-spear-phishing-attack-vectors">Spear-Phishing Attack Vectors</a></li>
+<li><a href="#2-website-attack-vectors">Website Attack Vectors</a></li>
+<li><a href="#3-infectious-media-generator">Infectious Media Generator</a></li>
+<li><a href="#4-create-a-payload-and-listener">Create a Payload and Listener</a></li>
+<li><a href="#5-mass-mailer-attack">Mass Mailer Attack</a></li>
+<li><a href="#6-arduino-based-attack-vector-teensy-usb-hid-attack">Arduino-Based Attack Vector</a></li>
+<li><a href="#7-wireless-access-point-attack-vector-evil-twin-attack">Wireless Access Point Attack Vector</a></li>
+<li><a href="#8-qrcode-generator-attack-vector">QRCode Generator Attack Vector</a></li>
+<li><a href="#9-powershell-attack-vectors">Powershell Attack Vectors</a></li>
+<li><a href="#10-third-party-modules">Third Party Modules</a></li>
+</ol>
+<hr />
 <h2 id="introduction-to-the-social-engineer-toolkit-set"><strong>Introduction to the Social-Engineer Toolkit (SET)</strong><a class="headerlink" href="#introduction-to-the-social-engineer-toolkit-set" title="Permanent link">&para;</a></h2>
 <p>The Social-Engineer Toolkit (SET) is a Python-driven, open-source penetration testing framework used for social engineering attacks. It's designed to test an organization's security by simulating real-world attacks that target the human element, often the weakest link in security. SET is bundled with Kali Linux and has millions of downloads. It is intended strictly for ethical use with explicit consent.</p>
-<p>---</p>
+<hr />
 <h2 id="getting-started-a-step-by-step-tutorial-for-beginners"><strong>Getting Started: A Step-by-Step Tutorial for Beginners</strong><a class="headerlink" href="#getting-started-a-step-by-step-tutorial-for-beginners" title="Permanent link">&para;</a></h2>
 <p>SET is menu-driven, making it accessible even for novices.</p>
 <h3 id="step-1-launch-set"><strong>Step 1: Launch SET</strong><a class="headerlink" href="#step-1-launch-set" title="Permanent link">&para;</a></h3>
 <p>Run the following in Kali Linux terminal (may require root):<br />
-```bash<br />
-sudo setoolkit<br />
-```<br />
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>setoolkit<span class="w">  </span>
+</code></pre></div>
 Upon launch, it may check for updates then present the main menu.</p>
 <h3 id="step-2-navigate-the-main-menu"><strong>Step 2: Navigate the Main Menu</strong><a class="headerlink" href="#step-2-navigate-the-main-menu" title="Permanent link">&para;</a></h3>
 <p>Options:<br />
@@ -1149,7 +1150,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 6. Help, Credits, and About<br />
 7. Exit SET</p>
 <p>For beginners, choose option <strong>1) Social-Engineering Attacks</strong>. You will then see the list of attack vectors that form the basis of this guide.</p>
-<p>---</p>
+<hr />
 <h2 id="1-spear-phishing-attack-vectors"><strong>1. Spear-Phishing Attack Vectors</strong><a class="headerlink" href="#1-spear-phishing-attack-vectors" title="Permanent link">&para;</a></h2>
 <h3 id="use-case-spear-phishing-campaign-simulation"><strong>Use Case: Spear-Phishing Campaign Simulation</strong><a class="headerlink" href="#use-case-spear-phishing-campaign-simulation" title="Permanent link">&para;</a></h3>
 <p><strong>Scenario:</strong> A penetration tester is tasked with evaluating an organization's employee vulnerability to targeted phishing attacks using customized emails tailored with personal information gathered from OSINT.</p>
@@ -1165,7 +1166,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 8.  Monitor SET terminal for any credentials or user interactions captured.<br />
 9.  Document findings to provide feedback and improve company security awareness.</p>
 <p><strong>Explanation:</strong> This use case shows how SET can be leveraged to simulate highly targeted phishing attacks, critical for assessing real-world risks. The tester must have permission, use safe lab environments, and ensure employees are debriefed afterward on recognizing social engineering attacks.</p>
-<p>---</p>
+<hr />
 <h2 id="2-website-attack-vectors"><strong>2. Website Attack Vectors</strong><a class="headerlink" href="#2-website-attack-vectors" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-credential-harvesting-with-a-cloned-website"><strong>Tutorial: Credential Harvesting with a Cloned Website</strong><a class="headerlink" href="#tutorial-credential-harvesting-with-a-cloned-website" title="Permanent link">&para;</a></h3>
 <p><strong>Scenario:</strong> An ethical hacker simulates a phishing test on their organization by cloning a common login page to assess employee awareness. This is a common attack that aims to capture a user's username and password by luring them to a fake website.</p>
@@ -1178,7 +1179,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 <li>SET will now ask for your IP address. <strong>This is the critical part.</strong> You must provide the IP address of your Kali machine, as it will act as the web server to host the cloned page and a listener to capture the credentials. If the target is on your local network, use your local IP (e.g., 192.168.1.50). If the target is external, you'll need to use a public IP address and configure port forwarding or use a tunneling service like ngrok.  </li>
 <li>SET will automatically clone the site and start the web server and listener. When the victim enters their credentials on your fake site, the data will be sent (POSTed) back to your Kali machine and displayed in your terminal.</li>
 </ol>
-<p>---</p>
+<hr />
 <h2 id="3-infectious-media-generator"><strong>3. Infectious Media Generator</strong><a class="headerlink" href="#3-infectious-media-generator" title="Permanent link">&para;</a></h2>
 <h4 id="tutorial-usb-based-payload-delivery"><strong>Tutorial: USB-Based Payload Delivery</strong><a class="headerlink" href="#tutorial-usb-based-payload-delivery" title="Permanent link">&para;</a></h4>
 <p><strong>Scenario:</strong> A curious employee picks up a USB drive labeled "Confidential Employee Salaries" that was intentionally left in a public area of an office. They plug it into their computer, and a malicious payload executes, giving you a remote backdoor.</p>
@@ -1198,7 +1199,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 <li>Once the victim plugs in the drive and runs the file, a connection will be established to the listener you have already set up.</li>
 </ol>
 <p><em>This attack tests physical security controls and user willingness to run unknown files.</em></p>
-<p>---</p>
+<hr />
 <h2 id="4-create-a-payload-and-listener"><strong>4. Create a Payload and Listener</strong><a class="headerlink" href="#4-create-a-payload-and-listener" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-metasploit-integration"><strong>Tutorial: Metasploit Integration</strong><a class="headerlink" href="#tutorial-metasploit-integration" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> This module is the foundation for all attacks in SET that involve a payload calling back to your machine. It's a critical utility used to generate standalone payloads and, most importantly, to start the <strong>Multi/Handler listener</strong> in Metasploit. The handler is a listener that sits in a listening state waiting for an incoming connection from a malicious payload that has been executed on a target machine. This is a crucial step that must be completed <strong>before</strong> you attempt to run any payload-based attack.</p>
@@ -1212,7 +1213,7 @@ Upon launch, it may check for updates then present the main menu.</p>
     *   PowerShell attacks<br />
     *   Arduino-based attacks<br />
     *   Any other payload that calls back to your machine.</p>
-<p>---</p>
+<hr />
 <h2 id="5-mass-mailer-attack"><strong>5. Mass Mailer Attack</strong><a class="headerlink" href="#5-mass-mailer-attack" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-broad-phishing-campaign"><strong>Tutorial: Broad Phishing Campaign</strong><a class="headerlink" href="#tutorial-broad-phishing-campaign" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> Unlike the targeted spear-phishing option, the Mass Mailer is designed to send a generic phishing email to a large list of addresses. It's useful for testing baseline awareness across a whole organization.</p>
@@ -1223,7 +1224,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 4.  Set the "From" address to something seemingly legitimate (e.g., `<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#73;&#84;&#45;&#83;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#111;&#117;&#114;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;">&#73;&#84;&#45;&#83;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#111;&#117;&#114;&#99;&#111;&#109;&#112;&#97;&#110;&#121;&#46;&#99;&#111;&#109;</a>`).<br />
 5.  Configure your email relay (e.g., a local SMTP server or Gmail app password).<br />
 6.  Send the email and monitor the credential harvester or other linked attack vector for results.</p>
-<p>---</p>
+<hr />
 <h2 id="6-arduino-based-attack-vector-teensy-usb-hid-attack"><strong>6. Arduino-Based Attack Vector (Teensy USB HID Attack)</strong><a class="headerlink" href="#6-arduino-based-attack-vector-teensy-usb-hid-attack" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-physical-usb-drop-attack"><strong>Tutorial: Physical USB Drop Attack</strong><a class="headerlink" href="#tutorial-physical-usb-drop-attack" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> This attack uses a programmable microcontroller board like a Teensy or Arduino Leonardo. These devices can be programmed to emulate a Human Interface Device (HID), like a keyboard. When plugged into a target computer, they are automatically recognized, and the device can be pre-programmed to execute a series of keystrokes at lightning speed to open a terminal and download/execute a malicious payload.</p>
@@ -1233,9 +1234,8 @@ Upon launch, it may check for updates then present the main menu.</p>
 </em>   The `teensy_loader` software on your Kali machine (`sudo apt install teensy-loader`).</p>
 <p><strong>Step-by-Step Instructions:</strong><br />
 1.  <strong>Launch SET and select the vector:</strong><br />
-    ```bash<br />
-    sudo setoolkit<br />
-    ```<br />
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>setoolkit<span class="w">  </span>
+</code></pre></div>
     Select: <strong>1) Social-Engineering Attacks</strong><br />
     Select: <strong>6) Arduino-Based Attack Vector</strong></p>
 <p>2.  <strong>Configure the Payload:</strong><br />
@@ -1256,7 +1256,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 <p>5.  <strong>Deploy:</strong><br />
     *   The Teensy is now a malicious USB stick. Plug it into the target machine. It will impersonate a keyboard and automatically type the commands to establish a reverse connection to your machine, granting you access.</p>
 <p><strong>Warning:</strong> This is a highly invasive physical attack. Explicit permission for physical testing is an absolute requirement.</p>
-<p>---</p>
+<hr />
 <h2 id="7-wireless-access-point-attack-vector-evil-twin-attack"><strong>7. Wireless Access Point Attack Vector (Evil Twin Attack)</strong><a class="headerlink" href="#7-wireless-access-point-attack-vector-evil-twin-attack" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-rogue-access-point-setup"><strong>Tutorial: Rogue Access Point Setup</strong><a class="headerlink" href="#tutorial-rogue-access-point-setup" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> SET can help you create a rogue wireless access point (an "Evil Twin") that mimics a legitimate corporate or public network (e.g., "Company_Guest"). When users connect to this malicious Wi-Fi, you can intercept their traffic, perform SSL stripping, and redirect them to credential-harvesting portals.</p>
@@ -1269,9 +1269,8 @@ Upon launch, it may check for updates then present the main menu.</p>
 </ul>
 <p><strong>Step-by-Step Instructions:</strong><br />
 1.  <strong>Launch SET and select the vector:</strong><br />
-    ```bash<br />
-    sudo setoolkit<br />
-    ```<br />
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>setoolkit<span class="w">  </span>
+</code></pre></div>
     Select: <strong>1) Social-Engineering Attacks</strong><br />
     Select: <strong>7) Wireless Access Point Attack Vector</strong></p>
 <p>2.  <strong>Configure the Rogue Access Point:</strong><br />
@@ -1287,7 +1286,7 @@ Upon launch, it may check for updates then present the main menu.</p>
     *   Let the rogue AP run. Users might connect automatically if their devices have connected to a similarly named network before.<br />
     *   Monitor the SET terminal for any captured credentials and HTTP traffic.</p>
 <p><strong>Note:</strong> This attack is often combined with manual jamming of the real access point using a tool like `mdk4` to force devices to connect to your stronger malicious signal.</p>
-<p>---</p>
+<hr />
 <h2 id="8-qrcode-generator-attack-vector"><strong>8. QRCode Generator Attack Vector</strong><a class="headerlink" href="#8-qrcode-generator-attack-vector" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-qr-code-phishing-campaign"><strong>Tutorial: QR Code Phishing Campaign</strong><a class="headerlink" href="#tutorial-qr-code-phishing-campaign" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> This technique leverages the widespread trust and use of QR codes. SET generates a QR code that embeds a malicious URL. When scanned, the victim is redirected to a credential-harvesting site or a payload-dropping page, all while believing they are interacting with a legitimate, physical object like a poster or flyer.</p>
@@ -1302,9 +1301,8 @@ Upon launch, it may check for updates then present the main menu.</p>
 *   A simple web server (like Apache) started: `sudo systemctl start apache2`.</p>
 <p><strong>Step-by-Step Instructions:</strong><br />
 1.  <strong>Launch SET and Navigate to the Attack Vector:</strong><br />
-    ```bash<br />
-    sudo setoolkit<br />
-    ```<br />
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>setoolkit<span class="w">  </span>
+</code></pre></div>
     Select: <strong>1) Social-Engineering Attacks</strong><br />
     Select: <strong>8) QR Code Generator Attack Vector</strong></p>
 <p>2.  <strong>Configure the QR Code Attack:</strong><br />
@@ -1322,16 +1320,15 @@ Upon launch, it may check for updates then present the main menu.</p>
     *   When an employee scans the code, their phone will open the malicious login page you configured.<br />
     *   Any credentials they enter will be captured and saved by SET, and you will see the data in real-time within the SET terminal window.</p>
 <p><strong>Post-Test Analysis:</strong> Document how many times the QR code was scanned and how many credentials were submitted.</p>
-<p>---</p>
+<hr />
 <h2 id="9-powershell-attack-vectors"><strong>9. Powershell Attack Vectors</strong><a class="headerlink" href="#9-powershell-attack-vectors" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-fileless-powershell-attack"><strong>Tutorial: Fileless PowerShell Attack</strong><a class="headerlink" href="#tutorial-fileless-powershell-attack" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> PowerShell is a powerful scripting language built into Windows that is often overlooked by traditional antivirus software. SET's PowerShell attacks generate malicious scripts that can be delivered via email or a website to download and execute payloads entirely in memory, leaving minimal traces on the target's disk.</p>
 <p><strong>Scenario:</strong> Bypassing antivirus software during a spear-phishing campaign by embedding a malicious PowerShell command in a Word document or a link within an email.</p>
 <p><strong>Step-by-Step Instructions:</strong><br />
 1.  <strong>Launch SET and select the vector:</strong><br />
-    ```bash<br />
-    sudo setoolkit<br />
-    ```<br />
+    <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>setoolkit<span class="w">  </span>
+</code></pre></div>
     Select: <strong>1) Social-Engineering Attacks</strong><br />
     Select: <strong>9) Powershell Attack Vectors</strong></p>
 <p>2.  <strong>Choose an Attack Method:</strong><br />
@@ -1350,7 +1347,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 <p>5.  <strong>Catch the Shell:</strong><br />
     *   Before the victim executes the payload, set up a listener in SET (<strong>4) Create a Payload and Listener</strong> -&gt; <strong>Listener Options</strong> -&gt; <strong>Start Multi/Handler</strong>).<br />
     *   Once the victim runs the command, you will receive a reverse shell on your listener.</p>
-<p>---</p>
+<hr />
 <h2 id="10-third-party-modules"><strong>10. Third Party Modules</strong><a class="headerlink" href="#10-third-party-modules" title="Permanent link">&para;</a></h2>
 <h3 id="tutorial-extending-sets-capabilities"><strong>Tutorial: Extending SET's Capabilities</strong><a class="headerlink" href="#tutorial-extending-sets-capabilities" title="Permanent link">&para;</a></h3>
 <p><strong>Concept:</strong> This menu option allows you to import and use external modules that are not officially part of the core SET framework. These can be custom attack vectors, new integration tools, or scripts written by the community.</p>
@@ -1360,7 +1357,7 @@ Upon launch, it may check for updates then present the main menu.</p>
 3.  Select a module to execute it.<br />
 4.  These modules often come with their own setup and configuration instructions. Always read any provided README files.</p>
 <p><strong>Note:</strong> The availability and functionality of these modules depend on the user manually adding them. The core SET installation may not have any third-party modules by default.</p>
-<p>---</p>
+<hr />
 <h2 id="navigation-and-best-practices-for-beginners"><strong>Navigation and Best Practices for Beginners</strong><a class="headerlink" href="#navigation-and-best-practices-for-beginners" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Always</strong> test in isolated environments with explicit, written permission. Never test on unauthorized systems.  </li>
