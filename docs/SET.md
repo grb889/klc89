@@ -2,24 +2,24 @@
 
 ## Table of Contents
 
-1\.  \[Spear-Phishing Attack Vectors\](#spear-phishing-attack-vectors)  
-2\.  \[Website Attack Vectors\](#website-attack-vectors)  
-3\.  \[Infectious Media Generator\](#infectious-media-generator)  
-4\.  \[Create a Payload and Listener\](#create-a-payload-and-listener)  
-5\.  \[Mass Mailer Attack\](#mass-mailer-attack)  
-6\.  \[Arduino-Based Attack Vector\](#arduino-based-attack-vector)  
-7\.  \[Wireless Access Point Attack Vector\](#wireless-access-point-attack-vector)  
-8\.  \[QRCode Generator Attack Vector\](#qrcode-generator-attack-vector)  
-9\.  \[Powershell Attack Vectors\](#powershell-attack-vectors)  
-10\. \[Third Party Modules\](#third-party-modules)
+1\.  [Spear-Phishing Attack Vectors](#spear-phishing-attack-vectors)  
+2\.  [Website Attack Vectors](#website-attack-vectors)  
+3\.  [Infectious Media Generator](#infectious-media-generator)  
+4\.  [Create a Payload and Listener](#create-a-payload-and-listener)  
+5\.  [Mass Mailer Attack](#mass-mailer-attack)  
+6\.  [Arduino-Based Attack Vector](#arduino-based-attack-vector)  
+7\.  [Wireless Access Point Attack Vector](#wireless-access-point-attack-vector)  
+8\.  [QRCode Generator Attack Vector](#qrcode-generator-attack-vector)  
+9\.  [Powershell Attack Vectors](#powershell-attack-vectors)  
+10\. [Third Party Modules](#third-party-modules)
 
-\---
+---
 
 ## **Introduction to the Social-Engineer Toolkit (SET)**
 
 The Social-Engineer Toolkit (SET) is a Python-driven, open-source penetration testing framework used for social engineering attacks. It's designed to test an organization's security by simulating real-world attacks that target the human element, often the weakest link in security. SET is bundled with Kali Linux and has millions of downloads. It is intended strictly for ethical use with explicit consent.
 
-\---
+---
 
 ## **Getting Started: A Step-by-Step Tutorial for Beginners**
 
@@ -27,9 +27,9 @@ SET is menu-driven, making it accessible even for novices.
 
 ### **Step 1: Launch SET**  
 Run the following in Kali Linux terminal (may require root):  
-\`\`\`bash  
+```bash  
 sudo setoolkit  
-\`\`\`  
+```  
 Upon launch, it may check for updates then present the main menu.
 
 ### **Step 2: Navigate the Main Menu**  
@@ -44,7 +44,7 @@ Options:
 
 For beginners, choose option **1) Social-Engineering Attacks**. You will then see the list of attack vectors that form the basis of this guide.
 
-\---
+---
 
 ## **1. Spear-Phishing Attack Vectors** 
 
@@ -66,7 +66,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Explanation:** This use case shows how SET can be leveraged to simulate highly targeted phishing attacks, critical for assessing real-world risks. The tester must have permission, use safe lab environments, and ensure employees are debriefed afterward on recognizing social engineering attacks.
 
-\---
+---
 
 ## **2. Website Attack Vectors** 
 
@@ -82,7 +82,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 5. SET will now ask for your IP address. **This is the critical part.** You must provide the IP address of your Kali machine, as it will act as the web server to host the cloned page and a listener to capture the credentials. If the target is on your local network, use your local IP (e.g., 192.168.1.50). If the target is external, you'll need to use a public IP address and configure port forwarding or use a tunneling service like ngrok.  
 6. SET will automatically clone the site and start the web server and listener. When the victim enters their credentials on your fake site, the data will be sent (POSTed) back to your Kali machine and displayed in your terminal.
 
-\---
+---
 
 ## **3. Infectious Media Generator** 
 
@@ -108,7 +108,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 *This attack tests physical security controls and user willingness to run unknown files.*
 
 
-\---
+---
 
 ## **4. Create a Payload and Listener** 
 
@@ -126,7 +126,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
     *   Arduino-based attacks  
     *   Any other payload that calls back to your machine.
 
-\---
+---
 
 ## **5. Mass Mailer Attack**
 
@@ -141,7 +141,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 5\.  Configure your email relay (e.g., a local SMTP server or Gmail app password).  
 6\.  Send the email and monitor the credential harvester or other linked attack vector for results.
 
-\---
+---
 
 ## **6. Arduino-Based Attack Vector (Teensy USB HID Attack)** 
 
@@ -156,15 +156,15 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Step-by-Step Instructions:**  
 1\.  **Launch SET and select the vector:**  
-    \`\`\`bash  
+    ```bash  
     sudo setoolkit  
-    \`\`\`  
+    ```  
     Select: **1) Social-Engineering Attacks**  
     Select: **6) Arduino-Based Attack Vector**
 
 2\.  **Configure the Payload:**  
     *   SET will present a menu of pre-configured attack payloads. A common choice is:  
-        *   **1) Windows Reverse TCP Shell** \- Creates a shell that calls back to your machine.  
+        *   **1) Windows Reverse TCP Shell** - Creates a shell that calls back to your machine.  
     *   You will be prompted for your Kali Linux machine's **LHOST** (your IP address) and **LPORT** (a port to listen on, e.g., 443 or 4444).
 
 3\.  **Generate and Prepare the Payload:**  
@@ -177,7 +177,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 4\.  **Set Up the Listener:**  
     *   Before deploying the device, you must start a listener to catch the reverse shell connection. In SET's main menu, use:  
-        *   **4) Create a Payload and Listener** \-\> **Listener Options** \-\> **Start Multi/Handler**  
+        *   **4) Create a Payload and Listener** -\> **Listener Options** -\> **Start Multi/Handler**  
     *   Configure the handler with the same LHOST and LPORT you used for the payload.
 
 5\.  **Deploy:**  
@@ -185,7 +185,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Warning:** This is a highly invasive physical attack. Explicit permission for physical testing is an absolute requirement.
 
-\---
+---
 
 ## **7. Wireless Access Point Attack Vector (Evil Twin Attack)** 
 
@@ -202,9 +202,9 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Step-by-Step Instructions:**  
 1\.  **Launch SET and select the vector:**  
-    \`\`\`bash  
+    ```bash  
     sudo setoolkit  
-    \`\`\`  
+    ```  
     Select: **1) Social-Engineering Attacks**  
     Select: **7) Wireless Access Point Attack Vector**
 
@@ -212,7 +212,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
     *   SET will guide you through configuration. First, it will likely ask for the interface for the rogue AP (e.g., \`wlan0\`).  
     *   It will then ask for the SSID. Enter a convincing name (e.g., \`CompanyName_Public\`).  
     *   You will be asked to select a network type. For a credential harvester, choose:  
-        *   **1) Fake AP \- Harvest Credentials without Jamming**  
+        *   **1) Fake AP - Harvest Credentials without Jamming**  
     *   SET will now set up the rogue AP and a DHCP server and may automatically launch a credential harvester.
 
 3\.  **Integrate with a Cloned Site:**  
@@ -225,7 +225,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Note:** This attack is often combined with manual jamming of the real access point using a tool like \`mdk4\` to force devices to connect to your stronger malicious signal.
 
-\---
+---
 
 ## **8. QRCode Generator Attack Vector** 
 
@@ -246,9 +246,9 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Step-by-Step Instructions:**  
 1\.  **Launch SET and Navigate to the Attack Vector:**  
-    \`\`\`bash  
+    ```bash  
     sudo setoolkit  
-    \`\`\`  
+    ```  
     Select: **1) Social-Engineering Attacks**  
     Select: **8) QR Code Generator Attack Vector**
 
@@ -272,7 +272,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Post-Test Analysis:** Document how many times the QR code was scanned and how many credentials were submitted.
 
-\---
+---
 
 ## **9. Powershell Attack Vectors**   
 ### **Tutorial: Fileless PowerShell Attack**  
@@ -282,33 +282,33 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Step-by-Step Instructions:**  
 1\.  **Launch SET and select the vector:**  
-    \`\`\`bash  
+    ```bash  
     sudo setoolkit  
-    \`\`\`  
+    ```  
     Select: **1) Social-Engineering Attacks**  
     Select: **9) Powershell Attack Vectors**
 
 2\.  **Choose an Attack Method:**  
     SET offers several PowerShell options. The most common is:  
-    *   **1) Powershell Alphanumeric Shellcode Injector** \- This encodes a payload into an alphanumeric string that can be executed via a single PowerShell command.
+    *   **1) Powershell Alphanumeric Shellcode Injector** - This encodes a payload into an alphanumeric string that can be executed via a single PowerShell command.
 
 3\.  **Generate the Payload:**  
     *   Select your payload type (e.g., **1) Windows Reverse TCP Shell**).  
     *   Enter your **LHOST** (Kali IP) and **LPORT** (listening port).  
     *   SET will generate a long, obfuscated PowerShell command. It will look something like:  
-        \`powershell \-Ep Bypass \-Command "& { ... \[LONG_ALPHANUMERIC_STRING\] ... }"\`  
+        \`powershell -Ep Bypass -Command "& { ... [LONG_ALPHANUMERIC_STRING] ... }"\`  
     *   **Copy this entire command.**
 
 4\.  **Delivery and Execution:**  
     *   **Email Delivery:** Paste this command into a Word macro. When the document is opened and macros are enabled, it will execute the PowerShell payload.  
     *   **Web Delivery:** You can serve this command from a website. A common trick is to have a victim copy and paste a "fix" or "plugin installer" command directly into their PowerShell terminal.  
-    *   SET can automate this web delivery through the **2) Web Attack Vectors** \-\> **3) PowerShell Alphanumeric Shellcode Injector** menu.
+    *   SET can automate this web delivery through the **2) Web Attack Vectors** -\> **3) PowerShell Alphanumeric Shellcode Injector** menu.
 
 5\.  **Catch the Shell:**  
-    *   Before the victim executes the payload, set up a listener in SET (**4) Create a Payload and Listener** \-\> **Listener Options** \-\> **Start Multi/Handler**).  
+    *   Before the victim executes the payload, set up a listener in SET (**4) Create a Payload and Listener** -\> **Listener Options** -\> **Start Multi/Handler**).  
     *   Once the victim runs the command, you will receive a reverse shell on your listener.
 
-\---
+---
 
 ## **10. Third Party Modules** 
 
@@ -323,7 +323,7 @@ For beginners, choose option **1) Social-Engineering Attacks**. You will then se
 
 **Note:** The availability and functionality of these modules depend on the user manually adding them. The core SET installation may not have any third-party modules by default.
 
-\---
+---
 
 ## **Navigation and Best Practices for Beginners**
 

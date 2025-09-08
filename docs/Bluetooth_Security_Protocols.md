@@ -1,19 +1,20 @@
 # **Comprehensive Guide to Bluetooth Security Protocols and Vulnerabilities**
 
-## **Table of Contents**
+## Table of Contents
 
-1. Foundation and Context  
-2. Bluetooth Architecture Overview  
-3. Bluetooth Classic Security  
-4. Bluetooth Low Energy (BLE) Security  
-5. Common Vulnerabilities  
-6. Attack Vectors  
-7. Practical OSINT Use Cases  
-8. Security Best Practices  
-9. Defensive Awareness  
-10. Future Considerations  
-11. Glossary  
-12. Conclusion
+1. [Foundation and Context](#1-foundation-and-context)  
+2. [Bluetooth Architecture Overview](#2-bluetooth-architecture-overview)  
+3. [Bluetooth Classic Security](#3-bluetooth-classic-security)  
+4. [Bluetooth Low Energy (BLE) Security](#4-bluetooth-low-energy-ble-security)  
+5. [Common Vulnerabilities](#5-common-vulnerabilities)  
+6. [Attack Vectors](#6-attack-vectors)  
+7. [Practical OSINT Use Cases](#7-practical-osint-use-cases)  
+8. [Security Best Practices](#8-security-best-practices)  
+9. [Defensive Awareness](#9-defensive-awareness)  
+10. [Future Considerations](#10-future-considerations)  
+11. [Glossary](#11-glossary)  
+12. [Conclusion](#conclusion)
+
 
 ---
 
